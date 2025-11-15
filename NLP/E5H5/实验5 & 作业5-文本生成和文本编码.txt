@@ -1,0 +1,8 @@
+作业
+1. 案例RNN-LM-song中的程序是一个根据歌词语料data.txt生成的RNN语言模型，它可以生成指定长度的相同风格的歌词。请参考该案例，收集某一类风格的歌词，或者诗歌，编写个RNN语言模型，并进行测试。
+
+实验
+1.样例代码avrPooling.html，LSTM-classification.html分别采用平均池化和LSTM模型最后的隐层向量对句子编码并分类。请参照给出的代码，编写如下二分类模型：对LSTM的每一步输出向量进行平均池化，作为句子的编码向量，实现train.txt（按照8：2划分训练和测试集）中的数据的二分类，请输出模型在测试集上的评测性能(precision, recall, f1)。
+
+2. TextCNN-2classes-torch.html，LSTM-classification.html分别采用CNN和LSTM架构对文本编码并实现二分类。请参照给出的代码，编写代码将CNN和LSTM整合对train.txt（8：2划分训练和测试数据）中的文本编码并二分类。整合方式可以是堆叠，向量平均，向量拼接。请输出模型在测试集上的评测性能(precision, recall, f1)，并跟上面的方法进行性能比较。
+
