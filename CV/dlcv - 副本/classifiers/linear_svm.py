@@ -23,47 +23,60 @@ def svm_loss_naive(W, X, y, reg):
     - gradient with respect to weights W; an array of same shape as W
     """
     dW = np.zeros(W.shape)  # initialize the gradient as zero
-
+    N = X.shape[0]
+    C = W.shape[1]
+    D = W.shape[0]
     # compute the loss and the gradient
     num_classes = W.shape[1]
     num_train = X.shape[0]
     loss = 0.0
+    m=np.zeros((N,C))
+    grad_w3=np.zeros((D,C))
+    dic={}
     for i in range(num_train):
+        grad_temp=np.zeros((D,C))
         scores = X[i].dot(W)
         correct_class_score = scores[y[i]]
         for j in range(num_classes):
             if j == y[i]:
                 continue
             margin = scores[j] - correct_class_score + 1  # note delta = 1
+            
             if margin > 0:
-                loss += margin
-                
-                # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-                # TODO:
-                # 计算损失函数的梯度并将其存储为dW。
-                # 而不是先计算损失，再计算导数，
-                # 在计算损失的同时计算导数可能更简单。因此，你可能需要修改上面的一些代码来计算梯度。
-                
-                # 对 j != y[i] 的类，如果 margin > 0，添加 X[i]
-                dW[:, j] += X[i]
-                # 对正确的类 y[i]，减去 X[i]（有多少个 j 满足 margin > 0，就减多少次）
-                dW[:, y[i]] -= X[i]
-                
-                # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+              dW[:,j]+=X[i].transpose()
+              dW[:,y[i]]+=-X[i].transpose()
+              grad_w3[:,j]+=X[i].transpose()
+              grad_w3[:,y[i]]+=-X[i].transpose()
+              m[i, j] = 1
+              loss += margin
+        dic[i]=grad_temp/num_train
 
     # Right now the loss is a sum over all training examples, but we want it
     # to be an average instead so we divide by num_train.
     loss /= num_train
-    dW /= num_train
-
+    dW/=num_train
     # Add regularization to the loss.
     loss += reg * np.sum(W * W)
-    # Add regularization to the gradient
-    dW += 2 * reg * W
+    dW+=reg*W*2
+    #############################################################################
+    # TODO:                                                                     #
+    # Compute the gradient of the loss function and store it dW.                #
+    # Rather that first computing the loss and then computing the derivative,   #
+    # it may be simpler to compute the derivative at the same time that the     #
+    # loss is being computed. As a result you may need to modify some of the    #
+    # code above to compute the gradient.                                       #
+    # TODO:
+    # 计算损失函数的梯度并将其存储为dW。
+    # 而不是先计算损失，再计算导数，
+    # 在计算损失的同时计算导数可能更简单。因此，你可能需要修改上面的一些代码来计算梯度。
+    #############################################################################
+    # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
+    pass
+
+    # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
     return loss, dW
-
 
 def svm_loss_vectorized(W, X, y, reg):
     """
@@ -73,7 +86,6 @@ def svm_loss_vectorized(W, X, y, reg):
     """
     loss = 0.0
     dW = np.zeros(W.shape)  # initialize the gradient as zero
-    num_train = X.shape[0]
 
     #############################################################################
     # TODO:                                                                     #
@@ -84,29 +96,7 @@ def svm_loss_vectorized(W, X, y, reg):
     #############################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    # 1. 计算分数 N x C
-    scores = X.dot(W)
-    
-    # 2. 获取每个样本的正确类别的分数
-    #    scores[np.arange(num_train), y] 得到一个 (N,) 数组
-    #    .reshape(-1, 1) 将其变为 (N, 1) 以便广播
-    correct_class_scores = scores[np.arange(num_train), y].reshape(-1, 1)
-
-    # 3. 计算 margins (N, C)
-    #    使用广播 (N, C) - (N, 1)
-    margins = scores - correct_class_scores + 1  # delta = 1
-    
-    # 4. 将正确类别的 margin 设置为 0
-    margins[np.arange(num_train), y] = 0
-    
-    # 5. Hinge loss: 只保留 > 0 的 margins
-    margins = np.maximum(0, margins)
-    
-    # 6. 计算总损失
-    loss = np.sum(margins) / num_train
-    
-    # 7. 添加正则化损失
-    loss += reg * np.sum(W * W)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -125,27 +115,7 @@ def svm_loss_vectorized(W, X, y, reg):
     #############################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    # 1. 创建一个二元掩码 (binary mask)，其中 margin > 0 的位置为 1，否则为 0
-    binary_mask = np.zeros(margins.shape)
-    binary_mask[margins > 0] = 1
-    
-    # 2. 对于每个样本，计算有多少个 j 满足了 margin > 0
-    #    这将是我们从正确类别 y[i] 中减去 X[i] 的次数
-    #    np.sum(binary_mask, axis=1) -> (N,)
-    row_sum = np.sum(binary_mask, axis=1)
-    
-    # 3. 在掩码中，将正确类别 y[i] 的位置设置为 -row_sum
-    binary_mask[np.arange(num_train), y] = -row_sum
-    
-    # 4. 计算梯度
-    #    这是 X.T (D, N) 和 binary_mask (N, C) 的矩阵乘法
-    dW = X.T.dot(binary_mask)
-    
-    # 5. 取平均
-    dW /= num_train
-    
-    # 6. 添加正则化梯度
-    dW += 2 * reg * W
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 

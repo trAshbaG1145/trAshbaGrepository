@@ -28,11 +28,7 @@ def affine_forward(x, w, b):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N = x.shape[0]
-    # 将输入 x 重塑为 (N, D)
-    x_reshaped = x.reshape(N, -1)
-    # 计算输出 (N, M)
-    out = x_reshaped.dot(w) + b
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -66,21 +62,7 @@ def affine_backward(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N = x.shape[0]
-    # 将 x 重塑为 (N, D)
-    x_reshaped = x.reshape(N, -1)
-    
-    # 计算 db (M,)
-    db = np.sum(dout, axis=0)
-    
-    # 计算 dw (D, M)
-    dw = x_reshaped.T.dot(dout)
-    
-    # 计算 dx_reshaped (N, D)
-    dx_reshaped = dout.dot(w.T)
-    
-    # 将 dx 重塑回 x 的原始形状
-    dx = dx_reshaped.reshape(x.shape)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -107,7 +89,7 @@ def relu_forward(x):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    out = np.maximum(0, x)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -135,8 +117,7 @@ def relu_backward(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    # 梯度只在 x > 0 时传递
-    dx = dout * (x > 0)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -224,24 +205,7 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 1. 计算样本均值
-        sample_mean = np.mean(x, axis=0)
-        
-        # 2. 计算样本方差
-        sample_var = np.var(x, axis=0)
-        
-        # 3. 归一化
-        x_hat = (x - sample_mean) / np.sqrt(sample_var + eps)
-        
-        # 4. 缩放和平移
-        out = gamma * x_hat + beta
-        
-        # 5. 更新运行均值和方差
-        running_mean = momentum * running_mean + (1 - momentum) * sample_mean
-        running_var = momentum * running_var + (1 - momentum) * sample_var
-        
-        # 6. 存储缓存
-        cache = (x, x_hat, sample_mean, sample_var, eps, gamma, beta)
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         #######################################################################
@@ -259,10 +223,7 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 使用运行均值和方差进行归一化
-        x_hat = (x - running_mean) / np.sqrt(running_var + eps)
-        # 缩放和平移
-        out = gamma * x_hat + beta
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         #######################################################################
@@ -306,29 +267,7 @@ def batchnorm_backward(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    x, x_hat, mu, var, eps, gamma, beta = cache
-    N = x.shape[0]
-
-    # 1. 计算 dbeta
-    dbeta = np.sum(dout, axis=0)
-    
-    # 2. 计算 dgamma
-    dgamma = np.sum(dout * x_hat, axis=0)
-    
-    # 3. 计算 dx_hat
-    dx_hat = dout * gamma
-    
-    # 4. 中间梯度
-    std_inv = 1. / np.sqrt(var + eps)
-    
-    # 5. 计算 dvar
-    dvar = -0.5 * np.sum(dx_hat * (x - mu), axis=0) * (std_inv**3)
-    
-    # 6. 计算 dmu
-    dmu = -np.sum(dx_hat * std_inv, axis=0) - 2. * dvar * np.mean(x - mu, axis=0)
-    
-    # 7. 计算 dx
-    dx = dx_hat * std_inv + (2. / N) * dvar * (x - mu) + (1. / N) * dmu
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -366,19 +305,7 @@ def batchnorm_backward_alt(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    x, x_hat, mu, var, eps, gamma, beta = cache
-    N, D = dout.shape
-
-    # 1. dbeta 和 dgamma (与上面相同)
-    dbeta = np.sum(dout, axis=0)
-    dgamma = np.sum(dout * x_hat, axis=0)
-    
-    # 2. dx_hat
-    dx_hat = dout * gamma
-    
-    # 3. 简化的 dx
-    std_inv = 1. / np.sqrt(var + eps)
-    dx = (1. / N) * std_inv * (N * dx_hat - np.sum(dx_hat, axis=0) - x_hat * np.sum(dx_hat * x_hat, axis=0))
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -431,23 +358,8 @@ def layernorm_forward(x, gamma, beta, ln_param):
     # 批处理规范代码，并保持它几乎不变？
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-    
-    N, D = x.shape
-    
-    # 1. 计算每个样本的均值 (N, 1)
-    mu = x.mean(axis=1, keepdims=True)
-    
-    # 2. 计算每个样本的方差 (N, 1)
-    var = x.var(axis=1, keepdims=True)
-    
-    # 3. 归一化 (N, D)
-    x_hat = (x - mu) / np.sqrt(var + eps)
-    
-    # 4. 缩放和平移 (N, D)
-    out = gamma * x_hat + beta
-    
-    # 5. 存储缓存
-    cache = (x, gamma, beta, mu, var, eps, x_hat)
+
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -484,29 +396,7 @@ def layernorm_backward(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    x, gamma, beta, mu, var, eps, x_hat = cache
-    N, D = x.shape
-
-    # 1. 计算 dbeta (D,)
-    dbeta = np.sum(dout, axis=0)
-    
-    # 2. 计算 dgamma (D,)
-    dgamma = np.sum(dout * x_hat, axis=0)
-    
-    # 3. 计算 dx_hat (N, D)
-    dx_hat = dout * gamma
-    
-    # 4. 中间梯度
-    std_inv = 1. / np.sqrt(var + eps)
-    
-    # 5. 计算 dvar (N, 1)
-    dvar = -0.5 * np.sum(dx_hat * (x - mu) * (std_inv**3), axis=1, keepdims=True)
-    
-    # 6. 计算 dmu (N, 1)
-    dmu = -np.sum(dx_hat * std_inv, axis=1, keepdims=True) - (2. / D) * dvar * np.sum(x - mu, axis=1, keepdims=True)
-    
-    # 7. 计算 dx (N, D)
-    dx = dx_hat * std_inv + (2. / D) * dvar * (x - mu) + (1. / D) * dmu
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -556,11 +446,7 @@ def dropout_forward(x, dropout_param):
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # Inverted dropout:
-        # 1. 创建掩码
-        mask = (np.random.rand(*x.shape) < p)
-        # 2. 应用掩码并按 p 缩放
-        out = x * mask / p
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         #######################################################################
@@ -573,8 +459,7 @@ def dropout_forward(x, dropout_param):
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 测试阶段，什么都不做，直接输出
-        out = x
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         #######################################################################
@@ -606,8 +491,7 @@ def dropout_backward(dout, cache):
         #######################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 应用相同的掩码并按 p 缩放
-        dx = dout * mask / dropout_param['p']
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         #######################################################################
@@ -655,36 +539,7 @@ def conv_forward_naive(x, w, b, conv_param):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N, C, H, W = x.shape
-    F, _, HH, WW = w.shape
-    stride = conv_param['stride']
-    pad = conv_param['pad']
-
-    # 计算输出维度
-    H_out = 1 + (H + 2 * pad - HH) // stride
-    W_out = 1 + (W + 2 * pad - WW) // stride
-    
-    out = np.zeros((N, F, H_out, W_out))
-
-    # 填充输入
-    # ((0, 0), (0, 0), (pad, pad), (pad, pad)) 表示在第 N, C 维不填充，在 H, W 维两侧各填充 pad 个 0
-    x_pad = np.pad(x, ((0, 0), (0, 0), (pad, pad), (pad, pad)), 'constant', constant_values=0)
-
-    for n in range(N):          # 遍历每个样本
-        for f in range(F):      # 遍历每个滤波器
-            for i in range(H_out):  # 遍历输出高度
-                for j in range(W_out):  # 遍历输出宽度
-                    # 计算当前切片的起始和结束位置
-                    h_start = i * stride
-                    h_end = h_start + HH
-                    w_start = j * stride
-                    w_end = w_start + WW
-                    
-                    # 提取输入切片 (C, HH, WW)
-                    x_slice = x_pad[n, :, h_start:h_end, w_start:w_end]
-                    
-                    # 计算卷积 (点积) 并加上偏置
-                    out[n, f, i, j] = np.sum(x_slice * w[f]) + b[f]
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -714,47 +569,7 @@ def conv_backward_naive(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    x, w, b, conv_param = cache
-    N, C, H, W = x.shape
-    F, _, HH, WW = w.shape
-    stride = conv_param['stride']
-    pad = conv_param['pad']
-    _, _, H_out, W_out = dout.shape
-
-    # 初始化梯度
-    dx = np.zeros_like(x)
-    dw = np.zeros_like(w)
-    db = np.zeros(F)
-
-    # 准备填充
-    x_pad = np.pad(x, ((0, 0), (0, 0), (pad, pad), (pad, pad)), 'constant', constant_values=0)
-    dx_pad = np.zeros_like(x_pad)
-
-    for n in range(N):          # 遍历每个样本
-        for f in range(F):      # 遍历每个滤波器
-            # 1. 计算 db
-            db[f] += np.sum(dout[n, f])
-            
-            for i in range(H_out):  # 遍历输出高度
-                for j in range(W_out):  # 遍历输出宽度
-                    # 计算切片位置
-                    h_start = i * stride
-                    h_end = h_start + HH
-                    w_start = j * stride
-                    w_end = w_start + WW
-                    
-                    # 提取输入切片
-                    x_slice = x_pad[n, :, h_start:h_end, w_start:w_end]
-                    
-                    # 2. 计算 dw
-                    # dout[n, f, i, j] 是一个标量
-                    dw[f] += x_slice * dout[n, f, i, j]
-                    
-                    # 3. 计算 dx_pad (累加梯度)
-                    dx_pad[n, :, h_start:h_end, w_start:w_end] += w[f] * dout[n, f, i, j]
-
-    # 去除 dx 的填充
-    dx = dx_pad[:, :, pad:-pad, pad:-pad]
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -791,32 +606,7 @@ def max_pool_forward_naive(x, pool_param):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N, C, H, W = x.shape
-    pool_height = pool_param['pool_height']
-    pool_width = pool_param['pool_width']
-    stride = pool_param['stride']
-
-    # 计算输出维度
-    H_out = 1 + (H - pool_height) // stride
-    W_out = 1 + (W - pool_width) // stride
-    
-    out = np.zeros((N, C, H_out, W_out))
-
-    for n in range(N):
-        for c in range(C):
-            for i in range(H_out):
-                for j in range(W_out):
-                    # 计算切片位置
-                    h_start = i * stride
-                    h_end = h_start + pool_height
-                    w_start = j * stride
-                    w_end = w_start + pool_width
-                    
-                    # 提取切片
-                    x_slice = x[n, c, h_start:h_end, w_start:w_end]
-                    
-                    # 找到最大值
-                    out[n, c, i, j] = np.max(x_slice)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -844,36 +634,7 @@ def max_pool_backward_naive(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    x, pool_param = cache
-    N, C, H, W = x.shape
-    pool_height = pool_param['pool_height']
-    pool_width = pool_param['pool_width']
-    stride = pool_param['stride']
-    _, _, H_out, W_out = dout.shape
-
-    dx = np.zeros_like(x)
-
-    for n in range(N):
-        for c in range(C):
-            for i in range(H_out):
-                for j in range(W_out):
-                    # 计算切片位置
-                    h_start = i * stride
-                    h_end = h_start + pool_height
-                    w_start = j * stride
-                    w_end = w_start + pool_width
-                    
-                    # 提取切片
-                    x_slice = x[n, c, h_start:h_end, w_start:w_end]
-                    
-                    # 找到最大值
-                    max_val = np.max(x_slice)
-                    
-                    # 创建掩码，最大值的位置为 1，其他为 0
-                    mask = (x_slice == max_val)
-                    
-                    # 将上游梯度 dout 广播到这个掩码上
-                    dx[n, c, h_start:h_end, w_start:w_end] += mask * dout[n, c, i, j]
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -920,17 +681,7 @@ def spatial_batchnorm_forward(x, gamma, beta, bn_param):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N, C, H, W = x.shape
-    # 将 x 重塑为 (N*H*W, C)，以便使用标准的 batchnorm
-    # (N, C, H, W) -> (N, H, W, C) -> (N*H*W, C)
-    x_reshaped = x.transpose(0, 2, 3, 1).reshape(N * H * W, C)
-    
-    # 应用标准 batchnorm
-    out_reshaped, cache = batchnorm_forward(x_reshaped, gamma, beta, bn_param)
-    
-    # 将输出重塑回 (N, C, H, W)
-    # (N*H*W, C) -> (N, H, W, C) -> (N, C, H, W)
-    out = out_reshaped.reshape(N, H, W, C).transpose(0, 3, 1, 2)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -969,17 +720,7 @@ def spatial_batchnorm_backward(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N, C, H, W = dout.shape
-    # 将 dout 重塑为 (N*H*W, C)
-    # (N, C, H, W) -> (N, H, W, C) -> (N*H*W, C)
-    dout_reshaped = dout.transpose(0, 2, 3, 1).reshape(N * H * W, C)
-    
-    # 应用标准 batchnorm_backward
-    dx_reshaped, dgamma, dbeta = batchnorm_backward(dout_reshaped, cache)
-    
-    # 将 dx 重塑回 (N, C, H, W)
-    # (N*H*W, C) -> (N, H, W, C) -> (N, C, H, W)
-    dx = dx_reshaped.reshape(N, H, W, C).transpose(0, 3, 1, 2)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -1023,27 +764,7 @@ def spatial_groupnorm_forward(x, gamma, beta, G, gn_param):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N, C, H, W = x.shape
-    # 将 x 重塑为 (N, G, C//G, H, W)
-    x_grouped = x.reshape(N, G, C // G, H, W)
-    # 重塑为 (N*G, -1)，其中 -1 包含了 C//G, H, W
-    x_reshaped = x_grouped.reshape(N * G, -1)
-    
-    # 像 layernorm 一样，计算每个组的均值和方差
-    mu = x_reshaped.mean(axis=1, keepdims=True)
-    var = x_reshaped.var(axis=1, keepdims=True)
-    
-    # 归一化
-    x_hat_reshaped = (x_reshaped - mu) / np.sqrt(var + eps)
-    
-    # 重塑回 (N, C, H, W)
-    x_hat = x_hat_reshaped.reshape(N, C, H, W)
-    
-    # 缩放和平移 (gamma 和 beta 是 (1, C, 1, 1)，可以广播)
-    out = gamma * x_hat + beta
-    
-    # 存储缓存
-    cache = (x, x_hat, mu, var, eps, gamma, beta, G, x_grouped, x_reshaped)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -1075,35 +796,7 @@ def spatial_groupnorm_backward(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    x, x_hat, mu, var, eps, gamma, beta, G, x_grouped, x_reshaped = cache
-    N, C, H, W = dout.shape
-    D_group = (C // G) * H * W # 每个组的元素数量
-
-    # 1. dgamma 和 dbeta (1, C, 1, 1)
-    dgamma = np.sum(dout * x_hat, axis=(0, 2, 3), keepdims=True)
-    dbeta = np.sum(dout, axis=(0, 2, 3), keepdims=True)
-
-    # 2. dx_hat (N, C, H, W)
-    dx_hat = dout * gamma
-    
-    # 3. 重塑为 (N*G, -1)
-    dx_hat_grouped = dx_hat.reshape(N, G, C // G, H, W)
-    dx_hat_reshaped = dx_hat_grouped.reshape(N * G, -1)
-    
-    # 4. 像 layernorm_backward 一样计算
-    std_inv = 1. / np.sqrt(var + eps)
-    
-    # dvar (N*G, 1)
-    dvar = -0.5 * np.sum(dx_hat_reshaped * (x_reshaped - mu) * (std_inv**3), axis=1, keepdims=True)
-    
-    # dmu (N*G, 1)
-    dmu = -np.sum(dx_hat_reshaped * std_inv, axis=1, keepdims=True) - (2. / D_group) * dvar * np.sum(x_reshaped - mu, axis=1, keepdims=True)
-    
-    # dx_reshaped (N*G, -1)
-    dx_reshaped = dx_hat_reshaped * std_inv + (2. / D_group) * dvar * (x_reshaped - mu) + (1. / D_group) * dmu
-    
-    # 5. 重塑回 dx (N, C, H, W)
-    dx = dx_reshaped.reshape(N, C, H, W)
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -1133,29 +826,7 @@ def svm_loss(x, y):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N = x.shape[0]
-    
-    # 1. 计算 scores (N, 1)
-    correct_class_scores = x[np.arange(N), y].reshape(N, 1)
-    
-    # 2. 计算 margins (N, C)
-    margins = np.maximum(0, x - correct_class_scores + 1.0)
-    
-    # 3. 将正确类别的 margin 设为 0
-    margins[np.arange(N), y] = 0
-    
-    # 4. 计算损失
-    loss = np.sum(margins) / N
-
-    # 5. 计算梯度
-    dx = np.zeros_like(x)
-    # 创建掩码，margin > 0 的地方为 1
-    mask = (margins > 0).astype(int)
-    # 在正确类别 y[i] 处，减去该行中 margin > 0 的次数
-    mask[np.arange(N), y] = -np.sum(mask, axis=1)
-    
-    # 归一化梯度
-    dx = mask / N
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -1185,23 +856,7 @@ def softmax_loss(x, y):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    N = x.shape[0]
-    
-    # 1. 数值稳定性：减去最大值
-    x_shifted = x - np.max(x, axis=1, keepdims=True)
-    
-    # 2. 计算 softmax 概率
-    exp_scores = np.exp(x_shifted)
-    probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
-    
-    # 3. 计算损失 (负对数似然)
-    correct_log_probs = -np.log(probs[np.arange(N), y])
-    loss = np.sum(correct_log_probs) / N
-    
-    # 4. 计算梯度
-    dx = probs.copy()
-    dx[np.arange(N), y] -= 1
-    dx /= N
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################

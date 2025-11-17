@@ -70,10 +70,7 @@ def sgd_momentum(w, dw, config=None):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    # 更新速度
-    v = config["momentum"] * v - config["learning_rate"] * dw
-    # 更新权重
-    next_w = w + v
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -113,18 +110,7 @@ def rmsprop(w, dw, config=None):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    cache = config['cache']
-    decay_rate = config['decay_rate']
-    eps = config['epsilon']
-    learning_rate = config['learning_rate']
-    
-    # 更新缓存（平方梯度的移动平均）
-    cache = decay_rate * cache + (1 - decay_rate) * (dw**2)
-    # 更新权重
-    next_w = w - learning_rate * dw / (np.sqrt(cache) + eps)
-    
-    # 将更新后的缓存存回 config
-    config['cache'] = cache
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -172,36 +158,7 @@ def adam(w, dw, config=None):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    # 获取参数
-    learning_rate = config['learning_rate']
-    beta1 = config['beta1']
-    beta2 = config['beta2']
-    eps = config['epsilon']
-    m = config['m']
-    v = config['v']
-    
-    # 提示：t 在用于计算前需要增加
-    t = config['t'] + 1
-    
-    # 1. 更新一阶矩（m）
-    m = beta1 * m + (1 - beta1) * dw
-    
-    # 2. 更新二阶矩（v）
-    v = beta2 * v + (1 - beta2) * (dw**2)
-    
-    # 3. 计算偏差修正后的一阶矩
-    m_hat = m / (1 - beta1**t)
-    
-    # 4. 计算偏差修正后的二阶矩
-    v_hat = v / (1 - beta2**t)
-    
-    # 5. 更新权重
-    next_w = w - learning_rate * m_hat / (np.sqrt(v_hat) + eps)
-    
-    # 存回更新后的 m, v, 和 t
-    config['m'] = m
-    config['v'] = v
-    config['t'] = t
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################

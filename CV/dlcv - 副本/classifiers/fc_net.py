@@ -58,13 +58,7 @@ class TwoLayerNet(object):
         ############################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 第一层: W1 (D, H), b1 (H,)
-        self.params['W1'] = weight_scale * np.random.randn(input_dim, hidden_dim)
-        self.params['b1'] = np.zeros(hidden_dim)
-        
-        # 第二层: W2 (H, C), b2 (C,)
-        self.params['W2'] = weight_scale * np.random.randn(hidden_dim, num_classes)
-        self.params['b2'] = np.zeros(num_classes)
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         ############################################################################
@@ -98,17 +92,7 @@ class TwoLayerNet(object):
         ############################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 架构: affine - relu - affine - softmax
-        W1, b1 = self.params['W1'], self.params['b1']
-        W2, b2 = self.params['W2'], self.params['b2']
-        
-        # 第一层 (affine - relu)
-        # out1 是 ReLU 激活后的输出
-        out1, cache1 = affine_relu_forward(X, W1, b1)
-        
-        # 第二层 (affine)
-        # scores 是最终的分类分数
-        scores, cache2 = affine_forward(out1, W2, b2)
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         ############################################################################
@@ -136,23 +120,7 @@ class TwoLayerNet(object):
         ############################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 1. 计算损失 (Softmax 损失 + L2 正则化)
-        loss, dscores = softmax_loss(scores, y)
-        # 添加 L2 正则化损失
-        loss += 0.5 * self.reg * (np.sum(W1 * W1) + np.sum(W2 * W2))
-
-        # 2. 计算梯度 (反向传播)
-        # grads['W2'], grads['b2']
-        # 第二层反向传播 (affine)
-        dout1, dW2, db2 = affine_backward(dscores, cache2)
-        grads['W2'] = dW2 + self.reg * W2
-        grads['b2'] = db2
-        
-        # grads['W1'], grads['b1']
-        # 第一层反向传播 (affine - relu)
-        dx, dW1, db1 = affine_relu_backward(dout1, cache1)
-        grads['W1'] = dW1 + self.reg * W1
-        grads['b1'] = db1
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         ############################################################################
