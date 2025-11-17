@@ -1,0 +1,11 @@
+# Byte-compiled / cache
+*.py[cod]
+__pycache__/
+
+# Jupyter artifacts
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+*.html
+
+# Local datasets
+CV/dlcv/datasets/cifar-10-batches-py/
