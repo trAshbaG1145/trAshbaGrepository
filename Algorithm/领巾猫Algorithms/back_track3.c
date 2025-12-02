@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#define MAX 10
+int n, m, k;
+int board[MAX][MAX];
+int best[MAX][MAX];
+int min_dirs = 114514;
+int count = 0;
+int total_steps;
+
+typedef struct Point
+{
+    int x, y;
+} Point;
+Point luo;
+Point ye;
+
+// 8个方向（上下左右+斜向）
+int dx[8] = {1, 0, -1, 0, 1, 1, -1, -1};
+int dy[8] = {0, 1, 0, -1, 1, -1, 1, -1};
+bool ok(int x, int y)
+{
+    return x >= 1 && x <= n && y >= 1 && y <= m && board[x][y] == 0;
+}
+void save()
+{
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++)
+            best[i][j] = board[i][j];
+}
+void backtrack(int x, int y, int dep, int prev_dir, int current_dirs)
+{
+    // 终止条件：走完所有非封闭格子，且到达终点
+    if (dep == total_steps && x == ye.x && y == ye.y)
+    {
+        if (current_dirs < min_dirs)
+        { // 找到更优路径
+            min_dirs = current_dirs;
+            count = 1;
+            save(); // 保存最优路径
+        }
+        else if (current_dirs == min_dirs)
+        { // 找到相同最优路径
+            count++;
+        }
+        return;
+    }
+
+    // 尝试8个方向
+    for (int curr_dir = 0; curr_dir < 8; curr_dir++)
+    {
+        int nextx = x + dx[curr_dir];
+        int nexty = y + dy[curr_dir];
+
+        if (ok(nextx, nexty))
+        {                                  // 下一步合法
+            board[nextx][nexty] = dep + 1; // 标记为已访问（步数）
+
+            // 计算新的转弯次数：第一步（dep=1）不转弯，方向变化才转弯
+            int new_dirs = current_dirs;
+            if (dep > 1 && prev_dir != curr_dir)
+            {
+                new_dirs++;
+            }
+
+            // 递归探索下一步
+            backtrack(nextx, nexty, dep + 1, curr_dir, new_dirs);
+
+            board[nextx][nexty] = 0; // 回溯：取消标记
+        }
+    }
+}
+
+int main()
+{
+    scanf("%d %d %d", &n, &m, &k);
+    total_steps = n * m - k;
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++)
+            board[i][j] = 0;
+    for (int i = 1; i <= k; i++)
+    {
+        int x, y;
+        scanf("%d %d", &x, &y);
+        board[x][y] = -1;
+    }
+    scanf("%d %d", &luo.x, &luo.y);
+    scanf("%d %d", &ye.x, &ye.y);
+    board[luo.x][luo.y] = 1;
+    backtrack(luo.x, luo.y, 1, -1, 0);
+    if (count == 0)
+    {
+        printf("No Solution!\n");
+    }
+    else
+    {
+        printf("%d\n", min_dirs);
+        printf("%d\n", count);
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= m; j++)
+            {
+                printf("%d ", best[i][j]);
+            }
+            printf("\n");
+        }
+    }
+}

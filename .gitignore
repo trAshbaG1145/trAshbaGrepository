@@ -9,3 +9,5 @@ __pycache__/
 
 # Local datasets
 CV/dlcv/datasets/cifar-10-batches-py/
+
+github-recovery-codes.txt
