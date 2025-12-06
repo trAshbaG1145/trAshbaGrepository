@@ -13,3 +13,5 @@ CV/dlcv/datasets/cifar-10-batches-py/
 github-recovery-codes.txt
 
 /OS/Exp*/**/build/
+
+/draft/
