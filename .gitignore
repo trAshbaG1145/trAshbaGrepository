@@ -17,3 +17,5 @@ github-recovery-codes.txt
 /draft/
 
 pytorch_model.bin
+/NlP/**/*results/
+/NlP/**/*logs/
