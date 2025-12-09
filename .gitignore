@@ -15,3 +15,5 @@ github-recovery-codes.txt
 /OS/Exp*/**/build/
 
 /draft/
+
+pytorch_model.bin
