@@ -19,3 +19,7 @@ github-recovery-codes.txt
 pytorch_model.bin
 /NlP/**/*results/
 /NlP/**/*logs/
+
+/CV/**/datasets/
+/CV/**/runs/
+/CV/Project/yolo11n.pt
