@@ -23,3 +23,5 @@ pytorch_model.bin
 /CV/**/datasets/
 /CV/**/runs/
 /CV/Project/yolo11n.pt
+
+*.zip
