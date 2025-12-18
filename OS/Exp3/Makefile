@@ -1,5 +1,5 @@
 schedule: main.o utils.o fcfs.o priority.o rr.o
-	if not exist build mkdir build
+	mkdir -p build
 	gcc -o build/schedule main.o utils.o fcfs.o priority.o rr.o
 
 main.o: main.c pcb.h
