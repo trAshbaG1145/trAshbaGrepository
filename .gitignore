@@ -25,3 +25,5 @@ pytorch_model.bin
 /CV/Project/yolo11n.pt
 
 *.zip
+
+*.o
