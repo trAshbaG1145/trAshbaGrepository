@@ -34,7 +34,7 @@
 - ✅ 支持灵活的单独训练（分次训练，互不影响）
 - ✅ 自动生成对比表格和 JSON 汇总
 - ✅ 配置集中管理，易于维护
-- ✅ 适配 8GB 显存（batch=16, AMP=True）
+- ✅ 适配 8GB 显存（batch=8, AMP=True）
 """
 import os
 import sys
