@@ -27,3 +27,10 @@ pytorch_model.bin
 *.zip
 
 *.o
+
+# 忽略 Word、Excel、PowerPoint 产生的临时文件
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+
+*.tmp
