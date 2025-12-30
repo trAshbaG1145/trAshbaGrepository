@@ -1,2 +1,4 @@
 *.pdf
 *dataset*/
+*.tar
+*.gz
