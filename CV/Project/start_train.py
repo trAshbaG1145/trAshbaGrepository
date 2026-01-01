@@ -2,7 +2,7 @@
 单模型训练脚本 - 训练单个指定的模型配置（备用）
 
 【作用】
-- 训练单个指定的模型配置（默认 yolov11n-p2.yaml）
+- 训练单个指定的模型配置（默认 yolov11n-p2-dilated.yaml）
 - 完整的训练流程：加载预训练权重 → 训练 → 保存
 - 针对 8GB 显存优化
 
@@ -18,7 +18,7 @@
 - 注意：通常情况下推荐使用 ablation_study.py
 
 【用法】
-  python start_train.py                          # 训练 P2 模型
+    python start_train.py                          # 训练 P2+Dilated 模型
 
 【输出位置】
   runs/detect/visdrone_yolov11n_p2/weights/best.pt
@@ -29,13 +29,28 @@
   - start_train.py: 只能训练单个模型，但代码更简洁
 """
 import os
+import random
+import numpy as np
 from ultralytics import YOLO
+
+
+def set_seed(seed: int = 42):
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        import torch
+
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    except Exception:
+        pass
 
 def main():
     """
     YOLOv11n-P2 训练脚本 for VisDrone 微小目标检测
     针对 RTX 4060 Laptop 8GB 显存优化
     """
+    set_seed()
     
     # ---------------------------------------------------------
     # ⚠️ 配置参数 (DEBUG 模式)
@@ -43,7 +58,7 @@ def main():
     # 注意：正式实验请务必使用 'ablation_study.py' 以确保实验条件一致。
     # 本脚本仅用于快速测试单个模型的连通性或调试报错。
     
-    CONFIG_PATH = "yolov11n-p2-dilated.yaml"      # 自定义模型配置
+    CONFIG_PATH = "yolov11n-p2-dilated.yaml"      # 默认使用含空洞卷积的拔高版
     DATA_PATH = "VisDrone.yaml"           # 数据集配置
     PRETRAIN_WEIGHTS = "yolo11n.pt"       # 预训练权重 (可选)
     

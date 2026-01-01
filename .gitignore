@@ -34,3 +34,5 @@ pytorch_model.bin
 ~$*.ppt*
 
 *.tmp
+
+*.log

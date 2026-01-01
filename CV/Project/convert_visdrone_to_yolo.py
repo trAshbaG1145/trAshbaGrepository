@@ -54,7 +54,8 @@ def visdrone2yolo(dir_path):
         with open(out_file, 'w') as file:
             for line in lines:
                 data = line.strip().split(',')
-                if len(data) < 8: continue
+                if len(data) < 8:
+                    continue
                 
                 # VisDrone 格式: 
                 # <bbox_left>,<bbox_top>,<bbox_width>,<bbox_height>,<score>,<object_category>,<truncation>,<occlusion>
@@ -63,14 +64,28 @@ def visdrone2yolo(dir_path):
                 # 过滤掉 "Ignored regions"(0) 和 "Others"(11)
                 if category == 0 or category == 11:
                     continue
+
+                truncation = float(data[6])
+                occlusion = int(data[7])
+                # 可选过滤：极端遮挡或截断的样本干扰训练
+                if truncation > 0.7 or occlusion >= 2:
+                    continue
                 
                 # 映射类别 ID (VisDrone 1-10 -> YOLO 0-9)
                 # 1:pedestrian -> 0, 2:people -> 1, ..., 10:motor -> 9
                 class_id = category - 1 
                 
-                # 提取坐标
-                box = (float(data[0]), float(data[1]), float(data[2]), float(data[3]))
-                
+                # 提取并裁剪坐标到图像范围，防止越界或负值
+                left = max(0.0, float(data[0]))
+                top = max(0.0, float(data[1]))
+                right = min(width, left + float(data[2]))
+                bottom = min(height, top + float(data[3]))
+                w = max(0.0, right - left)
+                h = max(0.0, bottom - top)
+                if w <= 0 or h <= 0:
+                    continue
+                box = (left, top, w, h)
+
                 # 转换坐标
                 bb = convert_box((width, height), box)
                 
@@ -96,4 +111,4 @@ if __name__ == '__main__':
         else:
             print(f"⚠️ 目录不存在: {d}")
 
-    print("\n✅ 转换完成！请务必执行下一步：删除 .cache 文件。")
+    print("\n✅ 转换完成！")

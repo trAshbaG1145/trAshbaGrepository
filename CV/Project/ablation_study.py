@@ -34,13 +34,26 @@
 - ✅ 支持灵活的单独训练（分次训练，互不影响）
 - ✅ 自动生成对比表格和 JSON 汇总
 - ✅ 配置集中管理，易于维护
-- ✅ 适配 8GB 显存（batch=8, AMP=True）
 """
 import os
 import sys
 import json
+import random
+import numpy as np
 from pathlib import Path
 from ultralytics import YOLO  # type: ignore
+
+
+def set_seed(seed: int = 42):
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        import torch
+
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    except Exception:
+        pass
 
 
 # 实验配置定义 (中央配置)
@@ -106,8 +119,8 @@ def train_model(config_path, experiment_name, epochs=EPOCHS, device=0):
         print(f"⚠️ 预训练权重加载失败: {e}")
         print("   使用随机初始化")
 
-    # 动态调整 batch size：如果是 P2 模型(ID 2, 3)，显存压力大，用 8；否则用 16
-    current_batch = 8 if ("p2" in experiment_name) else 16
+    # 动态调整 batch size：如果是 P2 模型(ID 2, 3)，显存压力大，用 16；否则用 32
+    current_batch = 16 if ("p2" in experiment_name) else 32
     
     # 训练
     results = model.train(
@@ -144,26 +157,61 @@ def train_model(config_path, experiment_name, epochs=EPOCHS, device=0):
     return best_metrics
 
 def load_experiment_results(exp_name):
-    """从已完成的训练中读取结果"""
-    result_file = Path(PROJECT) / exp_name / "weights" / "best.pt"
-    if not result_file.exists():
+    """从已完成的训练中读取结果 (修复版：支持读取 CSV)"""
+    base_path = Path(PROJECT) / exp_name
+    best_pt = base_path / "weights" / "best.pt"
+    
+    # 1. 基础检查：模型权重必须存在
+    if not best_pt.exists():
         return None
     
-    # 尝试读取保存的结果 JSON (如果有的话)
-    results_json = Path(PROJECT) / exp_name / "results.json"
-    if results_json.exists():
+    # 2. 优先尝试读取 YOLO 自动生成的 results.csv (最准确)
+    csv_file = base_path / "results.csv"
+    if csv_file.exists():
         try:
-            with open(results_json, 'r') as f:
+            with open(csv_file, 'r') as f:
+                lines = f.readlines()
+                if len(lines) > 1:
+                    # 获取表头和最后一行数据
+                    # YOLO 的 csv 表头和数据通常带有空格，需要 strip()
+                    headers = [h.strip() for h in lines[0].split(',')]
+                    values = [v.strip() for v in lines[-1].split(',')]
+                    
+                    # 动态查找 mAP 列的索引
+                    map50_idx = -1
+                    map95_idx = -1
+                    
+                    for i, h in enumerate(headers):
+                        if 'mAP50(B)' in h:  # 查找 mAP@0.5
+                            map50_idx = i
+                        elif 'mAP50-95(B)' in h:  # 查找 mAP@0.5:0.95
+                            map95_idx = i
+                    
+                    if map50_idx != -1 and map95_idx != -1:
+                        return {
+                            'map50': float(values[map50_idx]),
+                            'map': float(values[map95_idx])
+                        }
+        except Exception as e:
+            print(f"⚠️ 读取 CSV 失败 ({exp_name}): {e}")
+
+    # 3. 备选方案：尝试读取 results.json (仅 train all 会生成)
+    json_file = base_path / "results.json"
+    if json_file.exists():
+        try:
+            with open(json_file, 'r') as f:
                 data = json.load(f)
-                # ultralytics 的 results.json 格式
-                if isinstance(data, list) and len(data) > 0:
-                    latest = data[-1]  # 最后一个 epoch
+                if isinstance(data, list) and data:
+                    latest = data[-1]
                     return {
                         'map50': latest.get('metrics/mAP50(B)', 0),
                         'map': latest.get('metrics/mAP50-95(B)', 0),
                     }
         except:
             pass
+
+    # 4. 如果读不到指标，视为结果缺失，提示补跑评估
+    print(f"⚠️ 未找到 {exp_name} 的有效指标 (存在权重但缺少 results.csv/json)")
     return None
 
 
@@ -354,6 +402,8 @@ def main():
     if len(sys.argv) < 2:
         print_usage()
         return
+
+    set_seed()
     
     command = sys.argv[1].lower()
     
@@ -372,10 +422,13 @@ def main():
         else:
             try:
                 exp_id = int(target)
-                train_single(exp_id, epochs=epochs, device=device)
             except ValueError:
                 print(f"❌ 无效的实验 ID: {target}")
                 print_usage()
+                return
+            
+            # 🔥 关键：必须在这里调用函数，否则程序什么都不做！
+            train_single(exp_id, epochs=epochs, device=device)
     
     elif command == "compare":
         compare_experiments()

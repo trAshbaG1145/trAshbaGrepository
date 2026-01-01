@@ -11,7 +11,7 @@ CV/Project/
 ├── yolov11n-p2-dilated.yaml # P2 + 空洞卷积（拔高版）
 ├── VisDrone.yaml           # 数据集配置
 ├── ablation_study.py       # 消融实验脚本（推荐）
-├── start_train.py          # 单模型训练（备用）
+├── start_train.py          # 单模型训练（备用，默认 P2+Dilated）
 ├── eval.py                 # 模型评估
 ├── demo_inference.py       # SAHI 推理对比
 ├── technical_details.md    # 技术原理详解
@@ -53,7 +53,7 @@ python ablation_study.py train all
 ```
 
 **说明：**
-- 首次运行会自动下载 VisDrone 数据集（~50-100 GB）和预训练权重（~6 MB）
+- 首次运行会自动下载 VisDrone 数据集（1~2 GB）和预训练权重（~6 MB）
 - 每个模型训练约 2-3 小时（100 epochs，RTX 4060 8GB）
 - 输出保存在 `runs/ablation/*/weights/best.pt`
 
@@ -67,7 +67,7 @@ python eval.py --model runs/ablation/3_yolov11n_p2_dilated/weights/best.pt
 python eval.py --model runs/ablation/1_baseline_yolov11n/weights/best.pt
 ```
 
-### 4. SAHI 推理对比
+### 4. SAHI 推理对比（可选）
 
 ```powershell
 # 运行 SAHI 切片推理 vs 原生 YOLO 对比
@@ -77,6 +77,8 @@ python demo_inference.py --model runs/ablation/3_yolov11n_p2_dilated/weights/bes
 结果保存在 `demo_result/`，包含：
 - `sahi_result.jpg` - 切片推理结果（微小目标检测更好）
 - `native_yolo/` - 原生推理结果（速度更快）
+
+> 兼容性提示：SAHI 目前对 YOLOv11 支持有限，脚本会在 SAHI 不可用或加载失败时自动跳过，直接使用原生 YOLO 推理。
 
 ---
 
@@ -181,6 +183,9 @@ demo_result/
 
 ## 🛠️ 常见问题
 
+**Q0: 如何确保实验可复现？**  
+脚本默认设置了随机种子（42），如需更改可在入口脚本中调整。注意 AMP 与多线程数据加载仍可能带来微小波动。
+
 **Q1: 训练失败，提示找不到配置文件？**
 ```powershell
 # 确保在项目目录下运行
@@ -197,6 +202,9 @@ batch=8  # 从 16 改为 8
 **Q3: 数据集下载很慢？**
 - 可从 [VisDrone 官网](http://aiskyeye.com/) 手动下载
 - 解压到 `datasets/VisDrone/`
+
+**Q3.1: 标注转换会出界吗？**
+转换脚本已将框裁剪到图像范围，并过滤严重遮挡/截断样本，减少无效标注对训练的干扰。
 
 **Q4: 想跳过某个模型的训练？**
 - 完全可以，只训练需要的模型即可

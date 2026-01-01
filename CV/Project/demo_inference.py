@@ -53,9 +53,29 @@ import argparse
 import os
 import sys
 from pathlib import Path
+import random
+import numpy as np
 from ultralytics import YOLO  # type: ignore
-from sahi import AutoDetectionModel
-from sahi.predict import get_sliced_prediction
+
+# SAHI 对 YOLOv11 支持不稳定，导入失败时回退到仅原生推理
+try:
+    from sahi import AutoDetectionModel
+    from sahi.predict import get_sliced_prediction
+except Exception:  # pragma: no cover - 防守性降级
+    AutoDetectionModel = None
+    get_sliced_prediction = None
+
+
+def set_seed(seed: int = 42):
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        import torch
+
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    except Exception:
+        pass
 
 
 def parse_args():
@@ -81,6 +101,7 @@ def parse_args():
 
 def main():
     args = parse_args()
+    set_seed()
     
     # ---------------------------------------------------------
     # 检查文件
@@ -130,37 +151,39 @@ def main():
     # ---------------------------------------------------------
     print("\n🚀 方法 1: SAHI 切片推理 (适用于微小目标)")
     print("-" * 60)
-    
-    try:
-        # 配置 SAHI 模型接口
-        detection_model = AutoDetectionModel.from_pretrained(
-            model_type="yolov8",  # SAHI 目前使用 v8 接口 (v11 兼容)
-            model_path=args.model,
-            confidence_threshold=args.conf,
-            device=args.device,
-        )
-        
-        # 执行切片推理
-        print("正在执行切片推理...")
-        result = get_sliced_prediction(
-            image_path,
-            detection_model,
-            slice_height=args.slice_height,
-            slice_width=args.slice_width,
-            overlap_height_ratio=args.overlap,
-            overlap_width_ratio=args.overlap,
-            verbose=1
-        )
-        
-        # 保存结果
-        sahi_output = os.path.join(args.output, "sahi_result.jpg")
-        result.export_visuals(export_dir=args.output)
-        print(f"✅ SAHI 推理完成! 检测到 {len(result.object_prediction_list)} 个目标")
-        print(f"📁 结果已保存到: {args.output}/")
-        
-    except Exception as e:
-        print(f"❌ SAHI 推理失败: {e}")
-        print("   可能原因: SAHI 版本不兼容或模型格式问题")
+
+    if AutoDetectionModel is None or get_sliced_prediction is None:
+        print("⚠️ 未安装或无法导入 SAHI，跳过切片推理，直接使用原生 YOLO。")
+    else:
+        try:
+            # YOLOv11 可能与 SAHI 的 yolov8 接口不完全兼容；失败时降级
+            detection_model = AutoDetectionModel.from_pretrained(
+                model_type="ultralytics",  # 优先使用 ultralytics 适配
+                model_path=args.model,
+                confidence_threshold=args.conf,
+                device=args.device,
+            )
+        except Exception as e:
+            print(f"⚠️ SAHI 加载失败: {e}")
+            print("   将跳过 SAHI，继续原生 YOLO 推理。")
+        else:
+            try:
+                print("正在执行切片推理...")
+                result = get_sliced_prediction(
+                    image_path,
+                    detection_model,
+                    slice_height=args.slice_height,
+                    slice_width=args.slice_width,
+                    overlap_height_ratio=args.overlap,
+                    overlap_width_ratio=args.overlap,
+                    verbose=1
+                )
+                result.export_visuals(export_dir=args.output)
+                print(f"✅ SAHI 推理完成! 检测到 {len(result.object_prediction_list)} 个目标")
+                print(f"📁 结果已保存到: {args.output}/")
+            except Exception as e:
+                print(f"⚠️ SAHI 推理失败: {e}")
+                print("   将跳过 SAHI，继续原生 YOLO 推理。")
     
     # ---------------------------------------------------------
     # 方法 2: 原生 YOLO 推理 (对比基准)

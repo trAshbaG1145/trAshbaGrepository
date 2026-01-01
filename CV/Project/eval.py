@@ -43,7 +43,21 @@
 """
 import argparse
 import os
+import random
+import numpy as np
 from ultralytics import YOLO  # type: ignore
+
+
+def set_seed(seed: int = 42):
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        import torch
+
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    except Exception:
+        pass
 
 
 def parse_args():
@@ -71,6 +85,7 @@ def main():
     """评估训练好的模型在 VisDrone 测试集上的性能"""
 
     args = parse_args()
+    set_seed()
 
     # 检查模型文件
     if not os.path.exists(args.model):
@@ -136,20 +151,12 @@ def main():
     # 按类别输出
     print("\n📊 各类别 AP@0.5:")
     print("-" * 60)
-    class_names = [
-        "pedestrian",
-        "people",
-        "bicycle",
-        "car",
-        "van",
-        "truck",
-        "tricycle",
-        "awning-tricycle",
-        "bus",
-        "motor",
-    ]
-    for i, (name, ap) in enumerate(zip(class_names, metrics.box.ap50)):
-        print(f"{i:2d}. {name:20s}: {ap:.4f}")
+    # 使用模型自带的类别映射，避免与数据集 YAML 不一致
+    class_names = getattr(model, "names", None) or {}
+    # 按类别索引排序输出
+    for idx, ap in enumerate(metrics.box.ap50):
+        name = class_names.get(idx, f"class_{idx}") if isinstance(class_names, dict) else str(idx)
+        print(f"{idx:2d}. {name:20s}: {ap:.4f}")
 
     print("\n" + "=" * 60)
     print("✅ 评估完成!")

@@ -251,6 +251,14 @@ python demo_inference.py  # 同时运行 SAHI 和原生推理
 
 ---
 
+## 八、稳健性与复现性补充
+
+- 随机种子：训练、评估、推理脚本默认设定种子 42（`torch`/`numpy`/`random`），便于对比实验复现；如需完全确定性，可再启用 `torch.backends.cudnn.deterministic = True`（可能降低速度）。
+- SAHI 兼容性：SAHI 对 YOLOv11 支持有限，`demo_inference.py` 会在导入或加载失败时自动跳过 SAHI，直接运行原生 YOLO 推理，避免推理阶段中断。
+- 标注清洗：`convert_visdrone_to_yolo.py` 将框裁剪到图像范围，并过滤严重遮挡/截断样本，减少异常标注对训练的影响。
+
+---
+
 ## 参考文献
 
 - [YOLOv11 官方文档](https://docs.ultralytics.com/)
