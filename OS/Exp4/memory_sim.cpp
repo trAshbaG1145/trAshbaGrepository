@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <map>
+#include <fstream>
 
 using namespace std;
 
@@ -216,6 +217,51 @@ double simulate_NUR(int capacity) {
     return 1.0 - (double)page_faults / TOTAL_INSTRUCTIONS;
 }
 
+// 6. 绘图函数，生成 Python 脚本并调用
+void plot_results(const vector<int>& x, const vector<double>& opt, 
+                  const vector<double>& fifo, const vector<double>& lru,
+                  const vector<double>& lfu, const vector<double>& nur) {
+    ofstream py("plot_result.py");
+    if (!py.is_open()) return;
+
+    // 写入 Python 代码
+    py << "import matplotlib.pyplot as plt\n\n";
+    
+    // 将 C++ vector 转换为 Python list
+    auto write_vec = [&](string name, const vector<double>& v) {
+        py << name << " = [";
+        for(size_t i=0; i<v.size(); ++i) py << v[i] << (i==v.size()-1?"":",");
+        py << "]\n";
+    };
+    
+    py << "x = ["; for(size_t i=0; i<x.size(); ++i) py << x[i] << (i==x.size()-1?"":","); py << "]\n";
+    write_vec("opt", opt);
+    write_vec("fifo", fifo);
+    write_vec("lru", lru);
+    write_vec("lfu", lfu);
+    write_vec("nur", nur);
+
+    // 绘图命令
+    py << "plt.figure(figsize=(10, 6))\n"
+       << "plt.plot(x, opt, 'o-', label='OPT')\n"
+       << "plt.plot(x, fifo, 's-', label='FIFO')\n"
+       << "plt.plot(x, lru, '^-', label='LRU')\n"
+       << "plt.plot(x, lfu, 'x-', label='LFU')\n"
+       << "plt.plot(x, nur, 'd-', label='NUR')\n"
+       << "plt.title('Page Replacement Algorithms Hit Rate')\n"
+       << "plt.xlabel('Memory Size')\n"
+       << "plt.ylabel('Hit Rate')\n"
+       << "plt.legend()\n"
+       << "plt.grid(True)\n"
+       << "plt.xticks(x)\n"
+       << "plt.savefig('result_chart.png')\n"; // 保存为图片
+    py.close();
+
+    // 调用系统 Python 运行
+    system("python3 plot_result.py"); 
+}
+
+// 主函数，运行模拟并输出结果
 int main() {
     generate_instructions();
     
@@ -223,6 +269,10 @@ int main() {
     cout << "--------------------------------------------------------" << endl;
     cout << "MemSize\tOPT\tFIFO\tLRU\tLFU\tNUR" << endl;
     cout << "--------------------------------------------------------" << endl;
+
+    // 新增：定义向量用于存储画图数据
+    vector<int> x_axis;
+    vector<double> y_opt, y_fifo, y_lru, y_lfu, y_nur;
 
     // 模拟内存从 4 页到 32 页的变化
     for (int cap = 4; cap <= 32; cap += 2) { // 步长为2，节省输出篇幅
@@ -238,7 +288,20 @@ int main() {
              << lru << "\t"
              << lfu << "\t"
              << nur << endl;
+
+        // 存储数据用于绘图
+        x_axis.push_back(cap);
+        y_opt.push_back(opt);
+        y_fifo.push_back(fifo);
+        y_lru.push_back(lru);
+        y_lfu.push_back(lfu);
+        y_nur.push_back(nur);
     }
+
+    // 新增：循环结束后调用画图函数
+    cout << "[Info] Generating chart..." << endl;
+    plot_results(x_axis, y_opt, y_fifo, y_lru, y_lfu, y_nur);
+    cout << "[Done] Chart saved as 'result_chart.png'" << endl;
 
     return 0;
 }
