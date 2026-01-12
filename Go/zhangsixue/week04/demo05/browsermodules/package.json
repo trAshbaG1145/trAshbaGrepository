@@ -1,0 +1,13 @@
+{
+  "name": "week04",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "模块：一个文件（往往是 JS 文件）就是一个模块。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

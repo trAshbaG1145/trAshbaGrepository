@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "author": "",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.1.11",
+    "@radix-ui/themes": "^3.2.1",
+    "antd": "^5.24.6",
+    "class-variance-authority": "^0.7.1",
+    "core-js": "^3.42.0",
+    "tailwind-merge": "^3.2.0",
+    "umi": "^4.4.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}

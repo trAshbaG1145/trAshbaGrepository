@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{.title}}</title>
+</head>
+<body>
+    <h1>用户列表</h1>
+    <ul>
+        {{range .users}}
+            <li>{{.Name}} - {{.Age}}岁</li>
+        {{end}}
+    </ul>
+    
+    {{if .showAdmins}}
+        <h2>管理员</h2>
+        <ul>
+            {{range .admins}}
+                <li>{{.}}</li>
+            {{end}}
+        </ul>
+    {{else}}
+        <p>没有显示管理员信息</p>
+    {{end}}
+</body>
+</html>
