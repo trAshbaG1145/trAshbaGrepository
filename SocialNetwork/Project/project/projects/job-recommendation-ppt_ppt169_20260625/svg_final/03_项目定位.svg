@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  
+  <g id="header">
+    <text x="60" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">
+      课程项目定位
+    </text>
+    <text x="60" y="95" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">
+      PROJECT POSITIONING
+    </text>
+    <path fill="#2E7D32" d="M62,108 H138 A2,1.50 0 0 1 140,109.50 V109.50 A2,1.50 0 0 1 138,111 H62 A2,1.50 0 0 1 60,109.50 V109.50 A2,1.50 0 0 1 62,108 Z" />
+  </g>
+
+  
+  <text fill="#666666" font-size="22" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" x="60" y="155">面向就业场景的关系网络分析与职业推荐系统。将岗位、公司、城市、技能、学历、经验等信息组织成知识图谱，</text><text fill="#666666" font-size="22" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" x="60" y="187">结合检索、推荐和大语言模型问答，帮助用户理解职业要求和发展路径。</text><g id="pillars" transform="translate(60, 250)">
+
+    
+    <g id="card-kg">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H346 A14,14 0 0 1 360,14 V366 A14,14 0 0 1 346,380 H14 A14,14 0 0 1 0,366 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M3,0 H357 A3,3 0 0 1 360,3 V3 A3,3 0 0 1 357,6 H3 A3,3 0 0 1 0,3 V3 A3,3 0 0 1 3,0 Z" />
+      <g transform="translate(30, 40)">
+        
+  <g transform="translate(0, 0) scale(2)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M4 18v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2" />
+    <path d="M7 14l3 -3l2 2l3 -3l2 2" />
+  </g>
+        <text x="65" y="35" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+          知识图谱构建
+        </text>
+        <text x="0" y="75" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+          Neo4j图数据库存储实体关系
+        </text>
+        
+        <g transform="translate(0, 115)">
+          <text x="0" y="0" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#2E7D32">803</text>
+          <text x="110" y="0" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">条岗位数据</text>
+          <text x="0" y="42" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#2E7D32">6</text>
+          <text x="40" y="42" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">类实体节点</text>
+          <text x="0" y="84" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#2E7D32">5</text>
+          <text x="40" y="84" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">种关系类型</text>
+        </g>
+      </g>
+    </g>
+
+    
+    <g id="card-rec" transform="translate(400, 0)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H346 A14,14 0 0 1 360,14 V366 A14,14 0 0 1 346,380 H14 A14,14 0 0 1 0,366 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M3,0 H357 A3,3 0 0 1 360,3 V3 A3,3 0 0 1 357,6 H3 A3,3 0 0 1 0,3 V3 A3,3 0 0 1 3,0 Z" />
+      <g transform="translate(30, 40)">
+        
+  <g transform="translate(0, 0) scale(2)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" />
+    <path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8" />
+    <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" />
+    <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" />
+    <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" />
+    <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" />
+  </g>
+        <text x="65" y="35" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+          智能推荐引擎
+        </text>
+        <text x="0" y="75" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+          多维匹配评分与Top-K排序
+        </text>
+        <g transform="translate(0, 120)">
+          <path fill="#FFFFFF" d="M10,0 H290 A10,10 0 0 1 300,10 V46 A10,10 0 0 1 290,56 H10 A10,10 0 0 1 0,46 V10 A10,10 0 0 1 10,0 Z" />
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">技能命中 + 学历匹配</text>
+        </g>
+        <g transform="translate(0, 186)">
+          <path fill="#FFFFFF" d="M10,0 H290 A10,10 0 0 1 300,10 V46 A10,10 0 0 1 290,56 H10 A10,10 0 0 1 0,46 V10 A10,10 0 0 1 10,0 Z" />
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">经验匹配 + 薪资匹配</text>
+        </g>
+        <text x="0" y="280" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#2E7D32" font-weight="bold">AI驱动推荐</text>
+      </g>
+    </g>
+
+    
+    <g id="card-ai" transform="translate(800, 0)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H346 A14,14 0 0 1 360,14 V366 A14,14 0 0 1 346,380 H14 A14,14 0 0 1 0,366 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M3,0 H357 A3,3 0 0 1 360,3 V3 A3,3 0 0 1 357,6 H3 A3,3 0 0 1 0,3 V3 A3,3 0 0 1 3,0 Z" />
+      <g transform="translate(30, 40)">
+        
+  <g transform="translate(0, 0) scale(2)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1" />
+  </g>
+        <text x="65" y="35" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+          AI辅助分析
+        </text>
+        <text x="0" y="75" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+          大模型驱动问答与简历解析
+        </text>
+        <g transform="translate(0, 120)">
+          <path fill="#FFFFFF" d="M10,0 H290 A10,10 0 0 1 300,10 V46 A10,10 0 0 1 290,56 H10 A10,10 0 0 1 0,46 V10 A10,10 0 0 1 10,0 Z" />
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">AI职业问答 · SSE流式响应</text>
+        </g>
+        <g transform="translate(0, 186)">
+          <path fill="#FFFFFF" d="M10,0 H290 A10,10 0 0 1 300,10 V46 A10,10 0 0 1 290,56 H10 A10,10 0 0 1 0,46 V10 A10,10 0 0 1 10,0 Z" />
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">简历解析 · 职业时间线分析</text>
+        </g>
+        <text x="0" y="280" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#2E7D32" font-weight="bold">DeepSeek-V3大模型驱动</text>
+      </g>
+    </g>
+  </g>
+
+  
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">03</text>
+</svg>

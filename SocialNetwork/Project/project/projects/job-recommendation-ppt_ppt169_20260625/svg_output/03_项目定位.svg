@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Header -->
+  <g id="header">
+    <text x="60" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">
+      课程项目定位
+    </text>
+    <text x="60" y="95" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">
+      PROJECT POSITIONING
+    </text>
+    <rect x="60" y="108" width="80" height="3" rx="2" fill="#2E7D32"/>
+  </g>
+
+  <!-- Intro text -->
+  <text x="60" y="155" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+    <tspan x="60" dy="0">面向就业场景的关系网络分析与职业推荐系统。将岗位、公司、城市、技能、学历、经验等信息组织成知识图谱，</tspan>
+    <tspan x="60" dy="32">结合检索、推荐和大语言模型问答，帮助用户理解职业要求和发展路径。</tspan>
+  </text>
+
+  <!-- Three pillar cards -->
+  <g id="pillars" transform="translate(60, 250)">
+
+    <!-- Card 1: Knowledge Graph -->
+    <g id="card-kg">
+      <rect width="360" height="380" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="360" height="6" rx="3" fill="#2E7D32"/>
+      <g transform="translate(30, 40)">
+        <use data-icon="tabler-outline/graph" x="0" y="0" width="48" height="48" fill="#2E7D32" stroke-width="2"/>
+        <text x="65" y="35" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+          知识图谱构建
+        </text>
+        <text x="0" y="75" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+          Neo4j图数据库存储实体关系
+        </text>
+        <!-- Key numbers -->
+        <g transform="translate(0, 115)">
+          <text x="0" y="0" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#2E7D32">803</text>
+          <text x="110" y="0" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">条岗位数据</text>
+          <text x="0" y="42" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#2E7D32">6</text>
+          <text x="40" y="42" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">类实体节点</text>
+          <text x="0" y="84" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#2E7D32">5</text>
+          <text x="40" y="84" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">种关系类型</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Card 2: Recommendation Engine -->
+    <g id="card-rec" transform="translate(400, 0)">
+      <rect width="360" height="380" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="360" height="6" rx="3" fill="#2E7D32"/>
+      <g transform="translate(30, 40)">
+        <use data-icon="tabler-outline/brain" x="0" y="0" width="48" height="48" fill="#2E7D32" stroke-width="2"/>
+        <text x="65" y="35" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+          智能推荐引擎
+        </text>
+        <text x="0" y="75" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+          多维匹配评分与Top-K排序
+        </text>
+        <g transform="translate(0, 120)">
+          <rect width="300" height="56" rx="10" fill="#FFFFFF"/>
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">技能命中 + 学历匹配</text>
+        </g>
+        <g transform="translate(0, 186)">
+          <rect width="300" height="56" rx="10" fill="#FFFFFF"/>
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">经验匹配 + 薪资匹配</text>
+        </g>
+        <text x="0" y="280" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#2E7D32" font-weight="bold">AI驱动推荐</text>
+      </g>
+    </g>
+
+    <!-- Card 3: AI Analysis -->
+    <g id="card-ai" transform="translate(800, 0)">
+      <rect width="360" height="380" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="360" height="6" rx="3" fill="#2E7D32"/>
+      <g transform="translate(30, 40)">
+        <use data-icon="tabler-outline/message-circle" x="0" y="0" width="48" height="48" fill="#2E7D32" stroke-width="2"/>
+        <text x="65" y="35" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+          AI辅助分析
+        </text>
+        <text x="0" y="75" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+          大模型驱动问答与简历解析
+        </text>
+        <g transform="translate(0, 120)">
+          <rect width="300" height="56" rx="10" fill="#FFFFFF"/>
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">AI职业问答 · SSE流式响应</text>
+        </g>
+        <g transform="translate(0, 186)">
+          <rect width="300" height="56" rx="10" fill="#FFFFFF"/>
+          <text x="150" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">简历解析 · 职业时间线分析</text>
+        </g>
+        <text x="0" y="280" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#2E7D32" font-weight="bold">DeepSeek-V3大模型驱动</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">03</text>
+</svg>

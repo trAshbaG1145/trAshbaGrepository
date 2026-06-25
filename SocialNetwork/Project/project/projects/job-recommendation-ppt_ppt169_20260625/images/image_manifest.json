@@ -1,0 +1,202 @@
+[
+  {
+    "index": 1,
+    "filename": "image1.png",
+    "original_filename": "image1.png",
+    "asset_kind": "bitmap",
+    "svg_renderable": true,
+    "pptx_native_supported": true,
+    "source_kind": "pptx_picture",
+    "source_ext": ".png",
+    "source_target": "ppt/media/image1.png",
+    "content_type": "image/png",
+    "display_left_emu": 6309360,
+    "display_top_emu": 2167044,
+    "display_width_emu": 5482520,
+    "display_height_emu": 4188036,
+    "display_width_in": 5.9958,
+    "display_height_in": 4.5801,
+    "display_ratio": 1.309091,
+    "pixel_width": 1440,
+    "pixel_height": 1100,
+    "pixel_ratio": 1.309091,
+    "occurrences": [
+      {
+        "slide_index": 9,
+        "shape_name": "Picture 24",
+        "display_left_emu": 6309360,
+        "display_top_emu": 2167044,
+        "display_width_emu": 5482520,
+        "display_height_emu": 4188036,
+        "display_width_in": 5.9958,
+        "display_height_in": 4.5801,
+        "display_ratio": 1.309091
+      }
+    ],
+    "usage_count": 1,
+    "display_ratio_variants": [
+      1.309091
+    ],
+    "source_namespace": "智能职位推荐系统_汇报_可编辑"
+  },
+  {
+    "index": 2,
+    "filename": "image2.png",
+    "original_filename": "image2.png",
+    "asset_kind": "bitmap",
+    "svg_renderable": true,
+    "pptx_native_supported": true,
+    "source_kind": "pptx_picture",
+    "source_ext": ".png",
+    "source_target": "ppt/media/image2.png",
+    "content_type": "image/png",
+    "display_left_emu": 6339840,
+    "display_top_emu": 972256,
+    "display_width_emu": 5486400,
+    "display_height_emu": 4191000,
+    "display_width_in": 6.0,
+    "display_height_in": 4.5833,
+    "display_ratio": 1.309091,
+    "pixel_width": 1440,
+    "pixel_height": 1100,
+    "pixel_ratio": 1.309091,
+    "occurrences": [
+      {
+        "slide_index": 10,
+        "shape_name": "Picture 55",
+        "display_left_emu": 6339840,
+        "display_top_emu": 972256,
+        "display_width_emu": 5486400,
+        "display_height_emu": 4191000,
+        "display_width_in": 6.0,
+        "display_height_in": 4.5833,
+        "display_ratio": 1.309091
+      }
+    ],
+    "usage_count": 1,
+    "display_ratio_variants": [
+      1.309091
+    ],
+    "source_namespace": "智能职位推荐系统_汇报_可编辑"
+  },
+  {
+    "index": 3,
+    "filename": "image3.png",
+    "original_filename": "image3.png",
+    "asset_kind": "bitmap",
+    "svg_renderable": true,
+    "pptx_native_supported": true,
+    "source_kind": "pptx_picture",
+    "source_ext": ".png",
+    "source_target": "ppt/media/image3.png",
+    "content_type": "image/png",
+    "display_left_emu": 6522722,
+    "display_top_emu": 2297430,
+    "display_width_emu": 5296870,
+    "display_height_emu": 4046220,
+    "display_width_in": 5.7927,
+    "display_height_in": 4.425,
+    "display_ratio": 1.309091,
+    "pixel_width": 1440,
+    "pixel_height": 1100,
+    "pixel_ratio": 1.309091,
+    "occurrences": [
+      {
+        "slide_index": 11,
+        "shape_name": "Picture 37",
+        "display_left_emu": 6522722,
+        "display_top_emu": 2297430,
+        "display_width_emu": 5296870,
+        "display_height_emu": 4046220,
+        "display_width_in": 5.7927,
+        "display_height_in": 4.425,
+        "display_ratio": 1.309091
+      }
+    ],
+    "usage_count": 1,
+    "display_ratio_variants": [
+      1.309091
+    ],
+    "source_namespace": "智能职位推荐系统_汇报_可编辑"
+  },
+  {
+    "index": 4,
+    "filename": "image4.png",
+    "original_filename": "image4.png",
+    "asset_kind": "bitmap",
+    "svg_renderable": true,
+    "pptx_native_supported": true,
+    "source_kind": "pptx_picture",
+    "source_ext": ".png",
+    "source_target": "ppt/media/image4.png",
+    "content_type": "image/png",
+    "display_left_emu": 2500522,
+    "display_top_emu": 1249317,
+    "display_width_emu": 6689198,
+    "display_height_emu": 5109804,
+    "display_width_in": 7.3154,
+    "display_height_in": 5.5881,
+    "display_ratio": 1.309091,
+    "pixel_width": 1440,
+    "pixel_height": 1100,
+    "pixel_ratio": 1.309091,
+    "occurrences": [
+      {
+        "slide_index": 12,
+        "shape_name": "Picture 36",
+        "display_left_emu": 2500522,
+        "display_top_emu": 1249317,
+        "display_width_emu": 6689198,
+        "display_height_emu": 5109804,
+        "display_width_in": 7.3154,
+        "display_height_in": 5.5881,
+        "display_ratio": 1.309091
+      }
+    ],
+    "usage_count": 1,
+    "display_ratio_variants": [
+      1.309091
+    ],
+    "source_namespace": "智能职位推荐系统_汇报_可编辑"
+  },
+  {
+    "index": 5,
+    "filename": "image5.png",
+    "original_filename": "image5.png",
+    "asset_kind": "bitmap",
+    "svg_renderable": true,
+    "pptx_native_supported": true,
+    "source_kind": "pptx_picture",
+    "source_ext": ".png",
+    "source_target": "ppt/media/image5.png",
+    "content_type": "image/png",
+    "display_left_emu": 6263640,
+    "display_top_emu": 1165072,
+    "display_width_emu": 5486400,
+    "display_height_emu": 4191000,
+    "display_width_in": 6.0,
+    "display_height_in": 4.5833,
+    "display_ratio": 1.309091,
+    "pixel_width": 1440,
+    "pixel_height": 1100,
+    "pixel_ratio": 1.309091,
+    "occurrences": [
+      {
+        "slide_index": 13,
+        "shape_name": "Picture 33",
+        "display_left_emu": 6263640,
+        "display_top_emu": 1165072,
+        "display_width_emu": 5486400,
+        "display_height_emu": 4191000,
+        "display_width_in": 6.0,
+        "display_height_in": 4.5833,
+        "display_ratio": 1.309091
+      }
+    ],
+    "usage_count": 1,
+    "display_ratio_variants": [
+      1.309091
+    ],
+    "source_namespace": "智能职位推荐系统_汇报_可编辑"
+  }
+]

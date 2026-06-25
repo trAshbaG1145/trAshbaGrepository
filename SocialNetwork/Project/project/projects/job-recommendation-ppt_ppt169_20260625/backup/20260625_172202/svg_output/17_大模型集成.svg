@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">大语言模型集成</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">LLM INTEGRATION</text>
+  </g>
+
+  <!-- Three function cards -->
+  <g id="llm-cards" transform="translate(60, 145)">
+    <!-- Card 1: AI Q&A -->
+    <g transform="translate(0, 0)">
+      <rect width="360" height="280" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="360" height="6" rx="3" fill="#2E7D32"/>
+      <g transform="translate(24, 30)">
+        <use data-icon="tabler-outline/message-circle" x="0" y="0" width="36" height="36" fill="#2E7D32" stroke-width="2"/>
+        <text x="52" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B5E20">AI 职业问答</text>
+        <g transform="translate(0, 56)">
+          <rect width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="25" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">SSE流式响应，实时逐字输出</text>
+          <rect y="46" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="71" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">Markdown格式渲染回答</text>
+          <rect y="92" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="117" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">支持代码高亮和公式</text>
+          <rect y="138" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="163" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">多轮对话上下文理解</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Card 2: Career Timeline -->
+    <g transform="translate(400, 0)">
+      <rect width="360" height="280" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="360" height="6" rx="3" fill="#2E7D32"/>
+      <g transform="translate(24, 30)">
+        <use data-icon="tabler-outline/timeline" x="0" y="0" width="36" height="36" fill="#2E7D32" stroke-width="2"/>
+        <text x="52" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B5E20">职业时间线</text>
+        <g transform="translate(0, 56)">
+          <rect width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="25" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">根据职业名自动生成阶段</text>
+          <rect y="46" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="71" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">包含背景和关键事件</text>
+          <rect y="92" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="117" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">技能要求随阶段变化</text>
+          <rect y="138" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="163" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">时间线组件直观展示</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Card 3: Resume Match -->
+    <g transform="translate(800, 0)">
+      <rect width="360" height="280" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="360" height="6" rx="3" fill="#2E7D32"/>
+      <g transform="translate(24, 30)">
+        <use data-icon="tabler-outline/file-text" x="0" y="0" width="36" height="36" fill="#2E7D32" stroke-width="2"/>
+        <text x="52" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B5E20">简历智能匹配</text>
+        <g transform="translate(0, 56)">
+          <rect width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="25" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">多格式简历文本提取</text>
+          <rect y="46" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="71" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">AI生成职业匹配分析</text>
+          <rect y="92" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="117" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">匹配概率量化评估</text>
+          <rect y="138" width="312" height="36" rx="8" fill="#FFFFFF"/>
+          <text x="12" y="163" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">市场行情与前景预测</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Implementation note -->
+  <g id="impl-note" transform="translate(60, 460)">
+    <rect width="1160" height="130" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+    <text x="24" y="38" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">技术实现说明</text>
+    <text x="24" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">通过OpenAI兼容接口接入第三方大模型服务（SiliconFlow平台），调用DeepSeek-V3模型。</text>
+    <text x="24" y="106" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">不同功能模块使用不同Prompt模板组织输入和输出格式，AI返回Markdown由前端渲染。</text>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">17</text>
+</svg>

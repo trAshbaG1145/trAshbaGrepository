@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">技术栈总览</text>
+    <text x="60" y="95" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">TECHNOLOGY STACK</text>
+    <path fill="#2E7D32" d="M62,108 H138 A2,1.50 0 0 1 140,109.50 V109.50 A2,1.50 0 0 1 138,111 H62 A2,1.50 0 0 1 60,109.50 V109.50 A2,1.50 0 0 1 62,108 Z" />
+  </g>
+
+  
+  <g id="tech-stack" transform="translate(60, 155)">
+
+    
+    <g id="col-frontend">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H356 A14,14 0 0 1 370,14 V476 A14,14 0 0 1 356,490 H14 A14,14 0 0 1 0,476 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M14,0 H356 A14,14 0 0 1 370,14 V66 A14,14 0 0 1 356,80 H14 A14,14 0 0 1 0,66 V14 A14,14 0 0 1 14,0 Z" />
+      <rect y="66" width="370" height="14" fill="#2E7D32" />
+      
+  <g transform="translate(30, 20) scale(1.66667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M7 8l-4 4l4 4" />
+    <path d="M17 8l4 4l-4 4" />
+    <path d="M14 4l-4 16" />
+  </g>
+      <text x="90" y="49" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">前端技术</text>
+
+      <g transform="translate(24, 105)">
+        <path fill="#FFFFFF" d="M10,0 H312 A10,10 0 0 1 322,10 V40 A10,10 0 0 1 312,50 H10 A10,10 0 0 1 0,40 V10 A10,10 0 0 1 10,0 Z" />
+        <text x="16" y="32" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">Vue 3</tspan> — 渐进式前端框架</text>
+        <path fill="#FFFFFF" d="M10,60 H312 A10,10 0 0 1 322,70 V100 A10,10 0 0 1 312,110 H10 A10,10 0 0 1 0,100 V70 A10,10 0 0 1 10,60 Z" />
+        <text x="16" y="92" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">Element Plus</tspan> — UI组件库</text>
+        <path fill="#FFFFFF" d="M10,120 H312 A10,10 0 0 1 322,130 V160 A10,10 0 0 1 312,170 H10 A10,10 0 0 1 0,160 V130 A10,10 0 0 1 10,120 Z" />
+        <text x="16" y="152" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">ECharts 5</tspan> — 数据可视化图表</text>
+        <path fill="#FFFFFF" d="M10,180 H312 A10,10 0 0 1 322,190 V220 A10,10 0 0 1 312,230 H10 A10,10 0 0 1 0,220 V190 A10,10 0 0 1 10,180 Z" />
+        <text x="16" y="212" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">Axios</tspan> — HTTP客户端</text>
+        <path fill="#FFFFFF" d="M10,240 H312 A10,10 0 0 1 322,250 V280 A10,10 0 0 1 312,290 H10 A10,10 0 0 1 0,280 V250 A10,10 0 0 1 10,240 Z" />
+        <text x="16" y="272" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">Pinia</tspan> · Vue Router · Vite</text>
+        <path fill="#FFFFFF" d="M10,300 H312 A10,10 0 0 1 322,310 V340 A10,10 0 0 1 312,350 H10 A10,10 0 0 1 0,340 V310 A10,10 0 0 1 10,300 Z" />
+        <text x="16" y="332" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">marked</tspan> · mammoth · jwt-decode</text>
+      </g>
+    </g>
+
+    
+    <g id="col-backend" transform="translate(395, 0)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H356 A14,14 0 0 1 370,14 V476 A14,14 0 0 1 356,490 H14 A14,14 0 0 1 0,476 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#1B5E20" d="M14,0 H356 A14,14 0 0 1 370,14 V66 A14,14 0 0 1 356,80 H14 A14,14 0 0 1 0,66 V14 A14,14 0 0 1 14,0 Z" />
+      <rect y="66" width="370" height="14" fill="#1B5E20" />
+      
+  <g transform="translate(30, 20) scale(1.66667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3" />
+    <path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" />
+    <path d="M7 8l0 .01" />
+    <path d="M7 16l0 .01" />
+  </g>
+      <text x="90" y="49" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">后端技术</text>
+
+      <g transform="translate(24, 105)">
+        <path fill="#FFFFFF" d="M10,0 H312 A10,10 0 0 1 322,10 V40 A10,10 0 0 1 312,50 H10 A10,10 0 0 1 0,40 V10 A10,10 0 0 1 10,0 Z" />
+        <text x="16" y="32" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#1B5E20">Spring Boot 3.4</tspan> — Java业务后端</text>
+        <path fill="#FFFFFF" d="M10,60 H312 A10,10 0 0 1 322,70 V100 A10,10 0 0 1 312,110 H10 A10,10 0 0 1 0,100 V70 A10,10 0 0 1 10,60 Z" />
+        <text x="16" y="92" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#1B5E20">MyBatis-Plus 3.5</tspan> — ORM框架</text>
+        <path fill="#FFFFFF" d="M10,120 H312 A10,10 0 0 1 322,130 V160 A10,10 0 0 1 312,170 H10 A10,10 0 0 1 0,160 V130 A10,10 0 0 1 10,120 Z" />
+        <text x="16" y="152" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#1B5E20">JWT + Argon2</tspan> — 认证与密码哈希</text>
+        <path fill="#FFFFFF" d="M10,180 H312 A10,10 0 0 1 322,190 V220 A10,10 0 0 1 312,230 H10 A10,10 0 0 1 0,220 V190 A10,10 0 0 1 10,180 Z" />
+        <text x="16" y="212" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#1B5E20">MySQL 8.0</tspan> — 关系型数据库</text>
+        <path fill="#FFFFFF" d="M10,240 H312 A10,10 0 0 1 322,250 V280 A10,10 0 0 1 312,290 H10 A10,10 0 0 1 0,280 V250 A10,10 0 0 1 10,240 Z" />
+        <text x="16" y="272" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#1B5E20">Druid</tspan> — 数据库连接池</text>
+        <path fill="#FFFFFF" d="M10,300 H312 A10,10 0 0 1 322,310 V340 A10,10 0 0 1 312,350 H10 A10,10 0 0 1 0,340 V310 A10,10 0 0 1 10,300 Z" />
+        <text x="16" y="332" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#1B5E20">Redis</tspan> · Jedis — 缓存支持</text>
+      </g>
+    </g>
+
+    
+    <g id="col-ai" transform="translate(790, 0)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H356 A14,14 0 0 1 370,14 V476 A14,14 0 0 1 356,490 H14 A14,14 0 0 1 0,476 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#81C784" d="M14,0 H356 A14,14 0 0 1 370,14 V66 A14,14 0 0 1 356,80 H14 A14,14 0 0 1 0,66 V14 A14,14 0 0 1 14,0 Z" />
+      <rect y="66" width="370" height="14" fill="#81C784" />
+      
+  <g transform="translate(30, 20) scale(1.66667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" />
+    <path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8" />
+    <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" />
+    <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" />
+    <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" />
+    <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" />
+  </g>
+      <text x="90" y="49" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">AI与数据</text>
+
+      <g transform="translate(24, 105)">
+        <path fill="#FFFFFF" d="M10,0 H312 A10,10 0 0 1 322,10 V40 A10,10 0 0 1 312,50 H10 A10,10 0 0 1 0,40 V10 A10,10 0 0 1 10,0 Z" />
+        <text x="16" y="32" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">Flask</tspan> — AI微服务框架</text>
+        <path fill="#FFFFFF" d="M10,60 H312 A10,10 0 0 1 322,70 V100 A10,10 0 0 1 312,110 H10 A10,10 0 0 1 0,100 V70 A10,10 0 0 1 10,60 Z" />
+        <text x="16" y="92" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">Neo4j</tspan> — 图数据库</text>
+        <path fill="#FFFFFF" d="M10,120 H312 A10,10 0 0 1 322,130 V160 A10,10 0 0 1 312,170 H10 A10,10 0 0 1 0,160 V130 A10,10 0 0 1 10,120 Z" />
+        <text x="16" y="152" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">SiliconFlow API</tspan> — 大模型调用</text>
+        <path fill="#FFFFFF" d="M10,180 H312 A10,10 0 0 1 322,190 V220 A10,10 0 0 1 312,230 H10 A10,10 0 0 1 0,220 V190 A10,10 0 0 1 10,180 Z" />
+        <text x="16" y="212" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">py2neo</tspan> — Neo4j Python驱动</text>
+        <path fill="#FFFFFF" d="M10,240 H312 A10,10 0 0 1 322,250 V280 A10,10 0 0 1 312,290 H10 A10,10 0 0 1 0,280 V250 A10,10 0 0 1 10,240 Z" />
+        <text x="16" y="272" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">PyMuPDF</tspan> · python-docx — 文档解析</text>
+        <path fill="#FFFFFF" d="M10,300 H312 A10,10 0 0 1 322,310 V340 A10,10 0 0 1 312,350 H10 A10,10 0 0 1 0,340 V310 A10,10 0 0 1 10,300 Z" />
+        <text x="16" y="332" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333"><tspan font-weight="bold" fill="#2E7D32">pandas</tspan> · pytesseract · Pillow</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">06</text>
+</svg>

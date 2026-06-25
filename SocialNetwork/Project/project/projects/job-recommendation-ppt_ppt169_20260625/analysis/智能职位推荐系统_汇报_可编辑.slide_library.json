@@ -1,0 +1,6650 @@
+{
+  "schema": "template_fill_pptx_library.v1",
+  "source_pptx": "E:\\Coding\\trAshbaGrepository\\SocialNetwork\\Project\\project\\projects\\job-recommendation-ppt_ppt169_20260625\\sources\\智能职位推荐系统_汇报_可编辑.pptx",
+  "slide_count": 18,
+  "canvas_px": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "slide_index": 1,
+      "page_type": "cover_candidate",
+      "text_summary": "社交网络数据分析与处理\n课程项目汇报\n职业关系图谱与智能推荐系统\nJob Relationship Graph & Intelligent Recommendation System\n华中农业大学 · 信息学院",
+      "slots": [
+        {
+          "slot_id": "s01_sh7",
+          "role": "title_candidate",
+          "text": "社交网络数据分析与处理",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 374,
+            "width": 1085,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": 50.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s01_sh8",
+          "role": "label_candidate",
+          "text": "课程项目汇报",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 432,
+            "width": 1085,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 37.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s01_sh10",
+          "role": "label_candidate",
+          "text": "职业关系图谱与智能推荐系统",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 518,
+            "width": 1085,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 29.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s01_sh11",
+          "role": "label_candidate",
+          "text": "Job Relationship Graph & Intelligent Recommendation System",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 562,
+            "width": 1085,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s01_sh12",
+          "role": "label_candidate",
+          "text": "华中农业大学 · 信息学院",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 658,
+            "width": 1085,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 2,
+      "page_type": "toc_candidate",
+      "text_summary": "目 录\nCONTENTS\n01\n项目概述与技术架构\n系统定位 · 团队分工 · 整体架构 · 技术栈\n02\n核心功能演示\n知识图谱 · 职业推荐 · 时间线分析 · AI问答 · 简历分析\n03\n推荐算法与大模型\n推荐流程 · 匹配评分 · 大语言模型集成\n04\n总结\n02",
+      "slots": [
+        {
+          "slot_id": "s02_sh3",
+          "role": "title_candidate",
+          "text": "目 录",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 288,
+            "width": 442,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 48.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh5",
+          "role": "label_candidate",
+          "text": "CONTENTS",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 370,
+            "width": 442,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh7",
+          "role": "title_candidate",
+          "text": "01",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 490,
+            "y": 144,
+            "width": 43,
+            "height": 43
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh8",
+          "role": "title_candidate",
+          "text": "项目概述与技术架构",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 547,
+            "y": 142,
+            "width": 672,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh9",
+          "role": "label_candidate",
+          "text": "系统定位 · 团队分工 · 整体架构 · 技术栈",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 547,
+            "y": 171,
+            "width": 672,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh12",
+          "role": "label_candidate",
+          "text": "02",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 490,
+            "y": 269,
+            "width": 43,
+            "height": 43
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh13",
+          "role": "label_candidate",
+          "text": "核心功能演示",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 547,
+            "y": 267,
+            "width": 672,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh14",
+          "role": "label_candidate",
+          "text": "知识图谱 · 职业推荐 · 时间线分析 · AI问答 · 简历分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 547,
+            "y": 296,
+            "width": 672,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh17",
+          "role": "label_candidate",
+          "text": "03",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 490,
+            "y": 394,
+            "width": 43,
+            "height": 43
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh18",
+          "role": "label_candidate",
+          "text": "推荐算法与大模型",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 547,
+            "y": 392,
+            "width": 672,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh19",
+          "role": "label_candidate",
+          "text": "推荐流程 · 匹配评分 · 大语言模型集成",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 547,
+            "y": 420,
+            "width": 672,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh22",
+          "role": "label_candidate",
+          "text": "04",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 490,
+            "y": 518,
+            "width": 43,
+            "height": 43
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh23",
+          "role": "label_candidate",
+          "text": "总结",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 547,
+            "y": 525,
+            "width": 672,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh25",
+          "role": "label_candidate",
+          "text": "02",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 3,
+      "page_type": "content_candidate",
+      "text_summary": "课程项目定位\nPROJECT POSITIONING\n03\n项目背景与目标\n面向就业场景的关系网络分析与职业推荐系统。将岗位、公司、城市、技能、学历、经验等信息组织成知识图谱，结合检索、推荐和大语言模型问答，帮助用户理解职业要求和发展路径。\n803条岗位数据\n6类实体节点\n5种关系类型\nAI驱动推荐\n◇\n知识图谱构建\nNeo4j图数据库存储实体关系\n○\n智能推荐引擎\n多维匹配评分与Top-K排序\n△\nAI辅助分析\n大模型驱动问答与简历解析",
+      "slots": [
+        {
+          "slot_id": "s03_sh3",
+          "role": "title_candidate",
+          "text": "课程项目定位",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh4",
+          "role": "title_candidate",
+          "text": "PROJECT POSITIONING",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh6",
+          "role": "label_candidate",
+          "text": "03",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh8",
+          "role": "title_candidate",
+          "text": "项目背景与目标",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 125,
+            "width": 576,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh9",
+          "role": "label_candidate",
+          "text": "面向就业场景的关系网络分析与职业推荐系统。将岗位、公司、城市、技能、学历、经验等信息组织成知识图谱，结合检索、推荐和大语言模型问答，帮助用户理解职业要求和发展路径。",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 173,
+            "width": 595,
+            "height": 288
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh11",
+          "role": "label_candidate",
+          "text": "803条岗位数据",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 490,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh13",
+          "role": "label_candidate",
+          "text": "6类实体节点",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 374,
+            "y": 490,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh15",
+          "role": "label_candidate",
+          "text": "5种关系类型",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 533,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh17",
+          "role": "label_candidate",
+          "text": "AI驱动推荐",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 374,
+            "y": 533,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh20",
+          "role": "label_candidate",
+          "text": "◇",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 749,
+            "y": 168,
+            "width": 43,
+            "height": 43
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh21",
+          "role": "title_candidate",
+          "text": "知识图谱构建",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 806,
+            "y": 149,
+            "width": 384,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh22",
+          "role": "label_candidate",
+          "text": "Neo4j图数据库存储实体关系",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 806,
+            "y": 182,
+            "width": 384,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh25",
+          "role": "label_candidate",
+          "text": "○",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 749,
+            "y": 341,
+            "width": 43,
+            "height": 43
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh26",
+          "role": "label_candidate",
+          "text": "智能推荐引擎",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 806,
+            "y": 322,
+            "width": 384,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh27",
+          "role": "label_candidate",
+          "text": "多维匹配评分与Top-K排序",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 806,
+            "y": 355,
+            "width": 384,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh30",
+          "role": "label_candidate",
+          "text": "△",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 749,
+            "y": 514,
+            "width": 43,
+            "height": 43
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh31",
+          "role": "label_candidate",
+          "text": "AI辅助分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 806,
+            "y": 494,
+            "width": 384,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh32",
+          "role": "label_candidate",
+          "text": "大模型驱动问答与简历解析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 806,
+            "y": 528,
+            "width": 384,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 4,
+      "page_type": "content_candidate",
+      "text_summary": "团队分工\nTEAM WORK DISTRIBUTION\n04\n陈佳伸\n参考项目查阅\n项目进度管理\nPPT制作/汇报\n黄泰\n项目实现/改进\n功能测试\n数据库设计与优化",
+      "slots": [
+        {
+          "slot_id": "s04_sh3",
+          "role": "title_candidate",
+          "text": "团队分工",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh4",
+          "role": "title_candidate",
+          "text": "TEAM WORK DISTRIBUTION",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh6",
+          "role": "label_candidate",
+          "text": "04",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh10",
+          "role": "label_candidate",
+          "text": "陈佳伸",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 82,
+            "y": 201,
+            "width": 192,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 37.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh13",
+          "role": "title_candidate",
+          "text": "参考项目查阅\n项目进度管理\nPPT制作/汇报",
+          "paragraph_count": 3,
+          "geometry": {
+            "x": 284,
+            "y": 104,
+            "width": 446,
+            "height": 224
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 3
+          }
+        },
+        {
+          "slot_id": "s04_sh17",
+          "role": "label_candidate",
+          "text": "黄泰",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 82,
+            "y": 467,
+            "width": 192,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 37.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh20",
+          "role": "body_candidate",
+          "text": "项目实现/改进\n功能测试\n数据库设计与优化",
+          "paragraph_count": 3,
+          "geometry": {
+            "x": 251,
+            "y": 358,
+            "width": 510,
+            "height": 231
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 3
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 5,
+      "page_type": "content_candidate",
+      "text_summary": "系统整体架构\nSYSTEM ARCHITECTURE\n05\n前端展示层\nFRONTEND\nVue 3\nElement Plus\nECharts 5\n单页应用 · 动态路由 · 图谱可视化 · 响应式布局\n▼\nAI 分析引擎\nAI SERVICE\nFlask\nDeepSeek-V3\nNeo4j\n推荐引擎 · 简历解析 · AI问答 · 时间线分析\n▼\n业务服务层\nBACKEND\nSpring Boot 3.4\nMyBatis-Plus\nJWT\n用户管理 · 职位CRUD · 鉴权拦截 · 缓存加速\n▼\n数据存储层\nDATA LAYER\nMySQL 8.0\nNeo4j\n业务数据 · 会话缓存 · 图数据库",
+      "slots": [
+        {
+          "slot_id": "s05_sh3",
+          "role": "title_candidate",
+          "text": "系统整体架构",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh4",
+          "role": "title_candidate",
+          "text": "SYSTEM ARCHITECTURE",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh6",
+          "role": "label_candidate",
+          "text": "05",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh8",
+          "role": "title_candidate",
+          "text": "前端展示层",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 115,
+            "width": 173,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh9",
+          "role": "title_candidate",
+          "text": "FRONTEND",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 154,
+            "width": 173,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 12.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh12",
+          "role": "title_candidate",
+          "text": "Vue 3",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 125,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh14",
+          "role": "title_candidate",
+          "text": "Element Plus",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 370,
+            "y": 125,
+            "width": 236,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh16",
+          "role": "title_candidate",
+          "text": "ECharts 5",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 620,
+            "y": 125,
+            "width": 184,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh17",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 132,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh18",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 132,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh19",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh20",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh21",
+          "role": "label_candidate",
+          "text": "单页应用 · 动态路由 · 图谱可视化 · 响应式布局",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 175,
+            "width": 960,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh22",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 216,
+            "width": 48,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh24",
+          "role": "label_candidate",
+          "text": "AI 分析引擎",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 259,
+            "width": 173,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh25",
+          "role": "label_candidate",
+          "text": "AI SERVICE",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 298,
+            "width": 173,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 12.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh28",
+          "role": "label_candidate",
+          "text": "Flask",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 269,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh30",
+          "role": "label_candidate",
+          "text": "DeepSeek-V3",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 370,
+            "y": 269,
+            "width": 219,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh32",
+          "role": "label_candidate",
+          "text": "Neo4j",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 603,
+            "y": 269,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh33",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 236,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh34",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 236,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh35",
+          "role": "label_candidate",
+          "text": "推荐引擎 · 简历解析 · AI问答 · 时间线分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 319,
+            "width": 960,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh36",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 360,
+            "width": 48,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh38",
+          "role": "label_candidate",
+          "text": "业务服务层",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 403,
+            "width": 173,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh39",
+          "role": "label_candidate",
+          "text": "BACKEND",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 442,
+            "width": 173,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 12.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh42",
+          "role": "label_candidate",
+          "text": "Spring Boot 3.4",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 413,
+            "width": 288,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh44",
+          "role": "label_candidate",
+          "text": "MyBatis-Plus",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 542,
+            "y": 413,
+            "width": 236,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh46",
+          "role": "label_candidate",
+          "text": "JWT",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 793,
+            "y": 413,
+            "width": 81,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh47",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh48",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh49",
+          "role": "label_candidate",
+          "text": "用户管理 · 职位CRUD · 鉴权拦截 · 缓存加速",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 463,
+            "width": 960,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh50",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 96,
+            "y": 504,
+            "width": 48,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh52",
+          "role": "label_candidate",
+          "text": "数据存储层",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 547,
+            "width": 173,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh53",
+          "role": "label_candidate",
+          "text": "DATA LAYER",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 586,
+            "width": 173,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 12.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh56",
+          "role": "label_candidate",
+          "text": "MySQL 8.0",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 557,
+            "width": 184,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh57",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh58",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s05_sh60",
+          "role": "label_candidate",
+          "text": "Neo4j",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 568,
+            "y": 557,
+            "width": 115,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh61",
+          "role": "label_candidate",
+          "text": "业务数据 · 会话缓存 · 图数据库",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 240,
+            "y": 607,
+            "width": 960,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 6,
+      "page_type": "content_candidate",
+      "text_summary": "技术栈总览\nTECHNOLOGY STACK\n06\n前端技术\nVue 3\n渐进式前端框架\nElement Plus\nUI组件库\nECharts 5\n数据可视化图表\nAxios\nHTTP客户端\n后端技术\nSpring Boot 3.4\nJava业务后端\nMyBatis-Plus 3.5\nORM框架\nJWT + Argon2\n认证与密码哈希\nMySQL 8.0\n关系型数据库\nAI与数据\nFlask\nAI微服务框架\nNeo4j\n图数据库\nSiliconFlow API\n大模型调用",
+      "slots": [
+        {
+          "slot_id": "s06_sh3",
+          "role": "title_candidate",
+          "text": "技术栈总览",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh4",
+          "role": "title_candidate",
+          "text": "TECHNOLOGY STACK",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh6",
+          "role": "label_candidate",
+          "text": "06",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh8",
+          "role": "title_candidate",
+          "text": "前端技术",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 106,
+            "width": 374,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh10",
+          "role": "label_candidate",
+          "text": "Vue 3",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 180,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh11",
+          "role": "label_candidate",
+          "text": "渐进式前端框架",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 209,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh12",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 374,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh13",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh14",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh16",
+          "role": "label_candidate",
+          "text": "Element Plus",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 254,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh17",
+          "role": "label_candidate",
+          "text": "UI组件库",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 254,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh19",
+          "role": "label_candidate",
+          "text": "ECharts 5",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 336,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh20",
+          "role": "label_candidate",
+          "text": "数据可视化图表",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 336,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh21",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 374,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh22",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh23",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh25",
+          "role": "label_candidate",
+          "text": "Axios",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 418,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh26",
+          "role": "label_candidate",
+          "text": "HTTP客户端",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 53,
+            "y": 418,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh28",
+          "role": "title_candidate",
+          "text": "后端技术",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 442,
+            "y": 106,
+            "width": 374,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh30",
+          "role": "label_candidate",
+          "text": "Spring Boot 3.4",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 180,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh31",
+          "role": "label_candidate",
+          "text": "Java业务后端",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 209,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh33",
+          "role": "label_candidate",
+          "text": "MyBatis-Plus 3.5",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 262,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh34",
+          "role": "label_candidate",
+          "text": "ORM框架",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 291,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh36",
+          "role": "label_candidate",
+          "text": "JWT + Argon2",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 336,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh37",
+          "role": "label_candidate",
+          "text": "认证与密码哈希",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 336,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh38",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 374,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh39",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh40",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh41",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 374,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh42",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh43",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh45",
+          "role": "label_candidate",
+          "text": "MySQL 8.0",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 418,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh46",
+          "role": "label_candidate",
+          "text": "关系型数据库",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 456,
+            "y": 418,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh48",
+          "role": "title_candidate",
+          "text": "AI与数据",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 845,
+            "y": 106,
+            "width": 374,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh50",
+          "role": "label_candidate",
+          "text": "Flask",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 859,
+            "y": 180,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh51",
+          "role": "label_candidate",
+          "text": "AI微服务框架",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 859,
+            "y": 209,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh53",
+          "role": "label_candidate",
+          "text": "Neo4j",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 859,
+            "y": 262,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh54",
+          "role": "label_candidate",
+          "text": "图数据库",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 859,
+            "y": 291,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh56",
+          "role": "label_candidate",
+          "text": "SiliconFlow API",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 859,
+            "y": 344,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh57",
+          "role": "label_candidate",
+          "text": "大模型调用",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 859,
+            "y": 372,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh58",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 374,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh59",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh60",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh61",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 374,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh62",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh63",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh64",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 374,
+            "height": 67
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh65",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s06_sh66",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": -1050,
+            "y": -1050,
+            "width": 336,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 7,
+      "page_type": "content_candidate",
+      "text_summary": "数据源与知识图谱建模\nDATA SOURCE & KNOWLEDGE GRAPH MODELING\n07\n803\n岗位数据记录\n6\n实体节点类型\n5\n关系类型\n10+\n数据字段\n数据来源\n项目内置招聘岗位样本数据，共803条记录。数据字段包括：职位、城市、公司、学历、经验、技能、薪资、福利、工作描述和行业。数据用于课程项目演示与知识图谱建模。\n职位\n城市\n公司\n学历\n经验\n技能\n薪资\n福利\n工作描述\n行业\n图谱实体与关系\nJob 岗位\nCompany 公司\nCity 城市\nSkill 技能\nDegree 学历\nExperience 经验\n关系：REQUIRES（需要）· BELONGS_TO（属于）· LOCATED_IN（位于）",
+      "slots": [
+        {
+          "slot_id": "s07_sh3",
+          "role": "title_candidate",
+          "text": "数据源与知识图谱建模",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh4",
+          "role": "title_candidate",
+          "text": "DATA SOURCE & KNOWLEDGE GRAPH MODELING",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh6",
+          "role": "label_candidate",
+          "text": "07",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh8",
+          "role": "title_candidate",
+          "text": "803",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 110,
+            "width": 278,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 40.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh9",
+          "role": "label_candidate",
+          "text": "岗位数据记录",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 178,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh11",
+          "role": "title_candidate",
+          "text": "6",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 346,
+            "y": 110,
+            "width": 278,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 40.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh12",
+          "role": "label_candidate",
+          "text": "实体节点类型",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 346,
+            "y": 178,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh14",
+          "role": "title_candidate",
+          "text": "5",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 653,
+            "y": 110,
+            "width": 278,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 40.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh15",
+          "role": "label_candidate",
+          "text": "关系类型",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 653,
+            "y": 178,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh17",
+          "role": "title_candidate",
+          "text": "10+",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 960,
+            "y": 110,
+            "width": 278,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 40.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh18",
+          "role": "label_candidate",
+          "text": "数据字段",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 960,
+            "y": 178,
+            "width": 278,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh20",
+          "role": "label_candidate",
+          "text": "数据来源",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 259,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh21",
+          "role": "label_candidate",
+          "text": "项目内置招聘岗位样本数据，共803条记录。数据字段包括：职位、城市、公司、学历、经验、技能、薪资、福利、工作描述和行业。数据用于课程项目演示与知识图谱建模。",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 298,
+            "width": 557,
+            "height": 144
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh23",
+          "role": "label_candidate",
+          "text": "职位",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 470,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh25",
+          "role": "label_candidate",
+          "text": "城市",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 470,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh27",
+          "role": "label_candidate",
+          "text": "公司",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 298,
+            "y": 470,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh29",
+          "role": "label_candidate",
+          "text": "学历",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 413,
+            "y": 470,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh31",
+          "role": "label_candidate",
+          "text": "经验",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 528,
+            "y": 470,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh33",
+          "role": "label_candidate",
+          "text": "技能",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 509,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh35",
+          "role": "label_candidate",
+          "text": "薪资",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 509,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh37",
+          "role": "label_candidate",
+          "text": "福利",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 298,
+            "y": 509,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh39",
+          "role": "label_candidate",
+          "text": "工作描述",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 413,
+            "y": 509,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh41",
+          "role": "label_candidate",
+          "text": "行业",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 528,
+            "y": 509,
+            "width": 101,
+            "height": 31
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh43",
+          "role": "label_candidate",
+          "text": "图谱实体与关系",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 259,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh45",
+          "role": "label_candidate",
+          "text": "Job 岗位",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 302,
+            "width": 235,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh47",
+          "role": "label_candidate",
+          "text": "Company 公司",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 960,
+            "y": 302,
+            "width": 235,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh49",
+          "role": "label_candidate",
+          "text": "City 城市",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 350,
+            "width": 235,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh51",
+          "role": "label_candidate",
+          "text": "Skill 技能",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 960,
+            "y": 350,
+            "width": 235,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh53",
+          "role": "label_candidate",
+          "text": "Degree 学历",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 398,
+            "width": 235,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh55",
+          "role": "label_candidate",
+          "text": "Experience 经验",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 960,
+            "y": 398,
+            "width": 235,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh56",
+          "role": "label_candidate",
+          "text": "关系：REQUIRES（需要）· BELONGS_TO（属于）· LOCATED_IN（位于）",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 470,
+            "width": 509,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 8,
+      "page_type": "chapter_candidate",
+      "text_summary": "PART 02\n核心功能演示\nCORE FEATURES DEMONSTRATION\n08",
+      "slots": [
+        {
+          "slot_id": "s08_sh2",
+          "role": "title_candidate",
+          "text": "PART 02",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 240,
+            "width": 1277,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 37.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh4",
+          "role": "label_candidate",
+          "text": "核心功能演示",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 322,
+            "width": 1277,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 53.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh5",
+          "role": "label_candidate",
+          "text": "CORE FEATURES DEMONSTRATION",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 398,
+            "width": 1277,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh6",
+          "role": "label_candidate",
+          "text": "08",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 9,
+      "page_type": "content_candidate",
+      "text_summary": "知识图谱可视化\nKNOWLEDGE GRAPH VISUALIZATION\n09\n6\n实体节点类型\n5\n关系类型\n803\n岗位数据\nECharts\n力导向图渲染\n图谱功能说明\n将招聘数据转化为图结构，展示岗位与技能、学历、经验、公司、城市之间的连接关系。节点颜色代表不同实体类型，连线表示实体间关系。相比传统表格，图谱更适合直观解释岗位要求之间的关联。\n核心特性：\n√ ECharts力导向图渲染，支持交互拖拽\n√ 节点按实体类型着色，直观区分\n√ 支持按条件筛选子图\n知识图谱可视化：岗位-技能-学历-经验-公司-城市关系网络\n（知识图谱可视化：岗位-技能-学历-经验-公司-城市关系网络）",
+      "slots": [
+        {
+          "slot_id": "s09_sh2",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1277,
+            "height": 80
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh3",
+          "role": "title_candidate",
+          "text": "知识图谱可视化",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh4",
+          "role": "title_candidate",
+          "text": "KNOWLEDGE GRAPH VISUALIZATION",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh5",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 0,
+            "y": 80,
+            "width": 1277,
+            "height": 640
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh6",
+          "role": "label_candidate",
+          "text": "09",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh7",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 106,
+            "width": 278,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh8",
+          "role": "title_candidate",
+          "text": "6",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 106,
+            "width": 278,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 29.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh9",
+          "role": "label_candidate",
+          "text": "实体节点类型",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 163,
+            "width": 278,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh10",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 346,
+            "y": 106,
+            "width": 278,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh11",
+          "role": "title_candidate",
+          "text": "5",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 346,
+            "y": 106,
+            "width": 278,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 29.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh12",
+          "role": "label_candidate",
+          "text": "关系类型",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 346,
+            "y": 163,
+            "width": 278,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh13",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 653,
+            "y": 106,
+            "width": 278,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh14",
+          "role": "title_candidate",
+          "text": "803",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 653,
+            "y": 106,
+            "width": 278,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 29.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh15",
+          "role": "label_candidate",
+          "text": "岗位数据",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 653,
+            "y": 163,
+            "width": 278,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh16",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 960,
+            "y": 106,
+            "width": 278,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh17",
+          "role": "title_candidate",
+          "text": "ECharts",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 960,
+            "y": 106,
+            "width": 278,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 29.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh18",
+          "role": "label_candidate",
+          "text": "力导向图渲染",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 960,
+            "y": 163,
+            "width": 278,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh19",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 226,
+            "width": 595,
+            "height": 442
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh20",
+          "role": "label_candidate",
+          "text": "图谱功能说明",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 240,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh21",
+          "role": "label_candidate",
+          "text": "将招聘数据转化为图结构，展示岗位与技能、学历、经验、公司、城市之间的连接关系。节点颜色代表不同实体类型，连线表示实体间关系。相比传统表格，图谱更适合直观解释岗位要求之间的关联。",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 283,
+            "width": 538,
+            "height": 240
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh22",
+          "role": "body_candidate",
+          "text": "核心特性：\n√ ECharts力导向图渲染，支持交互拖拽\n√ 节点按实体类型着色，直观区分\n√ 支持按条件筛选子图",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 67,
+            "y": 518,
+            "width": 528,
+            "height": 125
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s09_sh23",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 662,
+            "y": 226,
+            "width": 576,
+            "height": 442
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s09_sh24",
+          "role": "body_candidate",
+          "text": "知识图谱可视化：岗位-技能-学历-经验-公司-城市关系网络\n（知识图谱可视化：岗位-技能-学历-经验-公司-城市关系网络）",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 662,
+            "y": 336,
+            "width": 576,
+            "height": 192
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 2
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 10,
+      "page_type": "content_candidate",
+      "text_summary": "职业推荐系统\nJOB RECOMMENDATION SYSTEM\n10\n1\n用户输入描述\n输入技能、学历、经验等自然语言\n▼\n2\nNLP关键词提取\n技能/学历/经验实体识别\n▼\n3\n图谱条件匹配\nNeo4j查询满足条件的岗位\n▼\n4\n匹配评分计算\n技能命中+学历+经验+薪资匹配\n▼\n5\nTop-K排序输出\n推荐结果+图谱可视化解释\n推荐结果展示：岗位列表与关系图谱同步呈现\n（推荐结果展示：岗位列表与关系图谱同步呈现）\n匹配评分权重\n技能命中\n40%\n学历匹配\n25%\n经验匹配\n25%\n薪资匹配\n10%",
+      "slots": [
+        {
+          "slot_id": "s10_sh2",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1277,
+            "height": 80
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh3",
+          "role": "title_candidate",
+          "text": "职业推荐系统",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh4",
+          "role": "title_candidate",
+          "text": "JOB RECOMMENDATION SYSTEM",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh5",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 0,
+            "y": 80,
+            "width": 1277,
+            "height": 640
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh6",
+          "role": "label_candidate",
+          "text": "10",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh7",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 106,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh8",
+          "role": "title_candidate",
+          "text": "1",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 106,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh9",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 110,
+            "y": 106,
+            "width": 528,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh10",
+          "role": "title_candidate",
+          "text": "用户输入描述",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 115,
+            "width": 480,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh11",
+          "role": "title_candidate",
+          "text": "输入技能、学历、经验等自然语言",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 152,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh12",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 269,
+            "y": 192,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh13",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 216,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh14",
+          "role": "label_candidate",
+          "text": "2",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 216,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh15",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 110,
+            "y": 216,
+            "width": 528,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh16",
+          "role": "label_candidate",
+          "text": "NLP关键词提取",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 226,
+            "width": 480,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh17",
+          "role": "label_candidate",
+          "text": "技能/学历/经验实体识别",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 262,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh18",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 269,
+            "y": 302,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh19",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 326,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh20",
+          "role": "label_candidate",
+          "text": "3",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 326,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh21",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 110,
+            "y": 326,
+            "width": 528,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh22",
+          "role": "label_candidate",
+          "text": "图谱条件匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 336,
+            "width": 480,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh23",
+          "role": "label_candidate",
+          "text": "Neo4j查询满足条件的岗位",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 372,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh24",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 269,
+            "y": 413,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh25",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 437,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh26",
+          "role": "label_candidate",
+          "text": "4",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 437,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh27",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 110,
+            "y": 437,
+            "width": 528,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh28",
+          "role": "label_candidate",
+          "text": "匹配评分计算",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 446,
+            "width": 480,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh29",
+          "role": "label_candidate",
+          "text": "技能命中+学历+经验+薪资匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 483,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh30",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 269,
+            "y": 523,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh31",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 547,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh32",
+          "role": "label_candidate",
+          "text": "5",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 547,
+            "width": 58,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh33",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 110,
+            "y": 547,
+            "width": 528,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh34",
+          "role": "label_candidate",
+          "text": "Top-K排序输出",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 557,
+            "width": 480,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh35",
+          "role": "label_candidate",
+          "text": "推荐结果+图谱可视化解释",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 125,
+            "y": 593,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh36",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 662,
+            "y": 106,
+            "width": 576,
+            "height": 336
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh37",
+          "role": "label_candidate",
+          "text": "推荐结果展示：岗位列表与关系图谱同步呈现\n（推荐结果展示：岗位列表与关系图谱同步呈现）",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 662,
+            "y": 192,
+            "width": 576,
+            "height": 144
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s10_sh38",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 662,
+            "y": 466,
+            "width": 576,
+            "height": 202
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh39",
+          "role": "label_candidate",
+          "text": "匹配评分权重",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 682,
+            "y": 475,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh40",
+          "role": "label_candidate",
+          "text": "技能命中",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 682,
+            "y": 516,
+            "width": 192,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh41",
+          "role": "label_candidate",
+          "text": "40%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1008,
+            "y": 516,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh42",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 543,
+            "width": 528,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh43",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 543,
+            "width": 211,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh44",
+          "role": "label_candidate",
+          "text": "学历匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 682,
+            "y": 553,
+            "width": 192,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh45",
+          "role": "label_candidate",
+          "text": "25%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1008,
+            "y": 553,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh46",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 580,
+            "width": 528,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh47",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 580,
+            "width": 132,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh48",
+          "role": "label_candidate",
+          "text": "经验匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 682,
+            "y": 589,
+            "width": 192,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh49",
+          "role": "label_candidate",
+          "text": "25%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1008,
+            "y": 589,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh50",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 616,
+            "width": 528,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh51",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 616,
+            "width": 132,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh52",
+          "role": "label_candidate",
+          "text": "薪资匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 682,
+            "y": 626,
+            "width": 192,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh53",
+          "role": "label_candidate",
+          "text": "10%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1008,
+            "y": 626,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh54",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 653,
+            "width": 528,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s10_sh55",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 682,
+            "y": 653,
+            "width": 53,
+            "height": 8
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 11,
+      "page_type": "content_candidate",
+      "text_summary": "职业时间线分析\nCAREER TIMELINE ANALYSIS\n11\nAI模型根据职业名自动生成发展阶段分析，包括阶段名称、背景、关键事件和技能要求，以时间线组件直观展示职业成长路径。\n初级阶段\n0-2年\n入门技能掌握，基础项目经验积累，在指导下完成工作任务\n发展阶段\n2-5年\n专业技术深化，独立负责项目模块，开始指导初级成员\n成熟阶段\n5-10年\n团队管理与跨领域协作，承担技术决策与架构设计职责\n专家阶段\n10年+\n行业影响力建设，技术战略规划，跨团队技术领导\nAI生成的职业发展四阶段时间线\n（AI生成的职业发展四阶段时间线）",
+      "slots": [
+        {
+          "slot_id": "s11_sh2",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 0,
+            "y": 0,
+            "width": 1277,
+            "height": 80
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh3",
+          "role": "title_candidate",
+          "text": "职业时间线分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh4",
+          "role": "title_candidate",
+          "text": "CAREER TIMELINE ANALYSIS",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh5",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 0,
+            "y": 80,
+            "width": 1277,
+            "height": 640
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh6",
+          "role": "label_candidate",
+          "text": "11",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh7",
+          "role": "title_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 38,
+            "y": 106,
+            "width": 1200,
+            "height": 115
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh8",
+          "role": "title_candidate",
+          "text": "AI模型根据职业名自动生成发展阶段分析，包括阶段名称、背景、关键事件和技能要求，以时间线组件直观展示职业成长路径。",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 115,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh9",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 106,
+            "y": 274,
+            "width": 29,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh10",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 117,
+            "y": 302,
+            "width": 0,
+            "height": 82
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh11",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 163,
+            "y": 250,
+            "width": 528,
+            "height": 91
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh12",
+          "role": "label_candidate",
+          "text": "初级阶段",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 257,
+            "width": 288,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh13",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 480,
+            "y": 261,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh14",
+          "role": "label_candidate",
+          "text": "0-2年",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 480,
+            "y": 261,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh15",
+          "role": "label_candidate",
+          "text": "入门技能掌握，基础项目经验积累，在指导下完成工作任务",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 293,
+            "width": 490,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh16",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 106,
+            "y": 384,
+            "width": 29,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh17",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 117,
+            "y": 413,
+            "width": 0,
+            "height": 82
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh18",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 163,
+            "y": 360,
+            "width": 528,
+            "height": 91
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh19",
+          "role": "label_candidate",
+          "text": "发展阶段",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 368,
+            "width": 288,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh20",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 480,
+            "y": 372,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh21",
+          "role": "label_candidate",
+          "text": "2-5年",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 480,
+            "y": 372,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh22",
+          "role": "label_candidate",
+          "text": "专业技术深化，独立负责项目模块，开始指导初级成员",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 403,
+            "width": 490,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh23",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 106,
+            "y": 494,
+            "width": 29,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh24",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 117,
+            "y": 523,
+            "width": 0,
+            "height": 82
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh25",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 163,
+            "y": 470,
+            "width": 528,
+            "height": 91
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh26",
+          "role": "label_candidate",
+          "text": "成熟阶段",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 478,
+            "width": 288,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh27",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 480,
+            "y": 482,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh28",
+          "role": "label_candidate",
+          "text": "5-10年",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 480,
+            "y": 482,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh29",
+          "role": "label_candidate",
+          "text": "团队管理与跨领域协作，承担技术决策与架构设计职责",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 514,
+            "width": 490,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh30",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 106,
+            "y": 605,
+            "width": 29,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh31",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 163,
+            "y": 581,
+            "width": 528,
+            "height": 91
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh32",
+          "role": "label_candidate",
+          "text": "专家阶段",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 588,
+            "width": 288,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh33",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 480,
+            "y": 592,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh34",
+          "role": "label_candidate",
+          "text": "10年+",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 480,
+            "y": 592,
+            "width": 115,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh35",
+          "role": "label_candidate",
+          "text": "行业影响力建设，技术战略规划，跨团队技术领导",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 182,
+            "y": 624,
+            "width": 490,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh36",
+          "role": "label_candidate",
+          "text": "",
+          "paragraph_count": 0,
+          "geometry": {
+            "x": 720,
+            "y": 250,
+            "width": 518,
+            "height": 403
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 0
+          }
+        },
+        {
+          "slot_id": "s11_sh37",
+          "role": "label_candidate",
+          "text": "AI生成的职业发展四阶段时间线\n（AI生成的职业发展四阶段时间线）",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 720,
+            "y": 384,
+            "width": 518,
+            "height": 192
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 2
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 12,
+      "page_type": "ending_candidate",
+      "text_summary": "AI 智能问答\nAI INTELLIGENT Q&A\n12\n💬\n自然语言交互\n用户使用日常语言提问职业发展和技能学习相关问题\n📝\nMarkdown渲染\nAI回答以Markdown格式输出，支持代码高亮和公式渲染\n⚡\nSSE流式响应\nServer-Sent Events实现逐字实时输出，交互体验流畅\n🧠\n上下文理解\n支持多轮对话，理解用户意图并给出针对性建议\n🎯\n职业领域专长\n针对职业发展、技能学习路径等领域进行优化\n🤖\n大模型驱动\n接入DeepSeek-V3等先进模型，回答质量高",
+      "slots": [
+        {
+          "slot_id": "s12_sh3",
+          "role": "title_candidate",
+          "text": "AI 智能问答",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh4",
+          "role": "title_candidate",
+          "text": "AI INTELLIGENT Q&A",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh6",
+          "role": "label_candidate",
+          "text": "12",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh9",
+          "role": "title_candidate",
+          "text": "💬",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 187,
+            "y": 134,
+            "width": 77,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh10",
+          "role": "label_candidate",
+          "text": "自然语言交互",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 58,
+            "y": 230,
+            "width": 336,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh11",
+          "role": "label_candidate",
+          "text": "用户使用日常语言提问职业发展和技能学习相关问题",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 274,
+            "width": 317,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh14",
+          "role": "title_candidate",
+          "text": "📝",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 590,
+            "y": 134,
+            "width": 77,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh15",
+          "role": "label_candidate",
+          "text": "Markdown渲染",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 461,
+            "y": 230,
+            "width": 336,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh16",
+          "role": "label_candidate",
+          "text": "AI回答以Markdown格式输出，支持代码高亮和公式渲染",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 470,
+            "y": 274,
+            "width": 317,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh19",
+          "role": "title_candidate",
+          "text": "⚡",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 994,
+            "y": 134,
+            "width": 77,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh20",
+          "role": "label_candidate",
+          "text": "SSE流式响应",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 864,
+            "y": 230,
+            "width": 336,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh21",
+          "role": "label_candidate",
+          "text": "Server-Sent Events实现逐字实时输出，交互体验流畅",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 874,
+            "y": 274,
+            "width": 317,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh24",
+          "role": "label_candidate",
+          "text": "🧠",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 187,
+            "y": 432,
+            "width": 77,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh25",
+          "role": "label_candidate",
+          "text": "上下文理解",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 58,
+            "y": 528,
+            "width": 336,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh26",
+          "role": "label_candidate",
+          "text": "支持多轮对话，理解用户意图并给出针对性建议",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 571,
+            "width": 317,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh29",
+          "role": "label_candidate",
+          "text": "🎯",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 590,
+            "y": 432,
+            "width": 77,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh30",
+          "role": "label_candidate",
+          "text": "职业领域专长",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 461,
+            "y": 528,
+            "width": 336,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh31",
+          "role": "label_candidate",
+          "text": "针对职业发展、技能学习路径等领域进行优化",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 470,
+            "y": 571,
+            "width": 317,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh34",
+          "role": "label_candidate",
+          "text": "🤖",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 994,
+            "y": 432,
+            "width": 77,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh35",
+          "role": "label_candidate",
+          "text": "大模型驱动",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 864,
+            "y": 528,
+            "width": 336,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh36",
+          "role": "label_candidate",
+          "text": "接入DeepSeek-V3等先进模型，回答质量高",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 874,
+            "y": 571,
+            "width": 317,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 13,
+      "page_type": "content_candidate",
+      "text_summary": "简历智能分析\nRESUME INTELLIGENT ANALYSIS\n13\n简历上传与解析\nPDF\nPyMuPDF (fitz) 提取\nWord\npython-docx 提取\n图片\npytesseract OCR识别\n上传简历 → 自动识别格式 → 提取文本内容 → AI模型分析 → 生成职业匹配建议\nAI分析输出\n职业名称\n匹配度最高的职业方向\n匹配概率\n基于简历内容的匹配评分\n市场状况\n该职业当前市场需求分析\n发展行情\n职业发展前景与薪资趋势",
+      "slots": [
+        {
+          "slot_id": "s13_sh3",
+          "role": "title_candidate",
+          "text": "简历智能分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh4",
+          "role": "title_candidate",
+          "text": "RESUME INTELLIGENT ANALYSIS",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh6",
+          "role": "label_candidate",
+          "text": "13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh8",
+          "role": "title_candidate",
+          "text": "简历上传与解析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 120,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh10",
+          "role": "label_candidate",
+          "text": "PDF",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 86,
+            "y": 182,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh11",
+          "role": "label_candidate",
+          "text": "PyMuPDF (fitz) 提取",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 86,
+            "y": 216,
+            "width": 480,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh13",
+          "role": "label_candidate",
+          "text": "Word",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 86,
+            "y": 298,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh14",
+          "role": "label_candidate",
+          "text": "python-docx 提取",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 86,
+            "y": 331,
+            "width": 480,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh16",
+          "role": "label_candidate",
+          "text": "图片",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 86,
+            "y": 413,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh17",
+          "role": "label_candidate",
+          "text": "pytesseract OCR识别",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 86,
+            "y": 446,
+            "width": 480,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh18",
+          "role": "label_candidate",
+          "text": "上传简历 → 自动识别格式 → 提取文本内容 → AI模型分析 → 生成职业匹配建议",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 528,
+            "width": 528,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh20",
+          "role": "title_candidate",
+          "text": "AI分析输出",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 682,
+            "y": 120,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh22",
+          "role": "label_candidate",
+          "text": "职业名称",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 182,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh23",
+          "role": "label_candidate",
+          "text": "匹配度最高的职业方向",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 216,
+            "width": 480,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh25",
+          "role": "label_candidate",
+          "text": "匹配概率",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 293,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh26",
+          "role": "label_candidate",
+          "text": "基于简历内容的匹配评分",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 326,
+            "width": 480,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh28",
+          "role": "label_candidate",
+          "text": "市场状况",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 403,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh29",
+          "role": "label_candidate",
+          "text": "该职业当前市场需求分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 437,
+            "width": 480,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh31",
+          "role": "label_candidate",
+          "text": "发展行情",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 514,
+            "width": 480,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh32",
+          "role": "label_candidate",
+          "text": "职业发展前景与薪资趋势",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 701,
+            "y": 547,
+            "width": 480,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 14,
+      "page_type": "chapter_candidate",
+      "text_summary": "PART 03\n推荐算法与大模型\nALGORITHM & LLM INTEGRATION\n14",
+      "slots": [
+        {
+          "slot_id": "s14_sh2",
+          "role": "title_candidate",
+          "text": "PART 03",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 240,
+            "width": 1277,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 37.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh4",
+          "role": "label_candidate",
+          "text": "推荐算法与大模型",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 322,
+            "width": 1277,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 53.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh5",
+          "role": "label_candidate",
+          "text": "ALGORITHM & LLM INTEGRATION",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 398,
+            "width": 1277,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh6",
+          "role": "label_candidate",
+          "text": "14",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 15,
+      "page_type": "content_candidate",
+      "text_summary": "推荐算法流程\nRECOMMENDATION ALGORITHM FLOW\n15\nSTEP\n01\n用户输入自我描述\n用户输入技能、学历、经验等自然语言描述\n▼\nSTEP\n02\nNLP关键词提取\n技能/学历/经验实体识别与提取\n▼\nSTEP\n03\nNeo4j图数据库查询\n条件查询与匹配岗位数据\n▼\nSTEP\n04\n多维匹配评分计算\n技能命中 + 学历匹配 + 经验匹配 + 薪资匹配\n▼\nSTEP\n05\nTop-K排序输出\n推荐结果 + 图谱解释可视化\n评分权重\n技能命中\n40%\n学历匹配\n25%\n经验匹配\n25%\n薪资匹配\n10%\n算法特点\n√ 基于图谱匹配，可解释性强\n√ 多维度综合评分，避免单一指标\n√ Top-K排序，结果精简高效",
+      "slots": [
+        {
+          "slot_id": "s15_sh3",
+          "role": "title_candidate",
+          "text": "推荐算法流程",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh4",
+          "role": "title_candidate",
+          "text": "RECOMMENDATION ALGORITHM FLOW",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh6",
+          "role": "label_candidate",
+          "text": "15",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh8",
+          "role": "title_candidate",
+          "text": "STEP",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 110,
+            "width": 67,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 10.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh9",
+          "role": "title_candidate",
+          "text": "01",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 139,
+            "width": 67,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh11",
+          "role": "title_candidate",
+          "text": "用户输入自我描述",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 113,
+            "width": 576,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh12",
+          "role": "title_candidate",
+          "text": "用户输入技能、学历、经验等自然语言描述",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 154,
+            "width": 576,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh13",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 355,
+            "y": 192,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh15",
+          "role": "label_candidate",
+          "text": "STEP",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 221,
+            "width": 67,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 10.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh16",
+          "role": "label_candidate",
+          "text": "02",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 250,
+            "width": 67,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh18",
+          "role": "label_candidate",
+          "text": "NLP关键词提取",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 224,
+            "width": 576,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh19",
+          "role": "label_candidate",
+          "text": "技能/学历/经验实体识别与提取",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 264,
+            "width": 576,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh20",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 355,
+            "y": 302,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh22",
+          "role": "label_candidate",
+          "text": "STEP",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 331,
+            "width": 67,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 10.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh23",
+          "role": "label_candidate",
+          "text": "03",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 360,
+            "width": 67,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh25",
+          "role": "label_candidate",
+          "text": "Neo4j图数据库查询",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 334,
+            "width": 576,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh26",
+          "role": "label_candidate",
+          "text": "条件查询与匹配岗位数据",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 374,
+            "width": 576,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh27",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 355,
+            "y": 413,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh29",
+          "role": "label_candidate",
+          "text": "STEP",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 442,
+            "width": 67,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 10.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh30",
+          "role": "label_candidate",
+          "text": "04",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 470,
+            "width": 67,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh32",
+          "role": "label_candidate",
+          "text": "多维匹配评分计算",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 444,
+            "width": 576,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh33",
+          "role": "label_candidate",
+          "text": "技能命中 + 学历匹配 + 经验匹配 + 薪资匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 485,
+            "width": 576,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh34",
+          "role": "label_candidate",
+          "text": "▼",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 355,
+            "y": 523,
+            "width": 48,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh36",
+          "role": "label_candidate",
+          "text": "STEP",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 552,
+            "width": 67,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 10.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh37",
+          "role": "label_candidate",
+          "text": "05",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 581,
+            "width": 67,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 21.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh39",
+          "role": "label_candidate",
+          "text": "Top-K排序输出",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 555,
+            "width": 576,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh40",
+          "role": "label_candidate",
+          "text": "推荐结果 + 图谱解释可视化",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 134,
+            "y": 595,
+            "width": 576,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh42",
+          "role": "title_candidate",
+          "text": "评分权重",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 816,
+            "y": 120,
+            "width": 384,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh43",
+          "role": "label_candidate",
+          "text": "技能命中",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 816,
+            "y": 163,
+            "width": 211,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh44",
+          "role": "label_candidate",
+          "text": "40%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1104,
+            "y": 163,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh47",
+          "role": "label_candidate",
+          "text": "学历匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 816,
+            "y": 216,
+            "width": 211,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh48",
+          "role": "label_candidate",
+          "text": "25%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1104,
+            "y": 216,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh51",
+          "role": "label_candidate",
+          "text": "经验匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 816,
+            "y": 269,
+            "width": 211,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh52",
+          "role": "label_candidate",
+          "text": "25%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1104,
+            "y": 269,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh55",
+          "role": "label_candidate",
+          "text": "薪资匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 816,
+            "y": 322,
+            "width": 211,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh56",
+          "role": "label_candidate",
+          "text": "10%",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1104,
+            "y": 322,
+            "width": 96,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh60",
+          "role": "label_candidate",
+          "text": "算法特点",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 816,
+            "y": 456,
+            "width": 384,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 18.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh61",
+          "role": "label_candidate",
+          "text": "√ 基于图谱匹配，可解释性强\n√ 多维度综合评分，避免单一指标\n√ Top-K排序，结果精简高效",
+          "paragraph_count": 3,
+          "geometry": {
+            "x": 816,
+            "y": 494,
+            "width": 403,
+            "height": 144
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 3
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 16,
+      "page_type": "content_candidate",
+      "text_summary": "大语言模型集成\nLLM INTEGRATION\n16\nAI 职业问答\nSSE流式响应，实时逐字输出\nMarkdown格式渲染回答\n支持代码高亮和公式\n多轮对话上下文理解\n职业时间线\n根据职业名自动生成阶段\n包含背景和关键事件\n技能要求随阶段变化\n时间线组件直观展示\n简历智能匹配\n多格式简历文本提取\nAI生成职业匹配分析\n匹配概率量化评估\n市场行情与前景预测\n技术实现说明\n本项目通过 OpenAI 兼容接口接入第三方大模型服务（当前使用 SiliconFlow 平台），调用 DeepSeek-V3 模型。不同功能模块使用不同的 Prompt 模板组织输入和输出格式，AI 返回 Markdown 格式内容，由前端渲染成时间线、问答卡片和分析报告。",
+      "slots": [
+        {
+          "slot_id": "s16_sh3",
+          "role": "title_candidate",
+          "text": "大语言模型集成",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh4",
+          "role": "title_candidate",
+          "text": "LLM INTEGRATION",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh6",
+          "role": "label_candidate",
+          "text": "16",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh8",
+          "role": "title_candidate",
+          "text": "AI 职业问答",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 106,
+            "width": 374,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh11",
+          "role": "label_candidate",
+          "text": "SSE流式响应，实时逐字输出",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 82,
+            "y": 180,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh13",
+          "role": "label_candidate",
+          "text": "Markdown格式渲染回答",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 82,
+            "y": 248,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh15",
+          "role": "label_candidate",
+          "text": "支持代码高亮和公式",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 82,
+            "y": 315,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh17",
+          "role": "label_candidate",
+          "text": "多轮对话上下文理解",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 82,
+            "y": 382,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh19",
+          "role": "title_candidate",
+          "text": "职业时间线",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 442,
+            "y": 106,
+            "width": 374,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh22",
+          "role": "label_candidate",
+          "text": "根据职业名自动生成阶段",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 485,
+            "y": 180,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh24",
+          "role": "label_candidate",
+          "text": "包含背景和关键事件",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 485,
+            "y": 248,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh26",
+          "role": "label_candidate",
+          "text": "技能要求随阶段变化",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 485,
+            "y": 315,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh28",
+          "role": "label_candidate",
+          "text": "时间线组件直观展示",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 485,
+            "y": 382,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh30",
+          "role": "title_candidate",
+          "text": "简历智能匹配",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 845,
+            "y": 106,
+            "width": 374,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh33",
+          "role": "label_candidate",
+          "text": "多格式简历文本提取",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 888,
+            "y": 180,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh35",
+          "role": "label_candidate",
+          "text": "AI生成职业匹配分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 888,
+            "y": 248,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh37",
+          "role": "label_candidate",
+          "text": "匹配概率量化评估",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 888,
+            "y": 315,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh39",
+          "role": "label_candidate",
+          "text": "市场行情与前景预测",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 888,
+            "y": 382,
+            "width": 307,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh41",
+          "role": "label_candidate",
+          "text": "技术实现说明",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 518,
+            "width": 288,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s16_sh42",
+          "role": "body_candidate",
+          "text": "本项目通过 OpenAI 兼容接口接入第三方大模型服务（当前使用 SiliconFlow 平台），调用 DeepSeek-V3 模型。不同功能模块使用不同的 Prompt 模板组织输入和输出格式，AI 返回 Markdown 格式内容，由前端渲染成时间线、问答卡片和分析报告。",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 557,
+            "width": 1133,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 14.67,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 17,
+      "page_type": "chapter_candidate",
+      "text_summary": "PART 04\n总结\nSUMMARY\n17",
+      "slots": [
+        {
+          "slot_id": "s17_sh2",
+          "role": "title_candidate",
+          "text": "PART 04",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 240,
+            "width": 1277,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 37.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s17_sh4",
+          "role": "label_candidate",
+          "text": "总结",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 322,
+            "width": 1277,
+            "height": 77
+          },
+          "text_metrics": {
+            "font_size_px": 53.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s17_sh5",
+          "role": "label_candidate",
+          "text": "SUMMARY",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 0,
+            "y": 398,
+            "width": 1277,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s17_sh6",
+          "role": "label_candidate",
+          "text": "17",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    },
+    {
+      "slide_index": 18,
+      "page_type": "ending_candidate",
+      "text_summary": "项目亮点与成果\nPROJECT HIGHLIGHTS\n18\n✓\n完整演示闭环\n注册登录 → 知识图谱 → 推荐 → 时间线 → 问答 → 简历分析，全流程本地可运行\n✓\n可解释推荐\n基于图谱匹配而非黑盒模型，推荐结果可追溯、可解释，每个推荐都有关系依据\n✓\nAI增强分析\n大语言模型补充传统图谱查询不足，AI生成职业发展解释、问答和简历分析建议\n✓\n多维度可视化\nECharts力导向图 + Element Plus表格/时间线/卡片，多组件协同呈现数据洞察",
+      "slots": [
+        {
+          "slot_id": "s18_sh3",
+          "role": "title_candidate",
+          "text": "项目亮点与成果",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 14,
+            "width": 768,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh4",
+          "role": "title_candidate",
+          "text": "PROJECT HIGHLIGHTS",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 38,
+            "y": 48,
+            "width": 768,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh6",
+          "role": "label_candidate",
+          "text": "18",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1200,
+            "y": 686,
+            "width": 58,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 13.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh9",
+          "role": "title_candidate",
+          "text": "✓",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 134,
+            "width": 58,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 26.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh10",
+          "role": "title_candidate",
+          "text": "完整演示闭环",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 144,
+            "y": 139,
+            "width": 432,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh11",
+          "role": "label_candidate",
+          "text": "注册登录 → 知识图谱 → 推荐 → 时间线 → 问答 → 简历分析，全流程本地可运行",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 221,
+            "width": 509,
+            "height": 125
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh14",
+          "role": "title_candidate",
+          "text": "✓",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 677,
+            "y": 134,
+            "width": 58,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 26.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh15",
+          "role": "title_candidate",
+          "text": "可解释推荐",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 754,
+            "y": 139,
+            "width": 432,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh16",
+          "role": "label_candidate",
+          "text": "基于图谱匹配而非黑盒模型，推荐结果可追溯、可解释，每个推荐都有关系依据",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 686,
+            "y": 221,
+            "width": 509,
+            "height": 125
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh19",
+          "role": "label_candidate",
+          "text": "✓",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 432,
+            "width": 58,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 26.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh20",
+          "role": "label_candidate",
+          "text": "AI增强分析",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 144,
+            "y": 437,
+            "width": 432,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh21",
+          "role": "label_candidate",
+          "text": "大语言模型补充传统图谱查询不足，AI生成职业发展解释、问答和简历分析建议",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 518,
+            "width": 509,
+            "height": 125
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh24",
+          "role": "label_candidate",
+          "text": "✓",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 677,
+            "y": 432,
+            "width": 58,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 26.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh25",
+          "role": "label_candidate",
+          "text": "多维度可视化",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 754,
+            "y": 437,
+            "width": 432,
+            "height": 34
+          },
+          "text_metrics": {
+            "font_size_px": 22.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s18_sh26",
+          "role": "label_candidate",
+          "text": "ECharts力导向图 + Element Plus表格/时间线/卡片，多组件协同呈现数据洞察",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 686,
+            "y": 518,
+            "width": 509,
+            "height": 125
+          },
+          "text_metrics": {
+            "font_size_px": 17.33,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": []
+    }
+  ],
+  "plan_contract": {
+    "schema": "template_fill_pptx_plan.v1",
+    "slides": [
+      {
+        "source_slide": 1,
+        "purpose": "封面 / 章节 / 内容 / 结尾",
+        "replacements": [
+          {
+            "slot_id": "s01_sh2",
+            "text": "替换后的文字"
+          }
+        ],
+        "table_edits": [
+          {
+            "table_id": "s01_tbl3",
+            "cells": [
+              {
+                "row": 0,
+                "col": 0,
+                "text": "替换后的单元格"
+              }
+            ]
+          }
+        ],
+        "chart_edits": [
+          {
+            "chart_id": "s01_ch4",
+            "categories": [
+              "A",
+              "B"
+            ],
+            "series": [
+              {
+                "name": "系列1",
+                "values": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

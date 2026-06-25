@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Header -->
+  <g id="header">
+    <text x="60" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">
+      系统整体架构
+    </text>
+    <text x="60" y="95" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">
+      SYSTEM ARCHITECTURE
+    </text>
+    <rect x="60" y="108" width="80" height="3" rx="2" fill="#2E7D32"/>
+  </g>
+
+  <!-- chart-plot-area: not applicable (structural diagram, no data plot area) -->
+
+  <!-- Four-Tier Architecture Pillars -->
+  <g id="architecture" transform="translate(80, 145)">
+
+    <!-- Tier 1: Frontend -->
+    <g id="tier-frontend">
+      <rect width="1120" height="115" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <!-- Left label area -->
+      <rect width="200" height="115" rx="14" fill="#2E7D32"/>
+      <rect x="186" y="0" width="14" height="115" fill="#2E7D32"/>
+      <use data-icon="tabler-outline/home" x="40" y="30" width="40" height="40" fill="#FFFFFF" stroke-width="2"/>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">前端展示层</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#C8E6C9">FRONTEND</text>
+      <!-- Tech items -->
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">Vue 3</tspan> · Element Plus · ECharts 5 — 单页应用 · 动态路由 · 图谱可视化 · 响应式布局
+      </text>
+    </g>
+
+    <!-- Arrow 1→2 -->
+    <g transform="translate(540, 260)">
+      <polygon points="0,0 16,18 32,0" fill="#81C784"/>
+    </g>
+
+    <!-- Tier 2: AI Service -->
+    <g id="tier-ai" transform="translate(0, 140)">
+      <rect width="1120" height="115" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="200" height="115" rx="14" fill="#1B5E20"/>
+      <rect x="186" y="0" width="14" height="115" fill="#1B5E20"/>
+      <use data-icon="tabler-outline/brain" x="40" y="30" width="40" height="40" fill="#FFFFFF" stroke-width="2"/>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">AI 分析引擎</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#C8E6C9">AI SERVICE</text>
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">Flask</tspan> · DeepSeek-V3 · Neo4j — 推荐引擎 · 简历解析 · AI问答 · 时间线分析
+      </text>
+    </g>
+
+    <!-- Arrow 2→3 -->
+    <g transform="translate(540, 400)">
+      <polygon points="0,0 16,18 32,0" fill="#81C784"/>
+    </g>
+
+    <!-- Tier 3: Backend -->
+    <g id="tier-backend" transform="translate(0, 280)">
+      <rect width="1120" height="115" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="200" height="115" rx="14" fill="#2E7D32"/>
+      <rect x="186" y="0" width="14" height="115" fill="#2E7D32"/>
+      <use data-icon="tabler-outline/server" x="40" y="30" width="40" height="40" fill="#FFFFFF" stroke-width="2"/>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">业务服务层</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#C8E6C9">BACKEND</text>
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">Spring Boot 3.4</tspan> · MyBatis-Plus · JWT — 用户管理 · 职位CRUD · 鉴权拦截 · 缓存加速
+      </text>
+    </g>
+
+    <!-- Arrow 3→4 -->
+    <g transform="translate(540, 540)">
+      <polygon points="0,0 16,18 32,0" fill="#81C784"/>
+    </g>
+
+    <!-- Tier 4: Data Layer -->
+    <g id="tier-data" transform="translate(0, 420)">
+      <rect width="1120" height="115" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <rect width="200" height="115" rx="14" fill="#81C784"/>
+      <rect x="186" y="0" width="14" height="115" fill="#81C784"/>
+      <use data-icon="tabler-outline/database" x="40" y="30" width="40" height="40" fill="#FFFFFF" stroke-width="2"/>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">数据存储层</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#E8F5E9">DATA LAYER</text>
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">MySQL 8.0</tspan> · Neo4j · Redis — 业务数据 · 图数据库 · 会话缓存
+      </text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">05</text>
+</svg>

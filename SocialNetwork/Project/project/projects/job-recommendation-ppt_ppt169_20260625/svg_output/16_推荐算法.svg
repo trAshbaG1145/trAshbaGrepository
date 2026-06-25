@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">推荐算法流程</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">RECOMMENDATION ALGORITHM FLOW</text>
+  </g>
+
+  <!-- chart-plot-area: not applicable (structural diagram) -->
+
+  <!-- 5-Step Chevron Chain -->
+  <g id="algorithm-chain" transform="translate(60, 150)">
+    <!-- Step 1: rect 0-175, flat left, point at 195 -->
+    <path d="M 0 0 H 175 L 195 48 L 175 96 H 0 Z" fill="#E8F5E9"/>
+    <!-- Step 2: rect 178-353, notch 200, point at 373 -->
+    <path d="M 178 0 H 353 L 373 48 L 353 96 H 178 L 200 48 Z" fill="#C8E6C9"/>
+    <!-- Step 3: rect 356-531, notch 378, point at 551 -->
+    <path d="M 356 0 H 531 L 551 48 L 531 96 H 356 L 378 48 Z" fill="#E8F5E9"/>
+    <!-- Step 4: rect 534-709, notch 556, point at 729 -->
+    <path d="M 534 0 H 709 L 729 48 L 709 96 H 534 L 556 48 Z" fill="#C8E6C9"/>
+    <!-- Step 5: rect 712-887, notch 734, point at 907 -->
+    <path d="M 712 0 H 887 L 907 48 L 887 96 H 712 L 734 48 Z" fill="#2E7D32"/>
+
+    <!-- Labels -->
+    <text x="87" y="38" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1B5E20">用户输入</text>
+    <text x="87" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#666666">自我描述</text>
+
+    <text x="265" y="38" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1B5E20">NLP</text>
+    <text x="265" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#666666">关键词提取</text>
+
+    <text x="443" y="38" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1B5E20">图谱匹配</text>
+    <text x="443" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#666666">Neo4j查询</text>
+
+    <text x="621" y="38" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1B5E20">多维评分</text>
+    <text x="621" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#666666">权重计算</text>
+
+    <text x="809" y="38" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">Top-K输出</text>
+    <text x="809" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#C8E6C9">结果+图谱</text>
+
+    <!-- Step numbers -->
+    <text x="20" y="-8" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="bold" fill="#2E7D32">01</text>
+    <text x="198" y="-8" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="bold" fill="#2E7D32">02</text>
+    <text x="376" y="-8" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="bold" fill="#2E7D32">03</text>
+    <text x="554" y="-8" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="bold" fill="#2E7D32">04</text>
+    <text x="732" y="-8" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="bold" fill="#2E7D32">05</text>
+  </g>
+
+  <!-- Weight scoring panel -->
+  <g id="weights" transform="translate(60, 320)">
+    <text x="0" y="0" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">匹配评分权重</text>
+
+    <g transform="translate(0, 30)">
+      <rect width="500" height="48" rx="10" fill="#E8F5E9"/>
+      <rect width="200" height="48" rx="10" fill="#2E7D32"/>
+      <text x="250" y="31" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">技能命中 40%</text>
+      <text x="360" y="31" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">核心匹配维度</text>
+    </g>
+    <g transform="translate(0, 90)">
+      <rect width="500" height="48" rx="10" fill="#E8F5E9"/>
+      <rect width="125" height="48" rx="10" fill="#81C784"/>
+      <text x="62" y="31" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">25% 学历</text>
+      <text x="200" y="31" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">学历要求匹配</text>
+    </g>
+    <g transform="translate(0, 148)">
+      <rect width="500" height="48" rx="10" fill="#E8F5E9"/>
+      <rect width="125" height="48" rx="10" fill="#81C784"/>
+      <text x="62" y="31" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">25% 经验</text>
+      <text x="200" y="31" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">工作年限匹配</text>
+    </g>
+    <g transform="translate(0, 206)">
+      <rect width="500" height="48" rx="10" fill="#E8F5E9"/>
+      <rect width="50" height="48" rx="10" fill="#C8E6C9"/>
+      <text x="25" y="31" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#666666">10%</text>
+      <text x="120" y="31" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">薪资匹配</text>
+    </g>
+  </g>
+
+  <!-- Algorithm features (right side) -->
+  <g id="features" transform="translate(640, 320)">
+    <text x="0" y="0" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">算法特点</text>
+    <g transform="translate(0, 30)">
+      <use data-icon="tabler-outline/check" x="0" y="6" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">基于图谱匹配，可解释性强</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="54" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="76" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">多维度综合评分，避免单一指标</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="102" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="124" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">Top-K排序，结果精简高效</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="150" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="172" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">每个推荐都有关系依据</text>
+    </g>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">16</text>
+</svg>

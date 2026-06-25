@@ -65,10 +65,10 @@
 flowchart LR
   User["用户浏览器"] --> Front["Vue 前端\nlocalhost:8089"]
   Front -->|业务接口| Java["Spring Boot 后端\nlocalhost:8090"]
-  Front -->|/api/* 代理| Flask["Flask AI 服务\nlocalhost:8080"]
-  Java --> MySQL["MySQL\njobrec"]
-  Java --> Redis["Redis\nlocalhost:6379"]
-  Flask --> Neo4j["Neo4j\n知识图谱"]
+  Front -->|/api/* 代理| Flask["Flask AI 服务\nlocalhost:8081"]
+  Java --> MySQL["MySQL (Docker)\nlocalhost:3413"]
+  Java --> Redis["Redis (Docker)\nlocalhost:6380"]
+  Flask --> Neo4j["Neo4j (Docker)\nBolt:7688 / HTTP:7475"]
   Flask --> LLM["SiliconFlow / DeepSeek-V3"]
 ```
 
@@ -81,6 +81,9 @@ flowchart LR
 
 ```text
 project/
+├── docker-compose.yml            # Docker 基础设施编排
+├── start-project.bat             # Windows 一键启动
+├── start-project.ps1             # PowerShell 一键启动
 ├── JobRec_Back/                  # Java Spring Boot 后端
 │   ├── pom.xml
 │   ├── jobrec.sql                # MySQL 初始化脚本
@@ -111,9 +114,11 @@ project/
 │   │   ├── stores/index.js       # Pinia store
 │   │   ├── views/Home.vue        # 主布局
 │   │   └── components/           # 页面组件
-│   └── Backend/                  # Flask AI 服务
+│   └── Backend/                  # Flask AI 服务 (端口 8081)
 │       ├── app.py
 │       ├── requirements.txt
+│       ├── kg_config.py           # Neo4j 连接配置 (Bolt:7688)
+│       ├── neo4j_import.py        # Neo4j 知识图谱数据导入
 │       ├── KG_processing.py
 │       ├── KG_search.py
 │       ├── KG_answer.py
@@ -122,6 +127,7 @@ project/
 │           ├── job_rec.py
 │           ├── resume_parser.py
 │           ├── career_analyzer.py
+│           ├── demo.py            # Excel → MySQL 数据导入
 │           └── model_1.py
 ├── docs/                         # 项目文档和截图
 └── reference/                    # 课程参考资料
@@ -349,7 +355,7 @@ server: {
   port: 8089,
   proxy: {
     '/api': {
-      target: 'http://127.0.0.1:8080',
+      target: 'http://127.0.0.1:8081',
       changeOrigin: true,
       secure: false
     }
@@ -372,7 +378,7 @@ Flask AI 服务负责智能能力：
 - 提供 SSE 流式 AI 职业问答。
 - 分析职业发展时间线。
 
-入口文件：`JobRec_Front/Backend/app.py`
+入口文件：`JobRec_Front/Backend/app.py`（端口 8081，通过 `FLASK_PORT` 环境变量配置）
 
 ### 8.2 AI 服务接口
 
@@ -434,105 +440,67 @@ Flask AI 服务负责智能能力：
 
 ### 10.1 环境要求
 
-- JDK 17+
-- Maven 3.6+
-- Node.js 16+
-- Python 3.10+
-- MySQL 8.0+
-- Redis
-- Neo4j
+- JDK 17+ (实际开发使用 JDK 21)
+- Maven 3.6+ (项目含 mvnw wrapper)
+- Node.js 16+ (实际使用 v24)
+- Python 3.10+ (实际使用 3.13)
+- Docker Desktop (运行 MySQL, Redis, Neo4j)
+- 系统需有 PowerShell (一键启动脚本依赖)
 
-### 10.2 初始化数据库
+### 10.2 一键启动（推荐）
 
-创建数据库：
-
-```sql
-CREATE DATABASE IF NOT EXISTS jobrec DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```bash
+# Windows 命令行
+cd project
+start-project.bat
 ```
 
-导入数据：
+脚本自动完成：Docker Compose 启动基础设施 → 等待健康检查 → 启动 Spring Boot → 启动 Flask → 启动 Vite → 打开浏览器。
+
+### 10.3 Docker Compose 基础设施
+
+```bash
+cd project
+docker compose up -d
+```
+
+端口映射：
+
+| 服务 | 宿主机端口 | 容器端口 |
+|------|-----------|----------|
+| MySQL 8.0 | 3413 | 3306 |
+| Redis 7 | 6380 | 6379 |
+| Neo4j Bolt | 7688 | 7687 |
+| Neo4j HTTP | 7475 | 7474 |
+
+MySQL 首次启动自动执行 `jobrec.sql` 初始化数据库。Neo4j 需要额外运行数据导入：
+
+```bash
+cd JobRec_Front/Backend
+python neo4j_import.py
+```
+
+### 10.4 手动启动 Spring Boot 后端
 
 ```bash
 cd JobRec_Back
-mysql -u root -p jobrec < jobrec.sql
+./mvnw spring-boot:run     # 端口 8090
 ```
 
-数据库连接配置位于：
-
-```text
-JobRec_Back/src/main/resources/application.yml
-```
-
-当前配置示例：
-
-```yaml
-spring:
-  datasource:
-    username: root
-    password: MySQL@999999
-    url: jdbc:mysql://localhost:3413/jobrec?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
-```
-
-### 10.3 启动 Redis 与 Neo4j
-
-如果使用 Docker：
-
-```bash
-docker start redis neo4j
-```
-
-Redis 默认连接：
-
-```text
-localhost:6379
-```
-
-Neo4j 常用端口：
-
-```text
-HTTP: localhost:7474
-Bolt: localhost:7687
-```
-
-### 10.4 启动 Spring Boot 后端
-
-```bash
-cd JobRec_Back
-./mvnw spring-boot:run
-```
-
-访问端口：
-
-```text
-http://localhost:8090
-```
-
-### 10.5 启动 Flask AI 服务
+### 10.5 手动启动 Flask AI 服务
 
 ```bash
 cd JobRec_Front/Backend
 pip install -r requirements.txt
-python app.py
+python app.py              # 端口 8081
 ```
 
-访问端口：
-
-```text
-http://localhost:8080
-```
-
-### 10.6 启动 Vue 前端
+### 10.6 手动启动 Vue 前端
 
 ```bash
 cd JobRec_Front
 npm install
-npm run dev
-```
-
-访问地址：
-
-```text
-http://localhost:8089
+npm run dev                # 端口 8089
 ```
 
 ## 11. 配置项说明

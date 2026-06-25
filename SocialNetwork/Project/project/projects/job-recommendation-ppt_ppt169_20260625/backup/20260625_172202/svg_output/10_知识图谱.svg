@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <clipPath id="kgClip"><rect x="620" y="100" width="600" height="458" rx="14"/></clipPath>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">知识图谱可视化</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">KNOWLEDGE GRAPH VISUALIZATION</text>
+  </g>
+
+  <!-- Left: text description -->
+  <g id="text-content" transform="translate(60, 145)">
+    <!-- Key numbers -->
+    <g transform="translate(0, 0)">
+      <rect width="155" height="70" rx="12" fill="#E8F5E9"/>
+      <text x="77" y="30" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="36" font-weight="bold" fill="#2E7D32">6</text>
+      <text x="77" y="56" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#666666">实体类型</text>
+    </g>
+    <g transform="translate(175, 0)">
+      <rect width="155" height="70" rx="12" fill="#E8F5E9"/>
+      <text x="77" y="30" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="36" font-weight="bold" fill="#2E7D32">5</text>
+      <text x="77" y="56" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#666666">关系类型</text>
+    </g>
+    <g transform="translate(350, 0)">
+      <rect width="155" height="70" rx="12" fill="#E8F5E9"/>
+      <text x="77" y="30" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="36" font-weight="bold" fill="#2E7D32">803</text>
+      <text x="77" y="56" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#666666">岗位数据</text>
+    </g>
+
+    <!-- Description -->
+    <text x="0" y="110" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">将招聘数据转化为图结构，展示岗位与技能、</text>
+    <text x="0" y="142" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">学历、经验、公司、城市之间的连接关系。</text>
+    <text x="0" y="174" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">节点颜色代表不同实体类型，连线表示关系。</text>
+
+    <!-- Feature bullets -->
+    <g transform="translate(0, 230)">
+      <use data-icon="tabler-outline/check" x="0" y="0" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="22" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">ECharts力导向图渲染，支持交互拖拽</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="46" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="68" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">节点按实体类型着色，直观区分</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="92" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="114" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">支持按条件筛选子图</text>
+
+      <text x="0" y="162" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1B5E20">相比传统表格，图谱更适合直观</text>
+      <text x="0" y="194" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1B5E20">解释岗位要求之间的关联。</text>
+    </g>
+  </g>
+
+  <!-- Right: screenshot -->
+  <g id="screenshot">
+    <image href="../images/02-knowledge-graph.png" x="620" y="100" width="600" height="458"
+           clip-path="url(#kgClip)" preserveAspectRatio="xMidYMid meet"/>
+    <rect x="620" y="100" width="600" height="458" rx="14" fill="none" stroke="#C8E6C9" stroke-width="1"/>
+    <text x="920" y="580" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">知识图谱可视化界面</text>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">10</text>
+</svg>

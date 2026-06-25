@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <clipPath id="chatClip"><rect x="620" y="100" width="600" height="458" rx="14"/></clipPath>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">AI 智能问答</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">AI INTELLIGENT Q&amp;A</text>
+  </g>
+
+  <!-- Left: 2x3 feature grid -->
+  <g id="features" transform="translate(60, 130)">
+    <g transform="translate(0, 0)">
+      <rect width="260" height="140" rx="14" fill="#E8F5E9"/>
+      <use data-icon="tabler-outline/message-circle" x="16" y="16" width="32" height="32" fill="#2E7D32" stroke-width="2"/>
+      <text x="16" y="70" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">自然语言交互</text>
+      <text x="16" y="100" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">日常语言提问职业发展和技能学习</text>
+    </g>
+    <g transform="translate(280, 0)">
+      <rect width="260" height="140" rx="14" fill="#E8F5E9"/>
+      <use data-icon="tabler-outline/file-text" x="16" y="16" width="32" height="32" fill="#2E7D32" stroke-width="2"/>
+      <text x="16" y="70" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">Markdown渲染</text>
+      <text x="16" y="100" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">支持代码高亮和公式渲染回答</text>
+    </g>
+    <g transform="translate(0, 160)">
+      <rect width="260" height="140" rx="14" fill="#E8F5E9"/>
+      <use data-icon="tabler-outline/arrow-right" x="16" y="16" width="32" height="32" fill="#2E7D32" stroke-width="2"/>
+      <text x="16" y="70" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">SSE流式响应</text>
+      <text x="16" y="100" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">Server-Sent Events逐字实时输出</text>
+    </g>
+    <g transform="translate(280, 160)">
+      <rect width="260" height="140" rx="14" fill="#E8F5E9"/>
+      <use data-icon="tabler-outline/brain" x="16" y="16" width="32" height="32" fill="#2E7D32" stroke-width="2"/>
+      <text x="16" y="70" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">上下文理解</text>
+      <text x="16" y="100" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">支持多轮对话，意图理解</text>
+    </g>
+    <g transform="translate(0, 320)">
+      <rect width="260" height="140" rx="14" fill="#E8F5E9"/>
+      <use data-icon="tabler-outline/star" x="16" y="16" width="32" height="32" fill="#2E7D32" stroke-width="2"/>
+      <text x="16" y="70" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">职业领域专长</text>
+      <text x="16" y="100" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">针对职业发展、技能学习优化</text>
+    </g>
+    <g transform="translate(280, 320)">
+      <rect width="260" height="140" rx="14" fill="#E8F5E9"/>
+      <use data-icon="tabler-outline/server" x="16" y="16" width="32" height="32" fill="#2E7D32" stroke-width="2"/>
+      <text x="16" y="70" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">大模型驱动</text>
+      <text x="16" y="100" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">接入DeepSeek-V3，回答质量高</text>
+    </g>
+  </g>
+
+  <!-- Right: screenshot -->
+  <g id="screenshot">
+    <image href="../images/05-ai-chat.png" x="620" y="100" width="600" height="458"
+           clip-path="url(#chatClip)" preserveAspectRatio="xMidYMid meet"/>
+    <rect x="620" y="100" width="600" height="458" rx="14" fill="none" stroke="#C8E6C9" stroke-width="1"/>
+    <text x="920" y="580" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">AI智能问答界面</text>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">13</text>
+</svg>

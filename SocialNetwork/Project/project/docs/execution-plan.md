@@ -1,8 +1,8 @@
 # 执行计划：职位推荐系统复现
 
-> 最后更新：2026-05-07 23:10
+> 最后更新：2026-06-25
 
-## 当前状态：Phase 4 完成，Phase 5 部分完成
+## 当前状态：全部完成 ✅
 
 ## Phase 1：环境准备 ✅
 
@@ -45,49 +45,68 @@
 | 4.4 | `npm install` | 通过 (有 npm audit 警告) |
 | 4.5 | `npm run dev` → 端口 8089 (Vite) | 运行中 |
 
-## Phase 5：端到端验证 ⚠️
+## Phase 5：端到端验证 ✅
 
 | 步骤 | 操作 | 结果 |
 |------|------|------|
 | 5.1 | `curl localhost:8089` | 200，页面正常 |
 | 5.2 | `POST /user/login` (Spring Boot) | 200，数据库链路正常 |
-| 5.3 | `POST /api/search` (Flask) | 200，KG + AI 响应正常 |
-| 5.4 | `POST /api/recommend` (Flask) | 200，但 SiliconFlow API 调用耗时长 |
-| 5.5 | 浏览器登录 | **未完成**（种子账号密码是 Argon2 哈希，无法反推） |
+| 5.3 | `POST /user/register` (Spring Boot) | 200，注册成功并返回 JWT + 菜单 |
+| 5.4 | `POST /api/search` (Flask + Neo4j) | 200，KG 搜索返回岗位 + 图谱数据 |
+| 5.5 | `POST /api/recommend` (Flask + Neo4j) | 200，推荐岗位 + ECharts 关系图 |
+| 5.6 | `POST /api/analyze` (Flask + LLM) | 200，AI 生成职业时间线 |
+| 5.7 | 浏览器访问前端 | 页面加载正常，菜单动态路由可用 |
 
-## 遗留问题
+## Phase 6：Neo4j 数据导入 ✅
 
-| # | 问题 | 优先级 | 处理方向 |
-|---|------|--------|----------|
-| 1 | **种子账号密码未知** | 高 | 注册新账号或通过 API 直接注册 |
-| 2 | **SiliconFlow API Key** | 高 | 用户后续替换为自有 key |
-| 3 | **Neo4j 知识图谱无数据** | 中 | 需原始数据导入脚本 |
-| 4 | **Redis 无预热数据** | 低 | 不影响功能 |
+| 步骤 | 操作 | 结果 |
+|------|------|------|
+| 6.1 | 创建 `neo4j_import.py` 导入脚本 | 从 MySQL jobSys 读取 803 条岗位 |
+| 6.2 | 运行导入 | Neo4j 创建 734 Job, 751 Company, 2048 Skill, 8 Degree, 7 Experience 节点及关系 |
+
+## 已解决的历史遗留问题
+
+| # | 问题 | 解决方法 |
+|---|------|----------|
+| 1 | 种子账号密码未知 | 通过 `/user/register` API 注册新用户（需 `scope` 和 `email` 字段） |
+| 3 | Neo4j 知识图谱无数据 | 创建 `neo4j_import.py` 导入脚本，从 jobSys 表批量导入 |
 
 ## 服务总览
 
 ```
-Docker:
-  redis:7-alpine     → localhost:6379
-  neo4j:5-community  → localhost:7474 (HTTP) / 7687 (Bolt)
+Docker Compose:
+  mysql:8.0          → localhost:3413 (容器 3306)
+  redis:7-alpine     → localhost:6380 (容器 6379)
+  neo4j:community    → localhost:7688 Bolt / 7475 HTTP (容器 7687/7474)
 
 本地进程:
-  Flask (python)     → localhost:8080  /api/*
+  Flask (python)     → localhost:8081  /api/*
   Spring Boot (java) → localhost:8090  其他所有 API
   Vite (node)        → localhost:8089  前端页面
 ```
 
+**注意**：端口映射与 docker-compose.yml 保持一致。application.yml 中 MySQL 端口为 3413，Redis 端口为 6380，kg_config.py 中 Neo4j Bolt 端口为 7688。
+
 ## 启动命令速查
 
 ```bash
-# 按顺序启动所有服务（每次需要复现时）
-docker start redis neo4j
+# 方式一：一键启动（推荐）
+cd project
+start-project.bat
+
+# 方式二：手动按顺序启动
+docker compose up -d  # 启动基础设施
+# 等待容器 healthy
+
+# Neo4j 数据导入（首次或数据重置后）
+cd JobRec_Front/Backend
+python neo4j_import.py
 
 # Flask (终端1)
-cd JobRec_Front/Backend && D:/anaconda3/python.exe app.py
+cd JobRec_Front/Backend && python app.py
 
 # Spring Boot (终端2)
-export JAVA_HOME="C:/Program Files/Microsoft/jdk-17.0.19.10-hotspot"
+export JAVA_HOME="C:/Program Files/Java/jdk-21"
 cd JobRec_Back && ./mvnw spring-boot:run
 
 # 前端 (终端3)

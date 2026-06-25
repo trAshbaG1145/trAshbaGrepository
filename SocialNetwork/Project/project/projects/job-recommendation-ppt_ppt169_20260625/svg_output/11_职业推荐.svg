@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <clipPath id="recClip"><rect x="620" y="100" width="600" height="458" rx="14"/></clipPath>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">职业推荐系统</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">JOB RECOMMENDATION SYSTEM</text>
+  </g>
+
+  <!-- Left: 5-step flow -->
+  <g id="steps" transform="translate(60, 140)">
+    <!-- Step 1 -->
+    <g transform="translate(0, 0)">
+      <circle cx="22" cy="22" r="16" fill="#2E7D32"/>
+      <text x="22" y="28" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="bold" fill="#FFFFFF">1</text>
+      <text x="50" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#333333">用户输入描述</text>
+      <text x="50" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#666666">输入技能、学历、经验等自然语言</text>
+    </g>
+    <!-- Arrow -->
+    <polygon points="22,72 30,82 22,92" fill="#81C784"/>
+
+    <!-- Step 2 -->
+    <g transform="translate(0, 96)">
+      <circle cx="22" cy="22" r="16" fill="#2E7D32"/>
+      <text x="22" y="28" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="bold" fill="#FFFFFF">2</text>
+      <text x="50" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#333333">NLP关键词提取</text>
+      <text x="50" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#666666">技能/学历/经验实体识别</text>
+    </g>
+    <polygon points="22,168 30,178 22,188" fill="#81C784"/>
+
+    <!-- Step 3 -->
+    <g transform="translate(0, 192)">
+      <circle cx="22" cy="22" r="16" fill="#2E7D32"/>
+      <text x="22" y="28" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="bold" fill="#FFFFFF">3</text>
+      <text x="50" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#333333">图谱条件匹配</text>
+      <text x="50" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#666666">Neo4j查询满足条件的岗位</text>
+    </g>
+    <polygon points="22,264 30,274 22,284" fill="#81C784"/>
+
+    <!-- Step 4 -->
+    <g transform="translate(0, 288)">
+      <circle cx="22" cy="22" r="16" fill="#2E7D32"/>
+      <text x="22" y="28" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="bold" fill="#FFFFFF">4</text>
+      <text x="50" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#333333">多维匹配评分计算</text>
+    </g>
+    <polygon points="22,360 30,370 22,380" fill="#81C784"/>
+
+    <!-- Step 5 -->
+    <g transform="translate(0, 384)">
+      <circle cx="22" cy="22" r="16" fill="#1B5E20"/>
+      <text x="22" y="28" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="18" font-weight="bold" fill="#FFFFFF">5</text>
+      <text x="50" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#333333">Top-K排序输出</text>
+      <text x="50" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#666666">推荐结果 + 图谱可视化解释</text>
+    </g>
+  </g>
+
+  <!-- Right: screenshot + weight cards -->
+  <g id="right-panel">
+    <!-- Screenshot -->
+    <image href="../images/03-career-recommendation.png" x="620" y="100" width="600" height="400"
+           clip-path="url(#recClip)" preserveAspectRatio="xMidYMid meet"/>
+    <rect x="620" y="100" width="600" height="400" rx="14" fill="none" stroke="#C8E6C9" stroke-width="1"/>
+
+    <!-- Weight cards -->
+    <g transform="translate(620, 520)">
+      <rect width="130" height="80" rx="12" fill="#E8F5E9"/>
+      <text x="65" y="35" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#2E7D32">40%</text>
+      <text x="65" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#666666">技能命中</text>
+    </g>
+    <g transform="translate(770, 520)">
+      <rect width="130" height="80" rx="12" fill="#E8F5E9"/>
+      <text x="65" y="35" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#2E7D32">25%</text>
+      <text x="65" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#666666">学历匹配</text>
+    </g>
+    <g transform="translate(920, 520)">
+      <rect width="130" height="80" rx="12" fill="#E8F5E9"/>
+      <text x="65" y="35" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#2E7D32">25%</text>
+      <text x="65" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#666666">经验匹配</text>
+    </g>
+    <g transform="translate(1070, 520)">
+      <rect width="130" height="80" rx="12" fill="#E8F5E9"/>
+      <text x="65" y="35" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#2E7D32">10%</text>
+      <text x="65" y="62" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#666666">薪资匹配</text>
+    </g>
+
+    <text x="1155" y="525" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">推荐结果界面</text>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">11</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="chapterBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B5E20" />
+      <stop offset="100%" stop-color="#2E7D32" />
+    </linearGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#81C784" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#1B5E20" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#chapterBg3)" />
+  <circle cx="640" cy="360" r="350" fill="url(#glow3)" />
+
+  <g id="chapter-content">
+    <text x="640" y="280" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#81C784" letter-spacing="8">PART 03</text>
+    <path fill="#81C784" fill-opacity="0.5" d="M541,310 H739 A1,1 0 0 1 740,311 V311 A1,1 0 0 1 739,312 H541 A1,1 0 0 1 540,311 V311 A1,1 0 0 1 541,310 Z" />
+    <text x="640" y="390" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="56" font-weight="bold" fill="#FFFFFF">推荐算法与大模型</text>
+    <text x="640" y="450" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#C8E6C9" letter-spacing="6">ALGORITHM &amp; LLM INTEGRATION</text>
+  </g>
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#81C784">15</text>
+</svg>

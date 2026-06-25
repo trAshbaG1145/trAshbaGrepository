@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <clipPath id="uploadClip"><rect x="60" y="100" width="560" height="240" rx="14"/></clipPath>
+    <clipPath id="analysisClip"><rect x="640" y="100" width="580" height="240" rx="14"/></clipPath>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">简历上传与智能分析</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">RESUME UPLOAD &amp; ANALYSIS</text>
+  </g>
+
+  <!-- Top row: two screenshots side by side -->
+  <g id="screenshots-top">
+    <!-- Upload screenshot (left) -->
+    <image href="../images/06-resume-upload.png" x="60" y="100" width="560" height="240"
+           clip-path="url(#uploadClip)" preserveAspectRatio="xMidYMid meet"/>
+    <rect x="60" y="100" width="560" height="240" rx="14" fill="none" stroke="#C8E6C9" stroke-width="1"/>
+    <text x="340" y="362" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">简历上传入口</text>
+
+    <!-- Analysis screenshot (right) -->
+    <image href="../images/07-resume-analysis.png" x="640" y="100" width="580" height="240"
+           clip-path="url(#analysisClip)" preserveAspectRatio="xMidYMid meet"/>
+    <rect x="640" y="100" width="580" height="240" rx="14" fill="none" stroke="#C8E6C9" stroke-width="1"/>
+    <text x="930" y="362" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">简历分析结果</text>
+  </g>
+
+  <!-- Process flow bar -->
+  <g id="process-bar" transform="translate(60, 400)">
+    <rect width="1160" height="56" rx="14" fill="#E8F5E9"/>
+
+    <text x="60" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#2E7D32">上传</text>
+    <text x="120" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">简历</text>
+    <polygon points="220,28 236,18 236,38" fill="#81C784"/>
+
+    <text x="260" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#2E7D32">识别</text>
+    <text x="320" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">格式</text>
+    <polygon points="420,28 436,18 436,38" fill="#81C784"/>
+
+    <text x="460" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#2E7D32">提取</text>
+    <text x="520" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">文本</text>
+    <polygon points="620,28 636,18 636,38" fill="#81C784"/>
+
+    <text x="660" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#2E7D32">AI分析</text>
+    <polygon points="820,28 836,18 836,38" fill="#81C784"/>
+
+    <text x="860" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#2E7D32">匹配建议</text>
+  </g>
+
+  <!-- Bottom: format support + analysis output cards -->
+  <g id="bottom-info" transform="translate(60, 485)">
+    <!-- Format support -->
+    <g transform="translate(0, 0)">
+      <rect width="550" height="170" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <text x="24" y="38" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">支持格式与解析</text>
+      <g transform="translate(24, 66)">
+        <rect width="150" height="44" rx="10" fill="#FFFFFF"/>
+        <text x="75" y="29" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#333333">PDF</text>
+        <text x="170" y="29" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">PyMuPDF (fitz)</text>
+        <text x="170" y="66" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">Word · python-docx</text>
+        <text x="170" y="103" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">图片 · pytesseract OCR</text>
+      </g>
+    </g>
+
+    <!-- Analysis output -->
+    <g transform="translate(580, 0)">
+      <rect width="580" height="170" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+      <text x="24" y="38" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">AI分析输出</text>
+      <g transform="translate(24, 66)">
+        <rect width="120" height="36" rx="10" fill="#FFFFFF"/>
+        <text x="60" y="25" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">职业名称</text>
+        <rect width="140" height="36" rx="10" fill="#FFFFFF" transform="translate(135, 0)"/>
+        <text x="205" y="25" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">匹配概率</text>
+        <rect width="120" height="36" rx="10" fill="#FFFFFF" transform="translate(290, 0)"/>
+        <text x="350" y="25" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">市场状况</text>
+        <rect width="120" height="36" rx="10" fill="#FFFFFF" transform="translate(425, 0)"/>
+        <text x="485" y="25" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">发展行情</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">14</text>
+</svg>

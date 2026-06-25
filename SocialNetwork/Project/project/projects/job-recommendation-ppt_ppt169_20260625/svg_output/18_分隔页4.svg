@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="chapBg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B5E20"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#81C784" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#1B5E20" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#chapBg4)"/>
+  <circle cx="640" cy="360" r="350" fill="url(#glow4)"/>
+
+  <g id="chapter-content">
+    <text x="640" y="310" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#81C784" letter-spacing="8">PART 04</text>
+    <rect x="540" y="340" width="200" height="2" rx="1" fill="#81C784" fill-opacity="0.5"/>
+    <text x="640" y="420" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="56" font-weight="bold" fill="#FFFFFF">总结</text>
+    <text x="640" y="480" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#C8E6C9" letter-spacing="6">SUMMARY</text>
+  </g>
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#81C784">18</text>
+</svg>

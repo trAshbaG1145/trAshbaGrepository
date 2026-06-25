@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <clipPath id="dashClip"><rect x="60" y="110" width="680" height="475" rx="14"/></clipPath>
+    <clipPath id="loginClip"><rect x="780" y="110" width="440" height="260" rx="14"/></clipPath>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">系统入口与主界面</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">SYSTEM ENTRY &amp; DASHBOARD</text>
+  </g>
+
+  <!-- Dashboard screenshot (main, left) -->
+  <g id="screenshot-dashboard">
+    <rect x="60" y="110" width="680" height="475" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+    <image href="../images/01-dashboard.png" x="60" y="110" width="680" height="475"
+           clip-path="url(#dashClip)" preserveAspectRatio="xMidYMid meet"/>
+    <text x="400" y="610" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">主界面 — 登录后仪表盘</text>
+  </g>
+
+  <!-- Login screenshot (smaller, right top) -->
+  <g id="screenshot-login">
+    <rect x="780" y="110" width="440" height="260" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+    <image href="../images/00-login.png" x="780" y="110" width="440" height="260"
+           clip-path="url(#loginClip)" preserveAspectRatio="xMidYMid meet"/>
+    <text x="1000" y="392" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">登录入口</text>
+  </g>
+
+  <!-- Feature description (right bottom) -->
+  <g id="features" transform="translate(780, 420)">
+    <rect width="440" height="230" rx="14" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1"/>
+
+    <g transform="translate(24, 24)">
+      <use data-icon="tabler-outline/check" x="0" y="0" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="22" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">用户注册/登录，JWT Token认证</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="46" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="68" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">角色选择（求职者 / 企业方）</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="92" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="114" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">左侧深色导航栏按功能分组</text>
+
+      <use data-icon="tabler-outline/check" x="0" y="138" width="28" height="28" fill="#2E7D32" stroke-width="2"/>
+      <text x="40" y="160" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">顶部工具栏 · 中央内容区</text>
+
+      <text x="40" y="195" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#999999">注意：首页统计面板数字为模板展示，尚未接入真实业务统计</text>
+    </g>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">09</text>
+</svg>

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  
+  <g id="header">
+    <text x="60" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">
+      系统整体架构
+    </text>
+    <text x="60" y="95" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">
+      SYSTEM ARCHITECTURE
+    </text>
+    <path fill="#2E7D32" d="M62,108 H138 A2,1.50 0 0 1 140,109.50 V109.50 A2,1.50 0 0 1 138,111 H62 A2,1.50 0 0 1 60,109.50 V109.50 A2,1.50 0 0 1 62,108 Z" />
+  </g>
+
+  
+
+  
+  <g id="architecture" transform="translate(80, 145)">
+
+    
+    <g id="tier-frontend">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H1106 A14,14 0 0 1 1120,14 V101 A14,14 0 0 1 1106,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      
+      <path fill="#2E7D32" d="M14,0 H186 A14,14 0 0 1 200,14 V101 A14,14 0 0 1 186,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      <rect x="186" y="0" width="14" height="115" fill="#2E7D32" />
+      
+  <g transform="translate(40, 30) scale(1.66667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+  </g>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">前端展示层</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#C8E6C9">FRONTEND</text>
+      
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">Vue 3</tspan> · Element Plus · ECharts 5 — 单页应用 · 动态路由 · 图谱可视化 · 响应式布局
+      </text>
+    </g>
+
+    
+    <g transform="translate(540, 260)">
+      <polygon points="0,0 16,18 32,0" fill="#81C784" />
+    </g>
+
+    
+    <g id="tier-ai" transform="translate(0, 140)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H1106 A14,14 0 0 1 1120,14 V101 A14,14 0 0 1 1106,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#1B5E20" d="M14,0 H186 A14,14 0 0 1 200,14 V101 A14,14 0 0 1 186,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      <rect x="186" y="0" width="14" height="115" fill="#1B5E20" />
+      
+  <g transform="translate(40, 30) scale(1.66667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" />
+    <path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8" />
+    <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" />
+    <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" />
+    <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" />
+    <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" />
+  </g>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">AI 分析引擎</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#C8E6C9">AI SERVICE</text>
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">Flask</tspan> · DeepSeek-V3 · Neo4j — 推荐引擎 · 简历解析 · AI问答 · 时间线分析
+      </text>
+    </g>
+
+    
+    <g transform="translate(540, 400)">
+      <polygon points="0,0 16,18 32,0" fill="#81C784" />
+    </g>
+
+    
+    <g id="tier-backend" transform="translate(0, 280)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H1106 A14,14 0 0 1 1120,14 V101 A14,14 0 0 1 1106,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M14,0 H186 A14,14 0 0 1 200,14 V101 A14,14 0 0 1 186,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      <rect x="186" y="0" width="14" height="115" fill="#2E7D32" />
+      
+  <g transform="translate(40, 30) scale(1.66667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3" />
+    <path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" />
+    <path d="M7 8l0 .01" />
+    <path d="M7 16l0 .01" />
+  </g>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">业务服务层</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#C8E6C9">BACKEND</text>
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">Spring Boot 3.4</tspan> · MyBatis-Plus · JWT — 用户管理 · 职位CRUD · 鉴权拦截 · 缓存加速
+      </text>
+    </g>
+
+    
+    <g transform="translate(540, 540)">
+      <polygon points="0,0 16,18 32,0" fill="#81C784" />
+    </g>
+
+    
+    <g id="tier-data" transform="translate(0, 420)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H1106 A14,14 0 0 1 1120,14 V101 A14,14 0 0 1 1106,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#81C784" d="M14,0 H186 A14,14 0 0 1 200,14 V101 A14,14 0 0 1 186,115 H14 A14,14 0 0 1 0,101 V14 A14,14 0 0 1 14,0 Z" />
+      <rect x="186" y="0" width="14" height="115" fill="#81C784" />
+      
+  <g transform="translate(40, 30) scale(1.66667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+    <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+    <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+  </g>
+      <text x="100" y="60" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">数据存储层</text>
+      <text x="100" y="88" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#E8F5E9">DATA LAYER</text>
+      <text x="230" y="55" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">
+        <tspan font-weight="bold">MySQL 8.0</tspan> · Neo4j · Redis — 业务数据 · 图数据库 · 会话缓存
+      </text>
+    </g>
+  </g>
+
+  
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">05</text>
+</svg>

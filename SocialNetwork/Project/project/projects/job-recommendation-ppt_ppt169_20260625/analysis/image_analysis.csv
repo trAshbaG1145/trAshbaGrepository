@@ -1,0 +1,14 @@
+No,Filename,Width,Height,AspectRatio,PixelAspectRatio,RatioSource,UsageCount,DisplayRatioVariants,AssetKind,SvgRenderable,PptxNativeSupported,SizeKB,Category,ImageArea_SxS,TextArea_SxS
+1,00-login.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,28.9,Standard landscape,785x600,355x600
+2,01-dashboard.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,87.6,Standard landscape,785x600,355x600
+3,02-knowledge-graph.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,201.0,Standard landscape,785x600,355x600
+4,03-career-recommendation.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,172.3,Standard landscape,785x600,355x600
+5,04-career-timeline.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,171.1,Standard landscape,785x600,355x600
+6,05-ai-chat.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,166.0,Standard landscape,785x600,355x600
+7,06-resume-upload.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,63.3,Standard landscape,785x600,355x600
+8,07-resume-analysis.png,1440,1100,1.31,1.31,pixel,1,,bitmap,True,True,188.2,Standard landscape,785x600,355x600
+9,image1.png,1440,1100,1.31,1.31,manifest,1,1.31,bitmap,True,True,201.0,Standard landscape,785x600,355x600
+10,image2.png,1440,1100,1.31,1.31,manifest,1,1.31,bitmap,True,True,172.3,Standard landscape,785x600,355x600
+11,image3.png,1440,1100,1.31,1.31,manifest,1,1.31,bitmap,True,True,171.1,Standard landscape,785x600,355x600
+12,image4.png,1440,1100,1.31,1.31,manifest,1,1.31,bitmap,True,True,166.0,Standard landscape,785x600,355x600
+13,image5.png,1440,1100,1.31,1.31,manifest,1,1.31,bitmap,True,True,188.2,Standard landscape,785x600,355x600

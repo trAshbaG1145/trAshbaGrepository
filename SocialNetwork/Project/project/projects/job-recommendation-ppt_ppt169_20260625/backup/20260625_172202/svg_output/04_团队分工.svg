@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Header -->
+  <g id="header">
+    <text x="60" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">
+      团队分工
+    </text>
+    <text x="60" y="95" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">
+      TEAM WORK DISTRIBUTION
+    </text>
+    <rect x="60" y="108" width="80" height="3" rx="2" fill="#2E7D32"/>
+  </g>
+
+  <!-- Team cards - two members -->
+  <g id="team" transform="translate(140, 180)">
+
+    <!-- Member 1: 陈佳伸 -->
+    <g id="member-1">
+      <rect width="440" height="420" rx="16" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1.5"/>
+      <!-- Avatar circle -->
+      <circle cx="220" cy="80" r="55" fill="#2E7D32"/>
+      <use data-icon="tabler-outline/users" x="193" y="53" width="54" height="54" fill="#FFFFFF" stroke-width="2"/>
+      <!-- Name -->
+      <text x="220" y="175" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+        陈佳伸
+      </text>
+      <!-- Divider -->
+      <rect x="80" y="200" width="280" height="2" rx="1" fill="#C8E6C9"/>
+      <!-- Tasks -->
+      <g transform="translate(60, 240)">
+        <circle cx="8" cy="5" r="6" fill="#81C784"/>
+        <text x="30" y="12" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">参考项目查阅</text>
+        <circle cx="8" cy="52" r="6" fill="#81C784"/>
+        <text x="30" y="59" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">项目进度管理</text>
+        <circle cx="8" cy="99" r="6" fill="#81C784"/>
+        <text x="30" y="106" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">PPT制作/汇报</text>
+      </g>
+    </g>
+
+    <!-- Member 2: 黄泰 -->
+    <g id="member-2" transform="translate(560, 0)">
+      <rect width="440" height="420" rx="16" fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1.5"/>
+      <!-- Avatar circle -->
+      <circle cx="220" cy="80" r="55" fill="#2E7D32"/>
+      <use data-icon="tabler-outline/code" x="193" y="53" width="54" height="54" fill="#FFFFFF" stroke-width="2"/>
+      <!-- Name -->
+      <text x="220" y="175" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B5E20">
+        黄泰
+      </text>
+      <!-- Divider -->
+      <rect x="80" y="200" width="280" height="2" rx="1" fill="#C8E6C9"/>
+      <!-- Tasks -->
+      <g transform="translate(60, 240)">
+        <circle cx="8" cy="5" r="6" fill="#81C784"/>
+        <text x="30" y="12" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">项目实现/改进</text>
+        <circle cx="8" cy="52" r="6" fill="#81C784"/>
+        <text x="30" y="59" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">功能测试</text>
+        <circle cx="8" cy="99" r="6" fill="#81C784"/>
+        <text x="30" y="106" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#333333">数据库设计与优化</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">04</text>
+</svg>

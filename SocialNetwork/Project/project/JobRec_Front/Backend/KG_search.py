@@ -1,6 +1,13 @@
 from kg_config import get_graph
 
-graph = get_graph()
+_graph = None
+
+
+def _get_graph():
+    global _graph
+    if _graph is None:
+        _graph = get_graph()
+    return _graph
 
 
 def search_jobs(job_name=None, skills=None, education=None, experience=None):
@@ -72,7 +79,7 @@ def search_jobs(job_name=None, skills=None, education=None, experience=None):
     print("Query parameters:", params)
 
     try:
-        result = graph.run(query, params)
+        result = _get_graph().run(query, params)
     except Exception as e:
         print("Query execution failed:", e)
         return [], {"nodes": [], "links": [], "categories": []}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8F5E9" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#C8E6C9" />
+    </linearGradient>
+    <linearGradient id="titleBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2E7D32" />
+      <stop offset="100%" stop-color="#81C784" />
+    </linearGradient>
+    <radialGradient id="decorRight" cx="85%" cy="15%" r="50%">
+      <stop offset="0%" stop-color="#2E7D32" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#2E7D32" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="bottomFade" x1="0%" y1="0%" x2="0%" y2="1%">
+      <stop offset="0%" stop-color="#1B5E20" stop-opacity="0" />
+      <stop offset="100%" stop-color="#1B5E20" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect width="1280" height="720" fill="url(#coverBg)" />
+
+  
+  <circle cx="1100" cy="120" r="280" fill="url(#decorRight)" />
+  <rect x="0" y="650" width="1280" height="70" fill="url(#bottomFade)" />
+
+  
+  <rect x="0" y="0" width="1280" height="6" fill="url(#titleBar)" />
+
+  
+  <line x1="120" y1="180" x2="1160" y2="180" stroke="#81C784" stroke-width="1" stroke-opacity="0.4" />
+
+  
+  <g id="cover-titles">
+    <text x="640" y="280" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="72" font-weight="bold" fill="#1B5E20">
+      社交网络数据分析与处理
+    </text>
+    <text x="640" y="340" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="36" font-weight="bold" fill="#666666" letter-spacing="8">
+      课程项目汇报
+    </text>
+
+    
+    <path fill="url(#titleBar)" d="M442,370 H838 A2,1.50 0 0 1 840,371.50 V371.50 A2,1.50 0 0 1 838,373 H442 A2,1.50 0 0 1 440,371.50 V371.50 A2,1.50 0 0 1 442,370 Z" />
+
+    
+    <text x="640" y="450" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#2E7D32">
+      职业关系图谱与智能推荐系统
+    </text>
+
+    
+    <text x="640" y="505" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="3">
+      Job Relationship Graph &amp; Intelligent Recommendation System
+    </text>
+  </g>
+
+  
+  <g id="cover-info">
+    <text x="640" y="680" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">
+      华中农业大学 · 信息学院
+    </text>
+  </g>
+
+  
+  <path d="M 0 700 L 60 720 L 0 720 Z" fill="#2E7D32" fill-opacity="0.15" />
+  <path d="M 1280 700 L 1220 720 L 1280 720 Z" fill="#2E7D32" fill-opacity="0.15" />
+</svg>

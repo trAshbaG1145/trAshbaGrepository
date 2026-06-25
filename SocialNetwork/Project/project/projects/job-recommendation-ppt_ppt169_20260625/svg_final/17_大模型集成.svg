@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="60" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="bold" fill="#1B5E20">大语言模型集成</text>
+    <text x="60" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#81C784" letter-spacing="4">LLM INTEGRATION</text>
+  </g>
+
+  
+  <g id="llm-cards" transform="translate(60, 145)">
+    
+    <g transform="translate(0, 0)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H346 A14,14 0 0 1 360,14 V266 A14,14 0 0 1 346,280 H14 A14,14 0 0 1 0,266 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M3,0 H357 A3,3 0 0 1 360,3 V3 A3,3 0 0 1 357,6 H3 A3,3 0 0 1 0,3 V3 A3,3 0 0 1 3,0 Z" />
+      <g transform="translate(24, 30)">
+        
+  <g transform="translate(0, 0) scale(1.5)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1" />
+  </g>
+        <text x="52" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B5E20">AI 职业问答</text>
+        <g transform="translate(0, 56)">
+          <path fill="#FFFFFF" d="M8,0 H304 A8,8 0 0 1 312,8 V28 A8,8 0 0 1 304,36 H8 A8,8 0 0 1 0,28 V8 A8,8 0 0 1 8,0 Z" />
+          <text x="12" y="25" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">SSE流式响应，实时逐字输出</text>
+          <path fill="#FFFFFF" d="M8,46 H304 A8,8 0 0 1 312,54 V74 A8,8 0 0 1 304,82 H8 A8,8 0 0 1 0,74 V54 A8,8 0 0 1 8,46 Z" />
+          <text x="12" y="71" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">Markdown格式渲染回答</text>
+          <path fill="#FFFFFF" d="M8,92 H304 A8,8 0 0 1 312,100 V120 A8,8 0 0 1 304,128 H8 A8,8 0 0 1 0,120 V100 A8,8 0 0 1 8,92 Z" />
+          <text x="12" y="117" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">支持代码高亮和公式</text>
+          <path fill="#FFFFFF" d="M8,138 H304 A8,8 0 0 1 312,146 V166 A8,8 0 0 1 304,174 H8 A8,8 0 0 1 0,166 V146 A8,8 0 0 1 8,138 Z" />
+          <text x="12" y="163" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">多轮对话上下文理解</text>
+        </g>
+      </g>
+    </g>
+
+    
+    <g transform="translate(400, 0)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H346 A14,14 0 0 1 360,14 V266 A14,14 0 0 1 346,280 H14 A14,14 0 0 1 0,266 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M3,0 H357 A3,3 0 0 1 360,3 V3 A3,3 0 0 1 357,6 H3 A3,3 0 0 1 0,3 V3 A3,3 0 0 1 3,0 Z" />
+      <g transform="translate(24, 30)">
+        
+  <g transform="translate(0, 0) scale(1.5)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M4 16l6 -7l5 5l5 -6" />
+    <path d="M14 14a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M9 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M3 16a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M19 8a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+  </g>
+        <text x="52" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B5E20">职业时间线</text>
+        <g transform="translate(0, 56)">
+          <path fill="#FFFFFF" d="M8,0 H304 A8,8 0 0 1 312,8 V28 A8,8 0 0 1 304,36 H8 A8,8 0 0 1 0,28 V8 A8,8 0 0 1 8,0 Z" />
+          <text x="12" y="25" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">根据职业名自动生成阶段</text>
+          <path fill="#FFFFFF" d="M8,46 H304 A8,8 0 0 1 312,54 V74 A8,8 0 0 1 304,82 H8 A8,8 0 0 1 0,74 V54 A8,8 0 0 1 8,46 Z" />
+          <text x="12" y="71" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">包含背景和关键事件</text>
+          <path fill="#FFFFFF" d="M8,92 H304 A8,8 0 0 1 312,100 V120 A8,8 0 0 1 304,128 H8 A8,8 0 0 1 0,120 V100 A8,8 0 0 1 8,92 Z" />
+          <text x="12" y="117" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">技能要求随阶段变化</text>
+          <path fill="#FFFFFF" d="M8,138 H304 A8,8 0 0 1 312,146 V166 A8,8 0 0 1 304,174 H8 A8,8 0 0 1 0,166 V146 A8,8 0 0 1 8,138 Z" />
+          <text x="12" y="163" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">时间线组件直观展示</text>
+        </g>
+      </g>
+    </g>
+
+    
+    <g transform="translate(800, 0)">
+      <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H346 A14,14 0 0 1 360,14 V266 A14,14 0 0 1 346,280 H14 A14,14 0 0 1 0,266 V14 A14,14 0 0 1 14,0 Z" />
+      <path fill="#2E7D32" d="M3,0 H357 A3,3 0 0 1 360,3 V3 A3,3 0 0 1 357,6 H3 A3,3 0 0 1 0,3 V3 A3,3 0 0 1 3,0 Z" />
+      <g transform="translate(24, 30)">
+        
+  <g transform="translate(0, 0) scale(1.5)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+    <path d="M9 9l1 0" />
+    <path d="M9 13l6 0" />
+    <path d="M9 17l6 0" />
+  </g>
+        <text x="52" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B5E20">简历智能匹配</text>
+        <g transform="translate(0, 56)">
+          <path fill="#FFFFFF" d="M8,0 H304 A8,8 0 0 1 312,8 V28 A8,8 0 0 1 304,36 H8 A8,8 0 0 1 0,28 V8 A8,8 0 0 1 8,0 Z" />
+          <text x="12" y="25" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">多格式简历文本提取</text>
+          <path fill="#FFFFFF" d="M8,46 H304 A8,8 0 0 1 312,54 V74 A8,8 0 0 1 304,82 H8 A8,8 0 0 1 0,74 V54 A8,8 0 0 1 8,46 Z" />
+          <text x="12" y="71" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">AI生成职业匹配分析</text>
+          <path fill="#FFFFFF" d="M8,92 H304 A8,8 0 0 1 312,100 V120 A8,8 0 0 1 304,128 H8 A8,8 0 0 1 0,120 V100 A8,8 0 0 1 8,92 Z" />
+          <text x="12" y="117" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">匹配概率量化评估</text>
+          <path fill="#FFFFFF" d="M8,138 H304 A8,8 0 0 1 312,146 V166 A8,8 0 0 1 304,174 H8 A8,8 0 0 1 0,166 V146 A8,8 0 0 1 8,138 Z" />
+          <text x="12" y="163" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#333333">市场行情与前景预测</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  
+  <g id="impl-note" transform="translate(60, 460)">
+    <path fill="#E8F5E9" stroke="#C8E6C9" stroke-width="1" d="M14,0 H1146 A14,14 0 0 1 1160,14 V116 A14,14 0 0 1 1146,130 H14 A14,14 0 0 1 0,116 V14 A14,14 0 0 1 14,0 Z" />
+    <text x="24" y="38" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B5E20">技术实现说明</text>
+    <text x="24" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">通过OpenAI兼容接口接入第三方大模型服务（SiliconFlow平台），调用DeepSeek-V3模型。</text>
+    <text x="24" y="106" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" fill="#666666">不同功能模块使用不同Prompt模板组织输入和输出格式，AI返回Markdown由前端渲染。</text>
+  </g>
+
+  <text x="1220" y="700" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#999999">17</text>
+</svg>
