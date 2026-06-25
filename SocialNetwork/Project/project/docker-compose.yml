@@ -1,0 +1,69 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: jobrec-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: MySQL@999999
+      MYSQL_DATABASE: jobrec
+      TZ: Asia/Shanghai
+    ports:
+      - "3413:3306"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-time-zone=+08:00
+    volumes:
+      - jobrec_mysql_data:/var/lib/mysql
+      - ./JobRec_Back/jobrec.sql:/docker-entrypoint-initdb.d/01-jobrec.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    container_name: jobrec-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - jobrec_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  neo4j:
+    image: neo4j:2025.06-community
+    container_name: jobrec-neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/TYH041113
+      NEO4J_dbms_usage__report_enabled: "false"
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512m
+    ports:
+      - "7475:7474"
+      - "7688:7687"
+    volumes:
+      - jobrec_neo4j_data:/data
+      - jobrec_neo4j_logs:/logs
+      - jobrec_neo4j_import:/var/lib/neo4j/import
+      - jobrec_neo4j_plugins:/plugins
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p TYH041113 'RETURN 1' || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+
+volumes:
+  jobrec_mysql_data:
+  jobrec_redis_data:
+  jobrec_neo4j_data:
+  jobrec_neo4j_logs:
+  jobrec_neo4j_import:
+  jobrec_neo4j_plugins:

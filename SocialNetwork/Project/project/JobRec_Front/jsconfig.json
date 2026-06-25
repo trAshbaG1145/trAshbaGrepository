@@ -1,0 +1,21 @@
+{
+  // 为确保能找到输入文件，添加对 .js 和 .jsx 文件的包含
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.js", "src/**/*.jsx"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node", // 使用 Node 模块解析策略
+    "strict": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"] // 如果项目使用 @ 作为 src 别名
+    },
+    "lib": ["ESNext", "DOM"]
+  },
+  "exclude": ["node_modules", "dist"]
+}

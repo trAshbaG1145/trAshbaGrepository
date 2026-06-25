@@ -1,0 +1,44 @@
+server:
+  port: 8090
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
+  web:
+    resources:
+      static-locations: classpath:/static/, file:uploaded-files/resume/,file:uploaded-files/images/uploads/
+  application:
+    name: SpringBoot
+  banner:
+    charset: UTF-8
+    location: classpath:banner.txt
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: MySQL@999999
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3413/jobrec?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+  devtools:
+    restart:
+      additional-paths: src/main/java
+      enabled: true
+      exclude: static/**,public/**
+  data:
+    redis:
+      host: localhost
+      port: 6380
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1
+          max-idle: 5
+          min-idle: 0
+      database: 0
+      connect-timeout: 10000
+
+

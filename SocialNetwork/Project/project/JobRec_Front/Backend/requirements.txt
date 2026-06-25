@@ -1,0 +1,22 @@
+# --- Web 框架与跨域 ---
+Flask
+Flask-Cors
+
+# --- 大语言模型 API ---
+openai
+
+# --- 图数据库连接 (Neo4j) ---
+py2neo
+
+# --- 文档处理与提取 (PDF, Word) ---
+PyMuPDF      # 在代码中被 import fitz
+python-docx    # 在代码中被 import docx
+
+# --- 图像处理与 OCR 识别 ---
+Pillow        # 在代码中被 import PIL
+pytesseract
+pdf2image
+
+# --- 机器学习与自然语言处理 (Hugging Face) ---
+transformers
+torch          # 运行 transformers 模型的底层深度学习框架
