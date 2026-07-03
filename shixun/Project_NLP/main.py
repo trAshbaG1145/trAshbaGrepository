@@ -159,12 +159,11 @@ def main():
                                "prepare-labels", "batch-annotate",
                                "gen-cot", "train-cot", "infer-cot",
                                "full", "interactive"])
-    parser.add_argument("--samples", type=int, default=300)
     args, unknown = parser.parse_known_args()
 
     cmds = {
         "analyze": cmd_analyze,
-        "baseline": lambda: cmd_baseline(samples=args.samples),
+        "baseline": lambda: cmd_baseline(samples=300),
         "submit": cmd_submit,
         "augment": cmd_augment,
         "prepare-labels": cmd_prepare_labels,
