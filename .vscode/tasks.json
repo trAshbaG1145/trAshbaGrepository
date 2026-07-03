@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "g++ 编译当前文件",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-g",
+                "-Wall",
+                "-std=c++11"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "g++ 编译并运行当前文件",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "g++ \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}.exe\" -g -Wall -std=c++11 && \"${fileDirname}/${fileBasenameNoExtension}.exe\""
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/c",
+                    "g++ \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" -g -Wall -std=c++11 && \"${fileDirname}\\${fileBasenameNoExtension}.exe\""
+                ]
+            }
+        }
+    ]
+}

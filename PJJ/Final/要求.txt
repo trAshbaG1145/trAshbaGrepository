@@ -1,0 +1,17 @@
+Drawing on Chapter 9 of the course textbook, select a topic within your own professional field and implement a machine learning task—either regression or classification—and write an experimental report.
+
+Submit a compressed archive containing the data file (.csv), code (.py), and the experimental report (.docx).
+
+Requirements:
+
+Topic selection: Independently choose a topic in your own field and implement a machine learning task (either regression or classification).
+
+Grading: Novelty and practicality of the topic (50%) + experimental report (50%).
+
+Data acquisition: Data may come from a faculty research project or be AI-generated (ensure the data are reasonable, e.g., constrain valid ranges for each column).
+
+The experimental report template is provided in the following file:
+
+Final Lab Assessment – Lab Report Template (Support Vector Machine).docx
+
+Final Lab Assessment – Lab Report Template (Neural Network Regression).docx

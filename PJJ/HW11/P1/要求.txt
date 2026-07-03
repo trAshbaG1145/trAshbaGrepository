@@ -1,0 +1,23 @@
+【Problem Description】    Based on environmental factors influencing tea plant growth, build a neural network–based machine learning model to predict tea yield.
+
+【Data Description】    The dataset contains 15,289 samples. The columns are as follows:
+        Column 1: Sample ID
+        Columns 2–11: Ten environmental factors (e.g., temperature, pests and diseases, etc.)
+        Column 12: Tea quality
+        Column 13: Tea branch length
+        Column 14: Bud density
+        Column 15: Tea yield
+
+    Data files are as follows:   
+
+TeaData.csv
+
+【Output Requirements】
+
+    Print the model evaluation metric R2, rounded to four decimal places.
+
+【HINTS】
+
+    Please write your code with reference to the sample file below and submit a .py file.
+
+MLP Regression Codes Example.docx
