@@ -67,21 +67,6 @@ def log(msg: str):
         f.write(line + "\n")
 
 
-def run_cmd(cmd: str, desc: str = ""):
-    """运行shell命令并记录"""
-    if desc:
-        log(f"--- {desc} ---")
-    log(f"  $ {cmd}")
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    if result.stdout:
-        log(result.stdout[-2000:])  # 只保留最后2000字符
-    if result.stderr and result.returncode != 0:
-        log(f"  STDERR: {result.stderr[-1000:]}")
-    if result.returncode != 0:
-        log(f"  WARNING: command returned {result.returncode}")
-    return result
-
-
 def check_env():
     """检查运行环境"""
     log("=" * 60)
@@ -138,8 +123,22 @@ def install_deps():
         "tqdm",
     ]
 
-    for dep in deps:
-        run_cmd(f"pip install {dep} -q", f"install {dep}")
+    # 一次性安装所有依赖（避免 shell 重定向符 > 被误解析）
+    dep_str = " ".join(f'"{d}"' for d in deps)
+    log("Installing dependencies (this may take a few minutes)...")
+    result = subprocess.run(
+        f"pip install {dep_str}", shell=True,
+        capture_output=True, text=True
+    )
+    if result.returncode != 0:
+        log(f"ERROR: pip install failed (code {result.returncode})")
+        log(f"STDERR: {result.stderr[-2000:]}")
+        log("Try manual install: pip install transformers peft datasets accelerate bitsandbytes sentencepiece tqdm")
+    else:
+        # 只记录关键行（已安装/成功安装的包）
+        for line in result.stdout.split('\n'):
+            if 'Successfully installed' in line or 'already satisfied' in line:
+                log(line.strip())
 
     log("依赖安装完成")
 
@@ -192,7 +191,10 @@ def train():
         device_map="auto",
         trust_remote_code=True,
     )
-    log(f"Model loaded. VRAM used: {torch.cuda.memory_allocated() / 1e9:.1f} GB")
+    if torch.cuda.is_available():
+        log(f"Model loaded. VRAM used: {torch.cuda.memory_allocated() / 1e9:.1f} GB")
+    else:
+        log("Model loaded (CPU)")
 
     # ======== LoRA ========
     log("Applying LoRA...")
@@ -208,10 +210,12 @@ def train():
     model.print_trainable_parameters()
 
     # ======== 训练配置 ========
-    # bf16 需要 Ampere 架构+（A100/A6000/RTX3090/RTX4090）
-    # 旧卡（V100/T4）fallback 到 fp16 或关闭混合精度
-    gpu_name = torch.cuda.get_device_name(0) if torch.cuda.is_available() else ""
-    use_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    if not torch.cuda.is_available():
+        log("ERROR: GPU required for training. Aborting.")
+        sys.exit(1)
+
+    gpu_name = torch.cuda.get_device_name(0)
+    use_bf16 = torch.cuda.is_bf16_supported()
     if use_bf16:
         log(f"Using bf16 precision (GPU: {gpu_name})")
     else:
