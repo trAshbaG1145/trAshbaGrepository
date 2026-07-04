@@ -85,8 +85,23 @@ def check_env():
         if vram_gb < 14:
             log("WARNING: VRAM < 14GB, training may OOM. Reduce batch_size or max_length.")
     else:
-        log("WARNING: CUDA NOT AVAILABLE. Training will be extremely slow on CPU.")
+        # 诊断 CUDA 不可用的原因
+        try:
+            import subprocess
+            result = subprocess.run(["nvidia-smi"], capture_output=True, text=True, timeout=10)
+            if result.returncode == 0:
+                log("ERROR: GPU detected by nvidia-smi but CUDA is unavailable in PyTorch.")
+                log("This usually means PyTorch was compiled for a different CUDA version.")
+                log("Fix: install a compatible PyTorch version. For Tesla V100 (CUDA 12.0):")
+                log("  pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121")
+                log("For other GPUs, check https://pytorch.org/get-started/locally/")
+            else:
+                log("WARNING: No GPU detected. Training will be extremely slow on CPU.")
+        except Exception:
+            log("WARNING: CUDA NOT AVAILABLE. Training will be extremely slow on CPU.")
         log("This script REQUIRES a GPU with >= 16GB VRAM.")
+        log("Aborting — please fix the CUDA/PyTorch mismatch above and re-run.")
+        sys.exit(1)
 
     # 检查训练数据
     if not os.path.exists(Config.TRAIN_DATA):
@@ -113,7 +128,6 @@ def install_deps():
     log("=" * 60)
 
     deps = [
-        "torch>=2.1.0",
         "transformers>=4.40.0",
         "datasets>=2.14.0",
         "accelerate>=0.20.0",
@@ -123,7 +137,13 @@ def install_deps():
         "tqdm",
     ]
 
-    # 一次性安装所有依赖（避免 shell 重定向符 > 被误解析）
+    # 移除可能冲突的 torch 生态包（文本模型不需要 vision/audio）
+    # 云平台常预装 CUDA 版本不匹配的 torchvision/torchaudio，导致 import 时报 libcudart.so 错误
+    log("Removing torchvision/torchaudio if present (not needed for Qwen2.5)...")
+    subprocess.run("pip uninstall torchvision torchaudio -y 2>/dev/null",
+                   shell=True, capture_output=True, text=True)
+
+    # 一次性安装所有依赖
     dep_str = " ".join(f'"{d}"' for d in deps)
     log("Installing dependencies (this may take a few minutes)...")
     result = subprocess.run(
@@ -133,9 +153,8 @@ def install_deps():
     if result.returncode != 0:
         log(f"ERROR: pip install failed (code {result.returncode})")
         log(f"STDERR: {result.stderr[-2000:]}")
-        log("Try manual install: pip install transformers peft datasets accelerate bitsandbytes sentencepiece tqdm")
+        log("Try: pip install transformers peft datasets accelerate bitsandbytes sentencepiece tqdm")
     else:
-        # 只记录关键行（已安装/成功安装的包）
         for line in result.stdout.split('\n'):
             if 'Successfully installed' in line or 'already satisfied' in line:
                 log(line.strip())
