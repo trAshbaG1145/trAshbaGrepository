@@ -12,89 +12,9 @@
 - 🌿 **自然推理** - 物体属性与分类
 - 🔀 **融合推理** - 跨域联合约束求解
 
-## 项目结构
-
-```
-Project_NLP/
-├── main.py                          # 主入口
-├── requirements.txt                 # Python依赖
-├── README.md                        # 本文件
-├── SCoRE2026_项目执行方案.md         # 详细方案文档
-├── data/
-│   ├── SCoRE2026_trainset.json      # 训练集 (3600题)
-│   └── SCoRE2026_testset.json       # 测试集 (1000题，无答案)
-├── src/
-│   ├── constraint_schema.py         # 统一约束Schema定义
-│   ├── solvers/
-│   │   ├── time_solver.py           # 时间推理求解器
-│   │   ├── space_solver.py          # 空间推理求解器
-│   │   ├── social_solver.py         # 社会关系求解器
-│   │   ├── nature_solver.py         # 自然常识求解器
-│   │   └── fusion_solver.py         # 融合域求解器
-│   ├── parser/
-│   │   └── constraint_parser.py     # 约束解析器 (LLM + 模板)
-│   └── pipeline/
-│       ├── score_pipeline.py        # 端到端Pipeline
-│       └── answer_verifier.py       # 答案验证器
-├── scripts/
-│   ├── analyze_data.py              # 数据分析
-│   ├── run_baseline.py              # 基线测试
-│   ├── generate_fusion_data.py      # 融合域数据增强
-│   ├── prepare_constraint_labels.py # 准备约束标注
-│   └── train_constraint_parser.py   # LoRA微调脚本
-├── outputs/                         # 输出目录
-└── checkpoints/                     # 模型检查点
-```
-
-## 快速开始
-
-### 1. 安装依赖
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. 数据分析
-
-```bash
-python main.py analyze
-```
-
-### 3. CoT 训练数据生成（需 DeepSeek API Key）
-
-```bash
-# 先试100条
-python main.py gen-cot --samples 100 --api_key sk-xxx
-# 或设置环境变量
-export DEEPSEEK_API_KEY=sk-xxx
-python main.py gen-cot --samples 100
-```
-
-### 4. 模型微调（需 GPU）
-
-```bash
-python scripts/train_cot_model.py \
-    --train_data outputs/cot_train_filtered.json \
-    --output_dir checkpoints/cot_model
-```
-
-### 5. 测试集推理
-
-```bash
-python main.py infer-cot \
-    --model_path checkpoints/cot_model/final \
-    --output outputs/submission_cot.json
-```
-
-### 6. 基线测试（模板解析器，无需GPU）
-
-```bash
-python main.py baseline
-```
-
 ## 技术方案
 
-本方案采用 **CoT (Chain-of-Thought) 推理 + 知识蒸馏** 架构：
+采用 **CoT (Chain-of-Thought) 推理 + 知识蒸馏** 架构：
 
 ```
 训练阶段:
@@ -104,84 +24,115 @@ python main.py baseline
   测试集 → [微调后 Qwen2.5-7B] → CoT推理链 + 答案JSON
 ```
 
-- **DeepSeek-V3** 作为Teacher：在训练集上生成逐步推理链
-- **Qwen2.5-7B** 作为Student：LoRA微调学习推理能力
-- **推理链输出**：`## Reasoning` + `## Answer {"answers": ["A", "B"]}`
+- **DeepSeek-V3** 作为 Teacher：在训练集上生成逐步推理链（零样本正确率 74.1%）
+- **Qwen2.5-7B** 作为 Student：LoRA 微调学习推理能力（满足 ≤8B 约束）
+- **推理链格式**：`## Reasoning` + `## Answer {"answers": ["A", "B"]}`
 
-### 两种解析器
+### 路线演进
 
-| 解析器 | 类名 | 说明 |
-|--------|------|------|
-| **模板解析器** | `TemplateConstraintParser` | 基于正则表达式的规则解析，无需LLM/GPU，作为基线 |
-| **LLM解析器** | `LLMConstraintParser` | 使用微调后的LLM进行约束解析（主方案） |
+| 路线 | 思路 | 正确率 | 状态 |
+|------|------|--------|------|
+| Neuro-Symbolic | LLM 提取约束 JSON → 符号求解器 → 答案 | 3.6% | ❌ 已放弃 |
+| **CoT 推理** | LLM 端到端逐步推理 → 直接输出答案 | **74.1%** (Teacher) | ✅ 当前方案 |
+
+Neuro-Symbolic 失败原因：DeepSeek-V3 无法可靠地将自然语言转化为精确结构化约束。CoT 路线避免了中间表示的精度损失。
+
+## 项目结构
+
+```
+Project_NLP/
+├── run_train.py                      # 云平台一键训练脚本
+├── main.py                           # 主入口
+├── requirements.txt                  # Python依赖
+├── .gitignore
+│
+├── data/
+│   ├── SCoRE2026_trainset.json       # 训练集 (3600题)
+│   └── SCoRE2026_testset.json        # 测试集 (1000题，无答案)
+│
+├── outputs/
+│   └── cot_train_filtered.json       # CoT训练数据 (2668条, 74.1%正确)
+│
+├── scripts/
+│   ├── generate_cot_data.py          # CoT数据生成 (DeepSeek API)
+│   ├── train_cot_model.py            # LoRA微调脚本
+│   ├── run_cot_inference.py          # 推理+提交生成
+│   ├── analyze_data.py               # 数据分析
+│   ├── run_baseline.py               # 模板解析器基线 (~5%)
+│   └── (batch_annotate.py, train_constraint_parser.py 等 # N-S路线保留)
+│
+├── src/
+│   ├── cot/                          # CoT推理模块
+│   ├── solvers/                      # 符号求解器 (保留作消融对比)
+│   ├── parser/                       # 约束解析器 (保留)
+│   └── pipeline/                     # Pipeline (保留)
+│
+└── docs/
+    ├── SCoRE2026.pdf                 # 任务说明
+    └── plans/                        # 实施计划
+```
+
+## 快速开始
+
+### 1. CoT 训练数据生成（本地，需 DeepSeek API）
+
+```bash
+pip install openai
+export DEEPSEEK_API_KEY=sk-xxx
+python main.py gen-cot --samples 100   # 试跑
+python main.py gen-cot                 # 全量3600条
+```
+
+### 2. 模型训练 + 推理（云 GPU 一键运行）
+
+```bash
+python run_train.py --modelscope       # 国内云平台
+python run_train.py                    # 海外云平台
+```
+
+### 3. 基线测试（本地，无需 GPU）
+
+```bash
+python main.py baseline               # 模板解析器基线
+```
 
 ## 关键挑战
 
 | 挑战 | 说明 | 应对策略 |
 |------|------|---------|
-| 域偏移 | 训练97.2%单域 → 测试67.5%融合域 | 符号求解器天然跨域通用 |
-| 多选 | 23.6%题目为不定项选择 | 答案验证器支持多选输出 |
-| 双语 | 中文58% + 英文42% | 模板解析器中英分别处理 |
-| 模型限制 | ≤8B参数 | Qwen2.5-7B-Instruct 推荐 |
-
-## 基线性能（模板解析器，无需LLM）
-
-在训练集前300条上的准确率：
-
-| 领域 | 准确率 | 说明 |
-|------|--------|------|
-| time | ~12% | 时间线重建，支持中英双语和每周循环 |
-| nature | ~6% | 属性匹配与约束传播 |
-| space | ~2% | 空间布局回溯搜索 |
-| social | ~0% | 亲属关系推导（最复杂） |
-| 融合域 | ~0% | 跨域约束（模板解析器难以处理） |
-| **总体** | **~5%** | 模板解析器基线 |
-
-> ⚠️ 模板解析器的局限性：正则表达式无法覆盖所有自然语言表达方式。要达到有竞争力的准确率，需使用LLM约束解析器 + LoRA微调。
+| 域偏移 | 训练 97.2% 单域 → 测试 67.5% 融合域 | CoT 推理链天然跨域泛化 |
+| 多选 | 23.6% 题目为不定项选择 | 输出格式 `{"answers": ["A", "B"]}` |
+| 双语 | 中文 58% + 英文 42% | 统一 CoT prompt，不区分语言 |
+| 模型限制 | ≤8B 参数 | Qwen2.5-7B-Instruct |
 
 ## 当前进度
 
-### Neuro-Symbolic 路线（已放弃）
-> DeepSeek-V3 约束提取正确率仅 3.6%，无法生成可用训练数据。
+### CoT 推理路线
 
-- [x] 项目结构搭建
-- [x] 数据分析脚本
-- [x] 约束Schema定义
-- [x] 四大领域符号求解器
-- [x] 融合域求解器
-- [x] 端到端Pipeline
-- [x] 答案验证器（支持填空/选择/选非三种题型）
-- [x] 模板解析器基线
-- [x] 基线测试框架
-- [x] 约束标注Prompt生成
-- [x] 批量约束标注脚本（batch_annotate.py）
+- [x] CoT 数据生成脚本
+- [x] CoT 数据全量生成（3600→2668 条，74.1% 正确率）
+- [x] LoRA 微调脚本 + 云平台一键训练脚本
+- [x] CoT 推理 + 提交生成脚本
+- [x] 文档更新（方案、进度、计划）
+- [ ] 模型微调（云平台进行中）
+- [ ] 测试集推理与提交
+- [ ] 消融实验（CoT vs 模板 vs 零样本）
+- [ ] 技术报告（4 页 CCL 格式）
 
-### CoT 推理路线（当前主方案）
-> DeepSeek API 生成 CoT 推理链 → LoRA 微调 Qwen2.5-7B → 端到端推理
+### Neuro-Symbolic 路线（已放弃，代码保留）
 
-- [x] CoT 数据生成脚本（generate_cot_data.py）
-- [x] CoT 模型微调脚本（train_cot_model.py）
-- [x] CoT 推理脚本（run_cot_inference.py）
-- [ ] CoT 训练数据生成（需 DeepSeek API）
-- [ ] 模型微调（需 GPU）
-- [ ] 最终推理与提交
-- [x] LoRA微调脚本框架
-- [ ] 约束标注数据生成（需LLM辅助，prompt已就绪）
-- [ ] 模型训练（需GPU环境）
-- [ ] 最终调优与提交
+- [x] 约束 Schema + 5 领域符号求解器
+- [x] 模板解析器基线（~5%）
+- [x] 约束标注 pipeline
+- [x] 验证 LLM 约束提取不可行（DeepSeek 仅 3.6%）
 
-## 下一步
+## CoT 训练数据质量
 
-1. **使用LLM生成约束标注**：`outputs/annotation_prompts.json` 已包含250条标注prompt，用强LLM（GPT-4/Claude/DeepSeek）批量生成约束JSON
-2. **LoRA微调约束解析器**：`python scripts/train_constraint_parser.py`
-3. **集成LLM解析器**：将微调后的模型接入Pipeline替换模板解析器
-4. **消融实验**：对比纯LLM CoT vs Neuro-Symbolic方案
-
-### 已生成的输出文件
-
-| 文件 | 说明 |
-|------|------|
-| `outputs/submission.json` | 测试集1000条提交（252条非空预测） |
-| `outputs/fusion_augmented_train.json` | 200条合成融合域训练数据 |
-| `outputs/combined_train.json` | 3800条合并训练集 |
-| `outputs/annotation_prompts.json` | 250条LLM约束标注prompt |
+| 领域 | 正确率 | 训练样本 |
+|------|--------|---------|
+| nature | 87.5% | 875 |
+| time | 86.1% | 861 |
+| social | 63.4% | 317 |
+| space | 56.2% | 562 |
+| space+nature | 53.0% | 53 |
+| **总计** | **74.1%** | **2668** |
