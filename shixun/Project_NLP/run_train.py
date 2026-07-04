@@ -208,6 +208,15 @@ def train():
     model.print_trainable_parameters()
 
     # ======== 训练配置 ========
+    # bf16 需要 Ampere 架构+（A100/A6000/RTX3090/RTX4090）
+    # 旧卡（V100/T4）fallback 到 fp16 或关闭混合精度
+    gpu_name = torch.cuda.get_device_name(0) if torch.cuda.is_available() else ""
+    use_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    if use_bf16:
+        log(f"Using bf16 precision (GPU: {gpu_name})")
+    else:
+        log(f"WARNING: bf16 not supported on {gpu_name}, using fp16")
+
     training_args = TrainingArguments(
         output_dir=Config.OUTPUT_DIR,
         num_train_epochs=Config.EPOCHS,
@@ -222,7 +231,8 @@ def train():
         eval_steps=200,
         save_total_limit=3,
         load_best_model_at_end=True,
-        bf16=True,
+        bf16=use_bf16,
+        fp16=not use_bf16,
         report_to="none",
         dataloader_num_workers=2,
     )
@@ -306,18 +316,26 @@ def inference(model_path: str):
 
     log(f"Test samples: {len(test_data)}")
 
-    # ======== CoT Prompt ========
+    # ======== CoT Prompt（必须与 generate_cot_data.py 完全一致）========
     COT_SYSTEM_PROMPT = """You are an expert at commonsense reasoning problems. Your task is to solve multi-step logical reasoning questions by thinking step by step.
 
 Follow this exact format in your response:
 
 ## Reasoning
-[Your detailed step-by-step reasoning.]
+[Your detailed step-by-step reasoning. Break down the problem:
+1. Identify all entities and their known properties/positions/relationships
+2. List all constraints stated in the text
+3. Reason through the constraints step by step
+4. For each option, check whether it is consistent with your conclusions]
 
 ## Answer
 {"answers": ["A", "B"]}
 
-IMPORTANT: Multiple answers may be correct. If the question says "不正确" or "incorrect", select the WRONG option(s). For fill-in-the-blank (____), select the option(s) that fill the blank correctly."""
+IMPORTANT:
+- Multiple answers may be correct. List ALL correct options.
+- If the question says "不正确" or "incorrect", select the WRONG option(s).
+- For fill-in-the-blank (____), select the option(s) that make the statement true.
+- Think carefully about every constraint before drawing conclusions."""
 
     def build_prompt(sample):
         options_text = "\n".join(
@@ -361,7 +379,10 @@ IMPORTANT: Multiple answers may be correct. If the question says "不正确" or 
     results = []
     for i, sample in enumerate(test_data):
         prompt = build_prompt(sample)
-        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+        inputs = tokenizer(prompt, return_tensors="pt")
+        # device_map="auto" 时模型自动处理设备放置，不手动 .to()
+        if not getattr(model, "hf_device_map", None):
+            inputs = inputs.to(model.device)
 
         with torch.no_grad():
             outputs = model.generate(
@@ -419,6 +440,7 @@ def main():
     parser.add_argument("--batch_size", type=int, default=None)
     parser.add_argument("--output_dir", type=str, default=None)
     parser.add_argument("--no_hf_mirror", action="store_true", help="不使用HF镜像")
+    parser.add_argument("--install", action="store_true", help="自动安装依赖")
     args = parser.parse_args()
 
     # 应用配置
@@ -442,6 +464,10 @@ def main():
     log("SCoRE2026 CoT Training Pipeline")
     log("=" * 60)
     log(f"Time: {datetime.now().isoformat()}")
+
+    # 安装依赖
+    if args.install:
+        install_deps()
 
     # 环境检查
     check_env()
