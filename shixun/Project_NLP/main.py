@@ -11,9 +11,12 @@ import sys
 import os
 import argparse
 import json
+from dotenv import load_dotenv
+load_dotenv()
 
 sys.path.insert(0, os.path.dirname(__file__))
 
+DEEPSEEK_API_KEY = 'sk-f99f427bfa6b49ed863b0c12a63cc10a'
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "outputs")
 

@@ -15,6 +15,7 @@ import sys
 import re
 import time
 import argparse
+import hashlib
 from typing import Dict, List, Optional
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -23,6 +24,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "outputs")
+CACHE_DIR = os.path.join(OUTPUT_DIR, ".cot_cache")
 
 # ============================================================
 # CoT Prompt 模板
@@ -120,16 +122,55 @@ def extract_reasoning_from_response(response: str) -> str:
 # ============================================================
 
 class CoTDataGenerator:
-    """CoT训练数据生成器"""
+    """CoT训练数据生成器（支持断点续传）"""
 
     def __init__(self, api_key: str, model: str = "deepseek-chat",
-                 base_url: str = "https://api.deepseek.com"):
+                 base_url: str = "https://api.deepseek.com",
+                 resume: bool = True):
         from openai import OpenAI
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.model = model
+        self.resume = resume
+        self.cache: Dict[str, Dict] = {}
+        self._lock = __import__('threading').RLock()  # 可重入锁，避免 _save_cache 死锁
+        if resume:
+            self._load_cache()
+
+    def _cache_key(self, sample_id: str) -> str:
+        content = f"{self.model}|{sample_id}"
+        return hashlib.md5(content.encode()).hexdigest()
+
+    def _cache_path(self) -> str:
+        os.makedirs(CACHE_DIR, exist_ok=True)
+        return os.path.join(CACHE_DIR, "responses.json")
+
+    def _load_cache(self):
+        path = self._cache_path()
+        if os.path.exists(path):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    self.cache = json.load(f)
+                print(f"  Loaded {len(self.cache)} cached responses (resume enabled)")
+            except (json.JSONDecodeError, IOError):
+                self.cache = {}
+
+    def _save_cache(self):
+        path = self._cache_path()
+        with self._lock:
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(self.cache, f, ensure_ascii=False)
 
     def generate_one(self, sample: Dict) -> Optional[Dict]:
-        """为单条样本生成CoT推理"""
+        """为单条样本生成CoT推理（优先使用缓存）"""
+        ck = self._cache_key(sample["id"])
+
+        # 检查缓存
+        if self.resume and ck in self.cache:
+            cached = self.cache[ck]
+            if cached and cached.get("id") == sample["id"]:
+                return cached
+
+        # 调用API
         options_text = format_options(sample["options"])
         user_prompt = COT_USER_TEMPLATE.format(
             text=sample["text"],
@@ -137,22 +178,33 @@ class CoTDataGenerator:
             options_text=options_text,
         )
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": COT_SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt},
-            ],
-            max_tokens=2048,
-            temperature=0.0,
-        )
+        max_retries = 3
+        full_response = None
+        for attempt in range(max_retries):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[
+                        {"role": "system", "content": COT_SYSTEM_PROMPT},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    max_tokens=2048,
+                    temperature=0.0,
+                    timeout=60.0,  # 60s 超时
+                )
+                full_response = response.choices[0].message.content
+                break
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    time.sleep(2 ** attempt)
+                else:
+                    raise e
 
-        full_response = response.choices[0].message.content
         reasoning = extract_reasoning_from_response(full_response)
         predicted = extract_answer_from_response(full_response)
         ground_truth = sample.get("answers", [])
 
-        return {
+        result = {
             "id": sample["id"],
             "domain": sample["domain"],
             "language": sample.get("language", "cn"),
@@ -166,11 +218,37 @@ class CoTDataGenerator:
             "raw_response": full_response,
         }
 
+        # 存入缓存
+        if self.resume:
+            with self._lock:
+                self.cache[ck] = result
+                # 每20条保存一次缓存
+                if len(self.cache) % 20 == 0:
+                    self._save_cache()
+
+        return result
+
     def generate_batch(self, samples: List[Dict], concurrency: int = 5) -> List[Dict]:
         """批量生成CoT数据"""
         results = []
         completed = 0
         total = len(samples)
+
+        # 从缓存中恢复已完成的结果
+        if self.resume:
+            cached_results = []
+            pending = []
+            for s in samples:
+                ck = self._cache_key(s["id"])
+                if ck in self.cache and self.cache[ck].get("id") == s["id"]:
+                    cached_results.append(self.cache[ck])
+                else:
+                    pending.append(s)
+            if cached_results:
+                results.extend(cached_results)
+                completed = len(cached_results)
+                print(f"  Resumed {completed} cached results, {len(pending)} remaining")
+            samples = pending
 
         with ThreadPoolExecutor(max_workers=concurrency) as executor:
             future_to_sample = {
@@ -194,6 +272,11 @@ class CoTDataGenerator:
                 print(f"  [{completed}/{total}] {status} {sample['id']} "
                       f"[{sample['domain']}] pred={result.get('predicted_answer', [])} "
                       f"actual={sample.get('answers', [])}")
+
+        # 最终保存缓存
+        if self.resume:
+            self._save_cache()
+            print(f"  Cache saved: {len(self.cache)} entries")
 
         return results
 
@@ -288,6 +371,8 @@ def main():
                        help="Max samples to process (0=all 3600)")
     parser.add_argument("--concurrency", type=int, default=5,
                        help="Concurrent API calls (default: 5)")
+    parser.add_argument("--no_resume", action="store_true",
+                       help="Don't use cache, re-fetch all samples")
     parser.add_argument("--domain", type=str, default=None,
                        help="Only process specific domain")
     parser.add_argument("--output", type=str, default=None,
@@ -313,10 +398,12 @@ def main():
     if args.samples > 0:
         train_data = train_data[:args.samples]
 
-    print(f"Processing {len(train_data)} samples with model '{args.model}'...")
+    resume_str = "" if args.no_resume else " (resume enabled)"
+    print(f"Processing {len(train_data)} samples with model '{args.model}'{resume_str}...")
 
     # 生成
-    generator = CoTDataGenerator(api_key=api_key, model=args.model)
+    generator = CoTDataGenerator(api_key=api_key, model=args.model,
+                                  resume=not args.no_resume)
     start = time.time()
     results = generator.generate_batch(train_data, concurrency=args.concurrency)
     elapsed = time.time() - start

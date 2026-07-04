@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# API keys
+.env
+
+# Output caches
+outputs/.cot_cache/
+outputs/.annotation_cache/
+
+# Model checkpoints (too large)
+checkpoints/
+
+# Training artifacts
+*.log
+wandb/
+
+# Submission outputs (regenerated each run)
+outputs/submission.json
+outputs/submission_cot.json
+
+# IDE
+.vscode/
+.idea/

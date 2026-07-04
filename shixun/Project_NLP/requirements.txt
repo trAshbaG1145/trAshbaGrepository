@@ -1,0 +1,18 @@
+torch>=2.1.0
+transformers>=4.40.0
+datasets>=2.14.0
+accelerate>=0.20.0
+peft>=0.7.0
+bitsandbytes>=0.41.0
+vllm>=0.3.0
+sentencepiece
+protobuf
+scikit-learn
+pandas
+numpy
+tqdm
+wandb
+jsonlines
+# LLM API clients (batch annotation)
+openai>=1.0.0
+anthropic>=0.30.0
