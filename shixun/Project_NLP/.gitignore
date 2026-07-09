@@ -11,7 +11,7 @@ outputs/.cot_cache/
 outputs/.annotation_cache/
 
 # Model checkpoints (too large)
-# checkpoints/
+checkpoints/
 
 # Training artifacts
 *.log
