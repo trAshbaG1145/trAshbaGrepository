@@ -1,0 +1,207 @@
+
+CCL26-Eval 
+http://cips-cl.org/static/CCL2026/index.html (https://cips-cl.org/static/CCL2026/index.html)
+The 25th China National Conference on Computational Linguistics, CCL 20262026101518CCL (CIPS)CCL NLPCCL 
+CCL26-EvalCCL26-Eval 14 AI  CCL AnthologyACL Anthology
+hflin@dlut.edu.cntanhongye@sxu.edu.cn liang@dlut.edu.cn
+
+1. /
+
+
+Factivity Inference, FI Factuality Inference, FactI """""" """ """ world knowledge analytical knowledge of language""" "
+
+FIE2025 "" 
+FIE2025500 """"""" """""" """""
+
+promptLLMs <Aa, a>JSON
+Aaa Aa a 95% JSON{"factivity":"true","confidence":"0.95"}
+non-finetuningfinetuning  
+
+ guanliang.cong@connect.um.edu.mo tianqi.xun@connect.um.edu.mo
+
+0-1 0-20-3
+
+https://github.com/UM-FAH-Yuan/FIE2026 (https://github.com/UM-FAH-Yuan/FIE2026)
+
+
+ "+" 5000Gold/ Silver
+
+1 1  2  Gold
+
+ ysq1997@mail.dlut.edu.cn
+
+
+
+https://github.com/DUTIR-YSQ/CCL2026-Non-literal-Translation-Task (https://github.com/DUTIR-YSQ/CCL2026-
+Non-literal-Translation-Task)
+2. 
+
+
+MapFinBen 
+MapFinBen  
+MapFinBen
+
+FinAS   FinQA  FinSA  FinTC  FinTS 
+
+
+ kongxiaoyong@stu.ynu.edu.cn
+
+
+
+https://github.com/HgITSE/MapFinBen (https://github.com/HgITSE/MapFinBen)
+
+
+ 
+"1""3"""""   
+ 
+
+ rhong@tju.edu.cnwuchuan@tju.edu.cn
+
+
+
+
+https://github.com/merc11/CCL-2026 (https://github.com/merc11/CCL-2026)
+
+1. 
+
+
+   
+Minor Grain Breeding Information Extraction Evaluation, MGBIE  MGBIE20001000 400600
+MGBIE 2026
+ 12 /  6
+
+  yangsenjie1@sxu.edu.cn
+
+
+
+https://github.com/zhiweihu1103/CCL2026-MGBIE (https://github.com/zhiweihu1103/CCL2026-MGBIE)
+
+2. 
+ICD
+
+  International Classification of DiseasesICD 
+ICDICD  ICD1019 162200 
+
+  icdevaluator@163.com
+
+136
+
+https://github.com/QLU-NLP/icdevaluator-26 (https://github.com/QLU-NLP/icdevaluator-26)
+
+
+Multilingual Large Language Models, MLLMs  """"  BCCL-CSA
+
+    1. Acc_pol 2. F1_emoMacro-F1  3. SubScore1 = 0.4 × Acc_pol + 0.6 × F1_emo   Con_label Sim_dist 
+CCL-SEL12250
+Total_Score = 0.5 × Sub_Score_1 + 0.5 × Sub_Score_2
+
+ Jingshi.Zhou@outlook.com
+
+123
+
+https://github.com/Jingshi-Zhou/-BCCL-CSA-2026- (https://github.com/Jingshi-Zhou/-BCCL-CSA-2026-)
+
+
+Evidence-based Medical Fact-checking  ClaimEvidence  
+ 
+
+(Supported) (Partially Supported) (Refuted) (Uncertain) (Not Applicable)
+
+ Tong.Chen19@student.xjtlu.edu.cn
+
+
+
+https://github.com/AshleyChenNLP/MedFact (https://github.com/AshleyChenNLP/MedFact)
+
+
+  
+  
+
+   
+
+   
+ RAG
+
+
+ zhuyj@stu.hit.edu.cn
+
+13000 12000 11000
+10
+
+https://github.com/HITICI-NLPGroup/CCPA-EvalTask (https://github.com/HITICI-NLPGroup/CCPA-EvalTask)
+AI
+
+
+ LLMs  LLMsAGI
+Scenariobased Commonsense Reasoning Evaluation, SCoRE 
+
+             
+
+ hunan@stu.pku.edu.cn
+
+0-1 0-2 0-4
+
+https://pku-space.github.io/SCoRE2026/ (https://pku-space.github.io/SCoRE2026/)
+
+
+E/E  HARA, Hazard Analysis and Risk Assessment  SEC ASIL 
+HARA ""  ----"/"3,000
+
+
+  HARA S/E/C
+
+ Zimu.Wang19@student.xjtlu.edu.cn
+
+15000 13000 12000
+
+
+
+https://ccl2026-hara.github.io (https://ccl2026-hara.github.io)
+----
+
+"" """""" "AI""/"" """" "
+
+APC BAR 
+
+
+Foundation Track   Structured Track    1-5 
+30­50/ 10­15 
+
+/ 20251083510951@buu.edu.cn
+
+ 
+
+https://github.com/ALINOSJ/IASSGE-2026 (https://github.com/ALINOSJ/IASSGE-2026)
+
+
+In-Image Translation""   /  """" BLEUMETEOR  
+   
+
+
+ baileng.hyx@alibaba-inc.com
+
+120000 110000 25000
+
+
+
+https://tianchi.aliyun.com/competition/entrance/532463 (https://tianchi.aliyun.com/competition/entrance/532463?
+spm=5176.12281973.J_6-HJZaSjQocH7SIdvbK02.1.376b3b74H1HNIn)
+
+
+""  
+
+    
+     
+
+   
+
+      
+
+ blcuicall@163.com
+
+
+
+https://github.com/blcuicall/CCIME2026 (https://github.com/blcuicall/CCIME2026)
+
+
+

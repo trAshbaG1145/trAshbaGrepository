@@ -11,16 +11,23 @@ outputs/.cot_cache/
 outputs/.annotation_cache/
 
 # Model checkpoints (too large)
-checkpoints/
+# checkpoints/
 
 # Training artifacts
 *.log
 wandb/
 
+# Shell redirect artifacts (buggy pip install)
+=*
+=*/
+
+
 # Submission outputs (regenerated each run)
-outputs/submission.json
-outputs/submission_cot.json
+# outputs/submission.json
+# outputs/submission_cot.json
 
 # IDE
 .vscode/
 .idea/
+
+projects/

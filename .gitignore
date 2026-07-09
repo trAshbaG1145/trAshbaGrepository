@@ -16,6 +16,8 @@ github-recovery-codes.txt
 
 /draft/
 
+.env
+
 pytorch_model.bin
 /NlP/**/*results/
 /NlP/**/*logs/
@@ -25,6 +27,8 @@ pytorch_model.bin
 /CV/Project/yolo11n.pt
 
 *.zip
+*.rar
+*.7z
 
 *.o
 
@@ -34,5 +38,3 @@ pytorch_model.bin
 ~$*.ppt*
 
 *.tmp
-
-*.log

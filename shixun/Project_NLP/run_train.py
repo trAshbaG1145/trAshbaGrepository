@@ -37,10 +37,13 @@ class Config:
     HF_MIRROR = "https://hf-mirror.com"
     USE_HF_MIRROR = True  # 云平台设为 True
 
-    # 训练超参
+    # ModelScope（国内更稳定，免翻墙）
+    USE_MODELSCOPE = False  # 运行时可通过 --modelscope 开启
+
+    # 训练超参（32GB V100: batch=2/2048 安全）
     EPOCHS = 3
-    BATCH_SIZE = 4
-    GRAD_ACCUM = 4
+    BATCH_SIZE = 2       # 降到 2 保证 max_length=2048 不 OOM
+    GRAD_ACCUM = 8       # 有效 batch = 2×8 = 16（不变）
     LEARNING_RATE = 2e-4
     LORA_R = 16
     LORA_ALPHA = 32
@@ -50,9 +53,7 @@ class Config:
     TRAIN_DATA = "outputs/cot_train_filtered.json"
     OUTPUT_DIR = "checkpoints/cot_model"
     SUBMISSION_DIR = "outputs"
-
-    # 日志
-    LOG_FILE = "train.log"
+    LOG_DIR = "logs"
 
 
 # ============================================================
@@ -60,11 +61,9 @@ class Config:
 # ============================================================
 
 def log(msg: str):
+    """记录带时间戳的消息（Tee 已捕获到文件，这里只负责格式化）"""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    line = f"[{timestamp}] {msg}"
-    print(line)
-    with open(Config.LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(line + "\n")
+    print(f"[{timestamp}] {msg}")
 
 
 def check_env():
@@ -87,7 +86,6 @@ def check_env():
     else:
         # 诊断 CUDA 不可用的原因
         try:
-            import subprocess
             result = subprocess.run(["nvidia-smi"], capture_output=True, text=True, timeout=10)
             if result.returncode == 0:
                 log("ERROR: GPU detected by nvidia-smi but CUDA is unavailable in PyTorch.")
@@ -103,18 +101,15 @@ def check_env():
         log("Aborting — please fix the CUDA/PyTorch mismatch above and re-run.")
         sys.exit(1)
 
-    # 检查训练数据
-    if not os.path.exists(Config.TRAIN_DATA):
-        log(f"ERROR: Training data not found: {Config.TRAIN_DATA}")
-        log("Please run generate_cot_data.py first on a machine with API access.")
-        sys.exit(1)
-
-    with open(Config.TRAIN_DATA, "r", encoding="utf-8") as f:
-        train = json.load(f)
-    log(f"Training data: {len(train)} samples")
-
-    from collections import Counter
-    log(f"Domain distribution: {dict(Counter(ex['domain'] for ex in train))}")
+    # 检查训练数据（推理模式不需要）
+    if os.path.exists(Config.TRAIN_DATA):
+        with open(Config.TRAIN_DATA, "r", encoding="utf-8") as f:
+            train = json.load(f)
+        log(f"Training data: {len(train)} samples")
+        from collections import Counter
+        log(f"Domain distribution: {dict(Counter(ex['domain'] for ex in train))}")
+    else:
+        log("Training data not found (--infer_only mode, skipping)")
 
 
 # ============================================================
@@ -228,6 +223,17 @@ def train():
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
 
+    # Gradient checkpointing: 用计算换显存（节省 ~40% 激活内存）
+    if hasattr(model, "enable_input_require_grads"):
+        model.enable_input_require_grads()
+    model.gradient_checkpointing_enable()
+    log("Gradient checkpointing enabled")
+
+    # 减少显存碎片
+    os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+    # 防止 DataLoader 多进程与 tokenizers 死锁
+    os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
     # ======== 训练配置 ========
     if not torch.cuda.is_available():
         log("ERROR: GPU required for training. Aborting.")
@@ -257,7 +263,7 @@ def train():
         bf16=use_bf16,
         fp16=not use_bf16,
         report_to="none",
-        dataloader_num_workers=2,
+        dataloader_num_workers=0,  # 避免多进程 fork 死锁（特别是旧内核）
     )
 
     # ======== Tokenize ========
@@ -314,23 +320,33 @@ def inference(model_path: str):
     import re
     from transformers import AutoModelForCausalLM, AutoTokenizer
     from peft import PeftModel
+    from tqdm import tqdm
 
     # ======== 加载模型 ========
     tokenizer = AutoTokenizer.from_pretrained(Config.MODEL_NAME, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
+    # V100 不支持 bf16，用 fp16（Tensor Core 原生加速 ~2x）
     log("Loading base model...")
     base_model = AutoModelForCausalLM.from_pretrained(
         Config.MODEL_NAME,
-        torch_dtype=torch.bfloat16,
-        device_map="auto",
+        torch_dtype=torch.float16,
         trust_remote_code=True,
-    )
+    ).cuda()
+    # 禁用 sampling 默认值，消除 generate() 的 warning
+    base_model.generation_config.temperature = None
+    base_model.generation_config.top_p = None
+    base_model.generation_config.top_k = None
 
     log("Loading LoRA adapter...")
     model = PeftModel.from_pretrained(base_model, model_path)
+    # 不 merge！merge 会破坏输出格式，导致 90%+ 空答案
     model.eval()
+    if hasattr(model, "generation_config"):
+        model.generation_config.temperature = None
+        model.generation_config.top_p = None
+        model.generation_config.top_k = None
 
     # ======== 加载测试集 ========
     test_path = os.path.join("data", "SCoRE2026_testset.json")
@@ -378,7 +394,7 @@ IMPORTANT:
         )
 
     def extract_answer(response):
-        # {"answers": ["A", "B"]}
+        # 策略1: JSON 对象 {"answers": ["A", "B"]}
         for match in re.finditer(r'\{[^}]*"answers"\s*:\s*\[[^\]]*\][^}]*\}', response):
             try:
                 obj = json.loads(match.group(0))
@@ -386,32 +402,53 @@ IMPORTANT:
                     return obj["answers"]
             except json.JSONDecodeError:
                 pass
-        # "answers": ["A", "B"]
+        # 策略2: "answers": ["A", "B"] 片段匹配
         json_match = re.search(r'"answers"\s*:\s*\[(.*?)\]', response, re.DOTALL)
         if json_match:
             answers = re.findall(r'"([A-D])"', json_match.group(1))
             if answers:
                 return answers
-        # Answer: A, B
+        # 策略3: Answer: A, B 纯文本
         line = re.search(r'(?:answer|答案)[:\s]*([A-D,\s]+)', response, re.IGNORECASE)
         if line:
             return re.findall(r'[A-D]', line.group(1))
+        # 策略4: 从尾部搜索 JSON（容错）
+        tail = response[-500:]
+        for match in re.finditer(r'\{[^}]*"answers"\s*:\s*\[[^\]]*\][^}]*\}', tail):
+            try:
+                obj = json.loads(match.group(0))
+                if "answers" in obj and isinstance(obj["answers"], list):
+                    return obj["answers"]
+            except json.JSONDecodeError:
+                pass
         return []
 
-    # ======== 批量推理 ========
+    # ======== 批量推理（支持断点续传）========
+    # 加载已有进度
+    checkpoint_path = os.path.join(Config.SUBMISSION_DIR, ".infer_checkpoint.json")
+    completed_ids = set()
     results = []
+    if os.path.exists(checkpoint_path):
+        with open(checkpoint_path, "r", encoding="utf-8") as f:
+            results = json.load(f)
+        completed_ids = {r["id"] for r in results}
+        log(f"Resumed {len(results)} completed predictions")
+
+    pbar = tqdm(total=len(test_data), initial=len(completed_ids),
+                desc="Inference", unit="samples")
     for i, sample in enumerate(test_data):
+        if sample["id"] in completed_ids:
+            continue
+
         prompt = build_prompt(sample)
         inputs = tokenizer(prompt, return_tensors="pt")
-        # device_map="auto" 时模型自动处理设备放置，不手动 .to()
-        if not getattr(model, "hf_device_map", None):
-            inputs = inputs.to(model.device)
+        device = next(model.parameters()).device
+        inputs = {k: v.to(device) for k, v in inputs.items()}
 
         with torch.no_grad():
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=1024,
-                temperature=0.0,
+                max_new_tokens=2048,
                 do_sample=False,
                 pad_token_id=tokenizer.pad_token_id or tokenizer.eos_token_id,
             )
@@ -422,16 +459,23 @@ IMPORTANT:
         )
         predicted = extract_answer(response)
         results.append({"id": sample["id"], "answers": predicted})
+        pbar.update(1)
 
-        if (i + 1) % 100 == 0:
-            non_empty = sum(1 for r in results if r["answers"])
-            log(f"  [{i+1}/{len(test_data)}] non-empty: {non_empty}")
+        # 每 100 条保存检查点
+        if (len(results) - len(completed_ids)) % 100 == 0:
+            with open(checkpoint_path, "w", encoding="utf-8") as f:
+                json.dump(results, f, ensure_ascii=False, indent=2)
+    pbar.close()
 
     # ======== 保存提交 ========
     os.makedirs(Config.SUBMISSION_DIR, exist_ok=True)
     output_path = os.path.join(Config.SUBMISSION_DIR, "submission_cot.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
+
+    # 清理检查点
+    if os.path.exists(checkpoint_path):
+        os.remove(checkpoint_path)
 
     non_empty = sum(1 for r in results if r["answers"])
     log(f"Submission saved to {output_path}")
@@ -452,7 +496,69 @@ IMPORTANT:
 # 主流程
 # ============================================================
 
+class Tee:
+    """同时输出到终端和日志文件，捕获所有 stdout/stderr"""
+    def __init__(self, log_path: str):
+        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+        self.file = open(log_path, "a", encoding="utf-8", buffering=1)
+        self.stdout = sys.stdout
+        self.stderr = sys.stderr
+
+    def write(self, message):
+        self.stdout.write(message)
+        self.file.write(message)
+
+    def flush(self):
+        self.stdout.flush()
+        self.file.flush()
+
+    def fileno(self):
+        return self.stdout.fileno()
+
+    def close(self):
+        pass  # 不关闭 stdout/stderr 本身
+
+
+def setup_logging():
+    """初始化全量日志记录（之后所有终端输出都会被捕获到文件）"""
+    os.makedirs(Config.LOG_DIR, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_path = os.path.join(Config.LOG_DIR, f"train_{timestamp}.log")
+    tee = Tee(log_path)
+    sys.stdout = tee  # type: ignore
+    sys.stderr = tee  # type: ignore
+    return log_path
+
+
+def _download_from_modelscope(model_name: str) -> str:
+    """从 ModelScope 下载模型，返回本地路径"""
+    try:
+        from modelscope import snapshot_download
+    except ImportError:
+        log("Installing modelscope...")
+        subprocess.run("pip install modelscope", shell=True, capture_output=True)
+        from modelscope import snapshot_download
+
+    log(f"Downloading {model_name} from ModelScope...")
+    local_dir = snapshot_download(model_name, cache_dir="models")
+    log(f"Model downloaded to: {local_dir}")
+    return local_dir
+
+
 def main():
+    # 初始化全量日志（最早执行，确保所有输出被捕获）
+    log_path = setup_logging()
+    print(f"Log file: {log_path}")
+
+    # 解析 --install
+    pre_parser = argparse.ArgumentParser(add_help=False)
+    pre_parser.add_argument("--install", action="store_true")
+    pre_args, _ = pre_parser.parse_known_args()
+
+    if pre_args.install:
+        install_deps()
+
+    # 完整参数解析
     parser = argparse.ArgumentParser(
         description="SCoRE2026 CoT Training & Inference (Cloud GPU)")
     parser.add_argument("--train_only", action="store_true", help="仅训练")
@@ -463,7 +569,7 @@ def main():
     parser.add_argument("--batch_size", type=int, default=None)
     parser.add_argument("--output_dir", type=str, default=None)
     parser.add_argument("--no_hf_mirror", action="store_true", help="不使用HF镜像")
-    parser.add_argument("--install", action="store_true", help="自动安装依赖")
+    parser.add_argument("--modelscope", action="store_true", help="使用 ModelScope 下载模型（国内更快）")
     args = parser.parse_args()
 
     # 应用配置
@@ -477,9 +583,15 @@ def main():
         Config.OUTPUT_DIR = args.output_dir
     if args.no_hf_mirror:
         Config.USE_HF_MIRROR = False
+    if args.modelscope:
+        Config.USE_MODELSCOPE = True
 
-    # HF镜像
-    if Config.USE_HF_MIRROR:
+    # 模型加载方式
+    if Config.USE_MODELSCOPE:
+        log("Using ModelScope for model download...")
+        Config.MODEL_NAME = _download_from_modelscope(Config.MODEL_NAME)
+        Config.USE_HF_MIRROR = False  # ModelScope 不需要 HF
+    elif Config.USE_HF_MIRROR:
         os.environ["HF_ENDPOINT"] = Config.HF_MIRROR
         log(f"Using HF mirror: {Config.HF_MIRROR}")
 
@@ -487,10 +599,6 @@ def main():
     log("SCoRE2026 CoT Training Pipeline")
     log("=" * 60)
     log(f"Time: {datetime.now().isoformat()}")
-
-    # 安装依赖
-    if args.install:
-        install_deps()
 
     # 环境检查
     check_env()

@@ -1,0 +1,464 @@
+                                                                                  NLPCC 2026
+
+The 15th CCF International Conference on Natural Language Processing and
+                                      Chinese Computing
+
+Overview  How to Participate  Important Dates  Paper Submission
+
+                              Organizers
+
+NLPCC 2026 continues the tradition of previous NLPCC conferences by hosting a series
+of shared tasks in natural language processing and Chinese computing. This year's
+shared tasks cover both established research problems and emerging challenges.
+
+Participants from both academia and industry are welcome. Each team may participate
+in one or more tasks. Participants will also be invited to submit papers to the main
+conference, and accepted papers will appear in the conference proceedings.
+
+The top three teams in each task will receive certificates jointly issued by NLPCC and
+CCF-NLP. If a task contains multiple sub-tasks or tracks, only the top-ranked team in
+each sub-task or track will receive a certificate.
+
+Registration Deadline: May 25th, 2026
+
+Overview of the Shared Tasks
+
+There are eleven shared tasks in NLPCC 2026. A brief overview of each task is given
+below.
+ 1 The 4th Multilingual and Multimodal Medical Instructional
+Video Understanding Evaluation: Difficulty-Aware Challenge
+
+DA-MIVQA extends the medical instructional video question answering tasks
+held at NLPCC from 2023 to 2025 by introducing difficulty-aware evaluation.
+Rather than measuring only overall performance, the new benchmark explicitly
+distinguishes between simple questions, which can be answered primarily
+through direct subtitle-aligned evidence, and complex questions, which
+require the integration of subtitles, visual demonstrations, and procedural
+context. This design aims to better assess model robustness in realistic medical
+education and emergency knowledge-access scenarios.
+
+Tracks:
+
+    Difficulty-Aware Temporal Answer Grounding in Single Video (DA-TAGSV)
+    Difficulty-Aware Video Corpus Retrieval (DA-VCR)
+    Difficulty-Aware Temporal Answer Grounding in Video Corpus (DA-TAGVC)
+
+     Organizers: Shenzhen Institutes of Advanced Technology; School of Computer
+Science and Technology, Beijing Institute of Technology
+
+     Contacts: Shenxi LIU (liushenxi@foxmail.com), Bin LI (b.li2@siat.ac.cn), Kan LI
+(likan@bit.edu.cn), Mingyang ZHAO (25019897r@connect.polyu.hk), Yuhang TIAN
+
+ 2 Schwartz's Basic Human Values' Detection and Alignment with
+LLMs
+
+LLM alignment has advanced rapidly in recent years. With the large-scale
+deployment of large language models in areas such as education, healthcare,
+psychological counseling, and public services, fine-grained value alignment
+has become an important prerequisite for safe and reliable AI systems. Existing
+studies often focus on coarse-grained compliance and bottom-line risk
+control, while systematic research on psychological basic human values
+remains limited. This shared task provides a standardized dataset based on
+Schwartz's theory of 19 basic human values and existing psychological test
+questions to support research on fine-grained value detection and alignment
+in LLMs.
+
+     Website: https://github.com/ctge5/SVDA
+Tracks:
+
+    Track 1: Fine-grained Value Detection -- Given an input text and a response
+aligned with Schwartz's Theory of Basic Values, the model is required to
+identify the dominant value in the text.
+
+    Track 2: Response Generation of Specific Human Value -- Given an input
+question and a target value, the model is required to generate a valid response
+that aligns with the specified human value while maintaining content validity.
+
+     Organizers: Zhengzhou University
+     Contacts: Changtong GE (gee5@qq.com), Hongfei XU (hfxunlp@foxmail.com),
+Zhipeng LI, Xinglin LYU, Lingling MU
+
+ 3 The Multi-dimensional Evaluation of Traditional Chinese
+Medicine LLMs: Capability, Reliability, and Robustness
+
+While large language models have shown strong performance on knowledge-
+intensive benchmarks, existing evaluations of Traditional Chinese Medicine
+(TCM) LLMs largely focus on core domain knowledge and overlook reliability
+and robustness under perturbed question formats. This shared task introduces
+a multi-dimensional evaluation framework built from authoritative
+undergraduate textbook exercises to jointly assess capability, reliability, and
+robustness through question answering, statement verification, and format-
+perturbed inputs. The task aims to move beyond accuracy-centric evaluation
+and provide a more faithful assessment of how well TCM knowledge is
+internalized by the models.
+
+     Organizers: National Supercomputer Center in Tianjin; Tianjin University of Traditional
+Chinese Medicine
+
+     Contacts: Chuang LIU (liuchuang@nscc-tj.cn), Xiangfei MENG, Pengfei NIE, Ruizheng
+XIAO, Zhe CHEN, Zhaochen JI
+
+ 4 LLM-based Investment Advisor Agents for Asset Allocation in
+the Chinese Market
+
+This task evaluates the ability of LLM-based investment advisor agents to
+perform complex reasoning and quantitative decision-making in the Chinese
+capital market. Moving beyond traditional text analysis, the task challenges
+participants to develop agents that interpret daily macroeconomic signals and
+sectoral shifts in order to execute daily asset-allocation strategies. Operating in
+a backtesting environment, the agents are provided with a Top-20 Financial
+Hot News feed and historical price data, and must autonomously generate
+daily rebalancing instructions for designated ETF pools.
+
+     Website: https://github.com/splash-li/NLPCC2026-Shared-Task-4/
+
+Tracks:
+
+    Track 1: Macro-Asset Allocation -- This track evaluates macro-inference
+capabilities by rebalancing macro-category ETFs such as broad indices,
+treasury bonds, and gold to navigate economic cycles.
+
+    Track 2: Sector-Rotation Allocation -- This track focuses on sensitivity to
+industrial policies and trends, requiring tactical adjustments across industry-
+themed ETFs such as new energy, semiconductors, and healthcare.
+
+     Organizers: E Fund Management Co., Ltd.; Tsinghua University; Peking University;
+Wuhan University; The Hong Kong University of Science and Technology (Guangzhou);
+The Hong Kong Polytechnic University
+
+     Contacts: Liyuan CHEN, Shuoling LIU, Xi CHENG, Jianqiu DENG, Jiangpeng YAN
+(yanjiangpeng@efunds.com.cn), Shilong LI (lishilong@efunds.com.cn), Jian LI, Li YUAN,
+Qianqian XIE, Nan TANG, Yang LIU
+
+ 5 Chinese BabyLM: Data-Efficient and Developmentally
+Plausible Language Models for Chinese
+
+Large language models achieve remarkable performance by training on
+trillions of words, yet human children acquire robust linguistic competence
+from far less input. Inspired by the BabyLM Challenge, Chinese BabyLM is the
+first shared task dedicated to sample-efficient pretraining for Chinese.
+Participants train language models on a constrained corpus of approximately
+100 million words of developmentally plausible Chinese text, including
+children's storybooks, child-adult conversations, and movie subtitles.
+
+     Website: https://chinese-babylm.github.io/
+
+Tracks:
+
+    Track 1: Natural Language Understanding (NLU) -- This track evaluates
+syntactic and semantic understanding using Chinese benchmarks.
+    Track 2: Cognitive Modeling (COG) -- This track measures alignment
+between model representations and human cognitive signals.
+
+    Track 3: Chinese Character (HANZI) -- This track tests knowledge of Chinese
+character phonology and orthography.
+
+     Organizers: Hai HU, Siyuan SONG, Linyang HE, Shaonan WANG, Yunhao ZHANG, Rui
+WANG, Luan LI, Hong'ao ZHU, Xiaozhe JI, Yingxin LIN
+
+     Contacts: Hai HU (hu.hai@cityu.edu.hk), Siyuan SONG (siyuansong@utexas.edu),
+Shaonan WANG (shaonan.wang@polyu.edu.hk)
+
+ 6 The 2nd Shared Task on LLM-Generated Text Detection
+
+The rapid development of large language models has introduced serious
+challenges, including disinformation generation, harmful content
+dissemination, and misuse. Against this backdrop, efficiently distinguishing
+LLM-generated text from human-written text has become an urgent research
+problem. Following the success of the first shared task at NLPCC 2025, the
+2026 edition extends the task from binary classification to ternary classification
+by distinguishing among human-written text, LLM-generated text, and LLM-
+refined text. This setting better reflects real-world use cases and aims to
+advance robust Chinese LLM-generated text detection.
+
+     Website: https://nlp2ct.github.io/NLPCC-2026-Task6-Detection/
+
+     Organizers: NLP2CT Lab, University of Macau; Alibaba Cloud; Central China Normal
+University
+
+     Contacts: Junchao WU (nlp2ct.junchao@gmail.com), Derek F. WONG, Runzhe ZHAN,
+Zeyu WU, Zhiwen XIE, Yichao DU, Longyue WANG
+
+ 7 ELSSTBenchmark: A Joint Evaluation of Implicit Concept
+Retrieval and Knowledge Discovery for LLMs
+
+This shared task evaluates large language models on identifying implicit
+social-science concepts from long English texts. Given a 600­900-word English
+document written in a "show, don't tell" style, where target concepts are
+implied through situations and narratives rather than explicitly named,
+participating systems may enter one or both independent tracks.
+Tracks:
+
+    Track 1: Implicit Concept Retrieval -- Systems are asked to rank relevant
+concepts from a pool of 3,433 ELSST concepts.
+
+    Track 2: Knowledge Discovery Generation -- Systems are asked to discover
+and generate the implicit concepts in the text without access to the concept
+pool.
+
+     Organizers: University of Surrey; NYU Shanghai
+     Contacts: Zeqiang WANG (zeqiang.wang@surrey.ac.uk), Suparna DE, Zixi CHEN
+
+ 8 Factivity Inference Inconsistency Attack (FIIA)
+
+Factivity Inference (FI) is an important semantic understanding task concerned
+with the truthfulness of events. Although accurate access to factual
+information is crucial for large language models, existing models often exhibit
+instability in FI when subjected to minor textual perturbations or complex
+contexts. This shared task adopts a red-teaming setting to systematically
+expose the boundaries and vulnerable scenarios of current LLMs in complex FI
+tasks. Participants are required to creatively adapt the provided Chinese FI
+dataset to induce hallucinations or trigger inconsistency in model judgments.
+
+Tracks:
+
+    Track 1: The attack target is a designated Qwen model.
+    Track 2: The attack target is a designated DeepSeek model.
+
+     Organizers: Huazhong University of Science and Technology; University of Macau;
+Nanjing Normal University
+
+     Contacts: Daohuan LIU (liudh@hust.edu.cn), Xuri TANG (xrtang@hust.edu.cn), Yulin
+YUAN (yulinyuan@um.edu.mo), Bin LI, Guanliang CONG, Junchao WU
+
+ 9 AISB (AI Scientist Benchmark)
+
+AISB (AI Scientist Benchmark) evaluates the capability of AI systems to conduct
+scientific research autonomously. Given a research topic, reference papers, and
+established benchmarks with known baselines, participating AI Scientist
+systems must independently read the literature, formulate hypotheses, design
+experiments, write and execute code, analyze results, and produce a complete
+research paper without human intervention.
+
+     Website: https://github.com/ResearAI/NLPCC-2026-Task9-AISB
+
+Tracks:
+
+    Track 1: Scientific Research -- The AI system is given a research topic,
+reference papers, and a benchmark, and must autonomously conduct a full
+research cycle, including hypothesis formulation, experimental design, ablation
+studies, result analysis, and paper writing in ICLR format.
+
+    Track 2: Benchmark SOTA Challenge -- The AI system is given a benchmark
+with known SOTA baselines and must develop a new method that improves
+over the current SOTA, provide analysis, and produce a technical report in ICLR
+format.
+
+     Organizers: WestLakeNLP, Westlake University
+     Contacts: Qiyao SUN (sunjoey035@gmail.com), Yue ZHANG
+
+10 Reliability of AI-Assisted Scientific Reporting
+
+As generative AI and agentic AI become increasingly integrated into scientific
+workflows, they are now widely used to assist with scientific writing, including
+summarizing experimental results, drafting conclusions, and generating
+citation-supported statements. However, recent studies have shown that AI-
+assisted scientific reporting often overgeneralizes conclusions beyond what
+the source evidence justifies. This shared task focuses on determining whether
+an AI-generated scientific statement faithfully reflects the evidence it
+summarizes or cites.
+
+     Website: https://nlp2ct.github.io/NLPCC-2026-Task10-Science/
+
+Tracks:
+
+    Track 1: Claim-level faithfulness to experimental results -- Systems
+determine whether each sentence in an AI-generated claim paragraph is
+supported by the provided experimental evidence.
+
+    Track 2: Citation-level faithfulness to external evidence -- Systems
+determine whether an AI-generated scientific claim is genuinely supported by
+the cited paper and identify the supporting evidence paragraphs.
+
+     Organizers: University of Macau
+     Contacts: Runzhe ZHAN (nlp2ct.runzhe@gmail.com), Derek F. WONG, Yutong YAO,
+Junchao WU, Jingkun MA, Yanming SUN, Fengying YE
+
+11 Agent-Based Experiment Reproduction from Scientific Papers
+
+As LLM-based AI systems become increasingly integral to scientific workflows,
+they provide substantial support across multiple stages of research. However,
+experiment reproduction remains a significant challenge for current AI agents.
+This task evaluates agents' ability to reconstruct experimental pipelines from
+research papers by interpreting text, planning implementations, generating
+code, and executing experiments within a controlled environment. Unlike prior
+work that focuses only on final outputs, this task emphasizes the full
+reproduction process through fine-grained action logs and predefined rubrics
+covering key stages such as paper understanding, planning, coding, and
+execution.
+
+     Organizers: The University of Manchester; Beihang University; Langboat
+     Contacts: Hanhua HONG (hanhua.hong@postgrad.manchester.ac.uk), Yizhi LI, Jian
+YANG, Ming ZHOU, Chenghua LIN
+
+How to Participate
+
+ 1 The 4th Multilingual and Multimodal Medical Instructional Video
+Understanding Evaluation: Difficulty-Aware Challenge
+
+Please fill out the Shared Task 1 Registration Form (Word File) and send it to the
+registration email.
+
+Registration Form  Registration Email
+
+ 2 Schwartz's Basic Human Values' Detection and Alignment with LLMs
+
+Please fill out the Shared Task 2 Registration Form (Word File) and send it to the
+registration email.
+Registration Form         Registration Email
+
+ 3 The Multi-dimensional Evaluation of Traditional Chinese Medicine
+LLMs: Capability, Reliability, and Robustness
+
+Please fill out the Shared Task 3 Registration Form (Word File) and send it to the
+registration email.
+
+Registration Form         Registration Email
+
+ 4 LLM-based Investment Advisor Agents for Asset Allocation in the
+Chinese Market
+
+Please fill out the Shared Task 4 Registration Form (Word File) and send it to the
+registration email.
+
+Registration Form         Registration Email
+
+ 5 Chinese BabyLM: Data-Efficient and Developmentally Plausible
+Language Models for Chinese
+
+Please fill out the Shared Task 5 Registration Form (Word File) and send it to the
+registration email.
+
+Registration Form         Registration Email
+
+ 6 The 2nd Shared Task on LLM-Generated Text Detection
+
+Please fill out the online registration form using the link above.
+
+Online Registration Form  Registration Email
+ 7 ELSSTBenchmark: A Joint Evaluation of Implicit Concept Retrieval and
+Knowledge Discovery for LLMs
+
+Please fill out the Shared Task 7 Registration Form (Word File) and send it to the
+registration email. The suggested email subject is "[NLPCC 2026 Shared Task Registration]
+Team Name".
+
+Registration Form         Registration Email
+
+ 8 Factivity Inference Inconsistency Attack (FIIA)
+
+Please fill out the Shared Task 8 Registration Form (Word File) and send it to the
+registration email.
+
+Registration Form         Registration Email
+
+ 9 AISB (AI Scientist Benchmark)
+
+Please complete registration via the online form or email the Shared Task 9 Registration
+Form (Word File). The Data Usage Agreement is available in the registration form. Task
+guidelines and data will be released on April 15, 2026.
+
+Registration Form         Online Registration Form
+
+Registration Email
+
+10 Reliability of AI-Assisted Scientific Reporting
+
+Please fill out the online registration form using the link above, or send your team
+information to the registration email.
+
+Online Registration Form  Registration Email
+
+11 Agent-Based Experiment Reproduction from Scientific Papers
+Please fill out the Shared Task 11 Registration Form (Word File) and send it to the
+registration email.
+
+Registration Form  Registration Email
+
+Important Dates
+
+March 20, 2026     Announcement of shared tasks and call for
+April 15, 2026     participation; registration open
+May 25, 2026
+June 11, 2026      Release of detailed task guidelines and training data
+June 20, 2026
+June 30, 2026      Registration deadline
+
+                   Release of test data
+
+                   Participants' results submission deadline
+
+                   Evaluation results release and call for system reports
+                   and conference paper
+
+Paper Submission Guidelines
+
+      The evaluation papers are English only. The papers will appear in the
+      proceedings of the NLPCC 2026 conference (for English), which are expected
+      to be published in the Springer LNAI series. Submissions should follow the
+      LNCS formatting instructions. The maximum length for papers is 12 pages,
+      including references and appendices.
+
+      Submissions must adhere to the standard Springer style sheets (LaTeX or
+      Microsoft Word). All papers should be prepared in PDF format.
+Submissions must be made electronically via the conference submission
+system. Detailed submission instructions will be announced in due course.
+
+Shared Task Organizers (in Alphabetical
+Order)
+
+Liyuan CHEN, E Fund Management         Jian LI, Tsinghua University
+Co., Ltd.                              Kan LI, Beijing Institute of
+Zhe CHEN, Tianjin University of        Technology
+Traditional Chinese Medicine           Luan LI, Shanghai Jiao Tong
+Zixi CHEN, NYU Shanghai                University
+Xi CHENG, E Fund Management Co.,       Shilong LI, E Fund Management Co.,
+Ltd.                                   Ltd.
+Guanliang CONG, University of          Yizhi LI, The University of Manchester
+Macau                                  Zhipeng LI, Zhengzhou University
+Suparna DE, University of Surrey       Chenghua LIN, The University of
+Jianqiu DENG, E Fund Management        Manchester
+Co., Ltd.                              Yingxin LIN, Tsinghua University
+Yichao DU, Alibaba Cloud               Chuang LIU, National Supercomputer
+Changtong GE, Zhengzhou                Center in Tianjin
+University                             Daohuan LIU, Huazhong University
+Linyang HE, Columbia University        of Science and Technology
+Hanhua HONG, The University of         Shenxi LIU, Beijing Institute of
+Manchester                             Technology
+Hai HU, City University of Hong Kong   Shuoling LIU, E Fund Management
+Xiaozhe JI, Beijing Normal University  Co., Ltd.
+Zhaochen JI, Tianjin University of     Yang LIU, The Hong Kong
+Traditional Chinese Medicine           Polytechnic University
+Bin LI, Nanjing Normal University      Xinglin LYU, Zhengzhou University
+Bin LI, Shenzhen Institute of          Jingkun MA, University of Macau
+Advanced Technology, Chinese           Xiangfei MENG, National
+Academy of Sciences                    Supercomputer Center in Tianjin
+Lingling MU, Zhengzhou University     Ruizheng XIAO, National
+Pengfei NIE, National Supercomputer   Supercomputer Center in Tianjin
+Center in Tianjin                     Qianqian XIE, Wuhan University
+Siyuan SONG, The University of Texas  Zhiwen XIE, University of Macau /
+at Austin                             Central China Normal University
+Qiyao SUN, Westlake University        Hongfei XU, Zhengzhou University
+Yanming SUN, University of Macau      Jiangpeng YAN, E Fund Management
+Nan TANG, The Hong Kong               Co., Ltd.
+University of Science and Technology  Jian YANG, Beihang University
+(Guangzhou)                           Yutong YAO, University of Macau
+Xuri TANG, Huazhong University of     Fengying YE, University of Macau
+Science and Technology                Li YUAN, Peking University
+Yuhang TIAN, Beijing Institute of     Yulin YUAN, University of Macau
+Technology                            Runzhe ZHAN, University of Macau
+Longyue WANG, Alibaba Cloud           Yue ZHANG, Westlake University
+Rui WANG, Shanghai Jiao Tong          Yunhao ZHANG, Chinese Academy of
+University                            Sciences
+Shaonan WANG, The Hong Kong           Mingyang ZHAO, The Hong Kong
+Polytechnic University                Polytechnic University
+Zeqiang WANG, University of Surrey    Ming ZHOU, Langboat
+Derek F. WONG, University of Macau    Hong'ao ZHU, University of California
+Junchao WU, University of Macau       San Diego
+Zeyu WU, University of Macau
+
+© 2026 CCF Technical Committee on Natural Language Processing
+                                   All rights reserved
+
+                                           Contact Us
+

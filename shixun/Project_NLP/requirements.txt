@@ -1,18 +1,25 @@
-torch>=2.1.0
-transformers>=4.40.0
-datasets>=2.14.0
+# SCoRE2026 项目依赖
+
+# === 核心训练（run_train.py / train_cot_model.py）===
 accelerate>=0.20.0
-peft>=0.7.0
 bitsandbytes>=0.41.0
-vllm>=0.3.0
+datasets>=2.14.0
+peft>=0.7.0
 sentencepiece
-protobuf
-scikit-learn
-pandas
-numpy
 tqdm
-wandb
-jsonlines
-# LLM API clients (batch annotation)
+transformers>=4.40.0
+
+# === 环境变量管理 ===
+python-dotenv>=1.0.0
+
+# === CoT 数据生成（generate_cot_data.py）===
 openai>=1.0.0
-anthropic>=0.30.0
+
+# === 旧 N-S 路线脚本（保留）===
+# vllm>=0.3.0        # 可选，本地推理加速
+# wandb              # 可选，训练监控
+# jsonlines          # 可选
+# scikit-learn       # 可选
+# pandas             # 可选
+# numpy              # 可选
+# protobuf           # 可选

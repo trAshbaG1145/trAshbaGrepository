@@ -109,22 +109,27 @@ python main.py baseline               # 模板解析器基线
 
 ### CoT 推理路线
 
-- [x] CoT 数据生成脚本
 - [x] CoT 数据全量生成（3600→2668 条，74.1% 正确率）
-- [x] LoRA 微调脚本 + 云平台一键训练脚本
-- [x] CoT 推理 + 提交生成脚本
-- [x] 文档更新（方案、进度、计划）
-- [ ] 模型微调（云平台进行中）
-- [ ] 测试集推理与提交
-- [ ] 消融实验（CoT vs 模板 vs 零样本）
-- [ ] 技术报告（4 页 CCL 格式）
+- [x] LoRA 微调（V100 32GB, ~14h, eval_loss=0.25）
+- [x] 测试集推理与提交（submission_cot.json, 非空率 19.8%）
+- [x] 消融实验（模板 5% / N-S 3.6% / Teacher 74.1% / Student 零样本 0% / Student 微调 19.8%）
+- [x] 综合实训报告（docs/综合实训报告.md）
 
 ### Neuro-Symbolic 路线（已放弃，代码保留）
 
 - [x] 约束 Schema + 5 领域符号求解器
 - [x] 模板解析器基线（~5%）
-- [x] 约束标注 pipeline
 - [x] 验证 LLM 约束提取不可行（DeepSeek 仅 3.6%）
+
+## 实验结果
+
+| 实验 | 准确率 | 说明 |
+|------|--------|------|
+| 模板解析器基线 | ~5% | 正则 + CSP 符号求解器 |
+| N-S 约束提取 | 3.6% | DeepSeek-V3 → JSON → 求解器，已放弃 |
+| Teacher 零样本 | 74.1% | DeepSeek-V3 CoT 直接推理 |
+| Student 零样本 | 0% | Qwen2.5-7B 不会输出 JSON 格式 |
+| **Student 微调** | **19.8%** | Qwen2.5-7B + LoRA，非空率低但格式正确 |
 
 ## CoT 训练数据质量
 
@@ -136,3 +141,12 @@ python main.py baseline               # 模板解析器基线
 | space | 56.2% | 562 |
 | space+nature | 53.0% | 53 |
 | **总计** | **74.1%** | **2668** |
+
+## 输出文件
+
+| 文件 | 说明 |
+|------|------|
+| `outputs/submission_cot.json` | 测试集 1000 条提交（198 非空） |
+| `outputs/cot_train_filtered.json` | CoT 训练数据 (2668 条) |
+| `checkpoints/cot_model/final/` | LoRA adapter (161MB) |
+| `docs/综合实训报告.md` | 完整项目报告 |

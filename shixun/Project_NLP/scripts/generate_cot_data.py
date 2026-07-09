@@ -9,6 +9,9 @@ CoT 推理数据生成脚本
     python scripts/generate_cot_data.py --api_key sk-xxx  # 全量3600条
     python scripts/generate_cot_data.py --samples 10  # 用环境变量 DEEPSEEK_API_KEY
 """
+from dotenv import load_dotenv
+load_dotenv()
+
 import json
 import os
 import sys

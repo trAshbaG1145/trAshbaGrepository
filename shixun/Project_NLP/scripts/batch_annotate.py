@@ -27,6 +27,8 @@
     Phase 2: 符号求解器验证 → 统计报告 + 筛选高质量标注
     Phase 3: 输出 outputs/constraint_annotations.json（训练用格式）
 """
+from dotenv import load_dotenv
+load_dotenv()
 
 import json
 import os
