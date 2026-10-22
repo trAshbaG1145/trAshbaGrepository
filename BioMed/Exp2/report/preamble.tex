@@ -1,0 +1,34 @@
+% 参考 Exp1 的 Pandoc/XeLaTeX 模板，调整为实验二。
+\usepackage{geometry}
+\geometry{a4paper,top=2.15cm,bottom=2.15cm,left=2.2cm,right=2.2cm}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+\setCJKsansfont{SimHei}
+\setCJKmonofont{SimSun}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}[Scale=0.86]
+\linespread{1.13}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.25em}
+\usepackage{longtable,booktabs,array}
+\renewcommand{\arraystretch}{1.08}
+\usepackage{titlesec}
+\titleformat{\section}{\sffamily\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\sffamily\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing{\section}{0pt}{0.8em}{0.4em}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 生物医学智能信息处理 · 实验二}
+\fancyhead[R]{\small 聚类分析}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{14pt}
+\usepackage{enumitem}
+\setlist{topsep=0.2em,itemsep=0.1em,parsep=0pt}
+\usepackage{caption}
+\captionsetup[figure]{name=图,font=small,justification=centering}
+\usepackage{etoolbox}
+\AtBeginEnvironment{Shaded}{\footnotesize\linespread{0.85}\selectfont}
+\AtBeginEnvironment{Highlighting}{\footnotesize\linespread{0.85}\selectfont}
+\setlength{\fboxsep}{3pt}

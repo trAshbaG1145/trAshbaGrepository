@@ -1,0 +1,241 @@
+% ======================================================================
+%  BIBM / IEEE 课程论文模板（支持中英文混排）
+%  适用课程：《生物文本挖掘与知识发现》等
+%  编译方式：pdflatex  ->  bibtex(可选)  ->  pdflatex  ->  pdflatex
+%  依赖宏包：IEEEtran.cls（BIBM 官方模板，请与本文件放同一目录）
+%
+%  本文档内容：论文标题 + 主要研究设想
+%  详细论文方案见同目录下《论文方案.md》
+% ======================================================================
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+% ---------- 基础宏包 ----------
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{booktabs}   % 更漂亮的三线表（可选）
+
+% ---------- 页码设置 ----------
+% IEEE 模板默认不显示页码；通过 fancyhdr 在页脚居中显示页码。
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}                    % 清空默认页眉页脚
+\fancyfoot[C]{\thepage}       % 页脚居中显示页码
+\renewcommand{\headrulewidth}{0pt}  % 去掉页眉横线
+\renewcommand{\footrulewidth}{0pt}  % 去掉页脚横线
+
+% ---------- 页脚左下角灰色水印 ----------
+% 课程论文声明：Agent 生成内容提示，灰色小字，左下角紧凑三行。
+% 若不需要，注释掉下面 \fancyfoot[L]{...} 整段即可。
+\fancyfoot[L]{%
+  \scriptsize\color{gray}%
+  \begin{tabular}[b]{@{}l@{}}
+    课程论文支持使用 Agent 生成内容，\\
+    这只是起点。人工内容审查\\
+    和驾驭才是终点。%
+  \end{tabular}%
+}
+\setlength{\footskip}{24pt}   % 给页脚留出足够空间，避免与正文重叠
+
+% IEEEtran 的首页 (\maketitle) 默认使用 plain 样式，会覆盖上面的 fancy 设置。
+% 这里把 plain 和 IEEE 标题页样式也改成同样的页脚，保证首页同样显示页码和水印。
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \fancyfoot[L]{%
+    \scriptsize\color{gray}%
+    \begin{tabular}[b]{@{}l@{}}
+      课程论文支持使用 Agent 生成内容，\\
+      这只是开始。人工内容审查\\
+      和驾驭才是终点。%
+    \end{tabular}%
+  }%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\fancypagestyle{IEEEtitlepagestyle}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \fancyfoot[L]{%
+    \scriptsize\color{gray}%
+    \begin{tabular}[b]{@{}l@{}}
+      课程论文支持使用 Agent 生成内容，\\
+      这只是开始。人工内容审查\\
+      和驾驭才是终点。%
+    \end{tabular}%
+  }%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ---------- 行号设置 ----------
+% 在页面左侧显示行号，方便老师批改/审稿时定位。
+% 若提交最终版不需要行号，注释掉 \pagewiselinenumbers 一行即可。
+\usepackage[switch]{lineno}   % switch: 双栏时行号显示在外侧
+\pagewiselinenumbers          % 每页行号从 1 重新开始（也可改用 \linenumbers 全文连续编号）
+
+% ---------- 中文支持（pdflatex 下也能用） ----------
+% 说明：
+%   1) 使用 ctex 宏包并开启 UTF8，即可在 pdflatex 下输入中文；
+%   2) 若你想用 xelatex，可去掉下面这行，改用 \usepackage[UTF8]{ctex} 并设置中文字体。
+\usepackage[UTF8]{ctex}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+% ======================================================================
+%  标题 / 作者 / 单位  ——  按需修改
+% ======================================================================
+\title{From Co-occurrence to Signal: Auditing and Correcting
+Research-Attention Bias in Cross-Kingdom Literature-Mined
+Gene--Trait Knowledge Bases\\
+\large 从共现到信号：跨物种文献挖掘基因--性状知识库中
+研究注意力偏差的审计与校正}
+
+\author{
+\IEEEauthorblockN{陈佳伸}
+\IEEEauthorblockA{
+\textit{2023317220404} \\
+\textit{人工智能2302}
+邮箱: smiletrashbag@webmail.hzau.edu.cn}
+}
+
+\maketitle
+
+% ======================================================================
+%  摘要 / 关键词
+% ======================================================================
+\begin{abstract}
+文献挖掘型知识库正被当作事实性资源广泛复用，但其关联强度的底层是共现计数，
+而共现同时混入了\textbf{生物学效应}与\textbf{研究注意力}两个来源。
+本文提出一项跨物种研究设想：以 RiceMind（水稻）与 CancerAlterome（人类癌症）
+这两个出自同一实验室、共享同一「共现抽取 + 本体归一化」范式的资源为对象，
+用库外文献基线为基因--性状对建立期望共现模型，
+并以残差作为注意力校正后的信号。
+设想的关键在于一个方法学处理：经查证，RiceMind 的 Tier~2/Tier~3 分层
+本身即由文章数阈值定义（$>10$ 与 $\leq 10$ 篇），
+故基于该分层验证任何基于计数的校正都将构成循环；
+本文据此仅以与文献量无关的 Tier~1 作为标签，并对比较按文章数分层。
+预期贡献为：一套可移植的校正协议、对分层循环性的显式处理，
+以及首次对文献挖掘知识库注意力偏差的跨物种量化。
+\end{abstract}
+
+\begin{IEEEkeywords}
+文献挖掘, 知识库偏差, 共现归一化, 发表偏倚,
+本体归一化, 跨物种迁移
+\end{IEEEkeywords}
+
+% ======================================================================
+%  I. 研究背景与问题
+% ======================================================================
+\section{研究背景与问题 Background}
+
+生物医学文献的规模已远超人工阅读能力，文献挖掘因此成为构建结构化知识的主要手段。
+Cancer-Alterome 与 RiceMind
+是该范式下两个成熟的资源：前者面向人类癌症，
+将\textbf{遗传改变}$\rightarrow$\textbf{下游调控事件}归一化到 GO/HPO；
+后者面向水稻，将基因--性状关联归一化到 GO/TO/PO/RTO。
+两者出自同一实验室（HZAU-BioNLP Lab），共享同一套
+「共现抽取 + 本体归一化 + 来源分级」的方法论，区别仅在于物种与表型空间。
+
+这类资源被下游直接当作「已知事实」使用——用于候选基因排序、
+通路富集、以及作为机器学习模型的弱标签。然而其关联强度的底层量是
+\textbf{文献共现计数}。一个基因--性状对共现得多，可能因为该关联在生物学上强，
+也可能仅仅因为\textbf{这个基因和这个性状都被研究得多}。
+后者即\textbf{研究注意力}，它与生物学效应在计数中被不可分辨地混合。
+
+这一偏差会带来一个具有实际后果的反馈回路：
+若知识库被不加校正地用于下游，其输出将系统性偏向已被充分研究的实体，
+从而\textbf{放大而非缩小}现有研究格局的不均衡——
+研究得多的基因被预测为更重要，进而获得更多研究。
+在作物育种与癌症靶点发现两个场景中，这意味着
+前者会忽视地方品种中未被充分研究的耐逆基因，
+后者会重复聚焦于已饱和的靶点。
+
+现有资源普遍以置信度分层应对该问题，但这些分层并未与文献量解耦。
+经查证 RiceMind 的官方文档，其 Tier~2 与 Tier~3 的划分标准分别是
+「$>10$ 篇独立文章」与「$\leq 10$ 篇文章」%
+\footnote{\url{http://lit-evi.hzau.edu.cn/ricemind-webpage/dataset/}}，
+\textbf{即某一层的定义本身就是文章数的函数}。
+这一事实尚未被既有文献指出，却直接影响下游对分层的使用方式。
+
+\textbf{本文要回答的三个问题：}
+\begin{itemize}
+  \item \textbf{RQ1（量化）} 研究注意力对关联强度的影响有多大？
+        它与生物学信号在多大程度上可分离？
+  \item \textbf{RQ2（校正）} 用外部文献基线对共现做归一化，
+        能否得到比原始计数更接近生物学真值的排序？
+  \item \textbf{RQ3（迁移）} 在一个物种上确定的校正，
+        能否无损迁移到另一物种及其表型空间？
+\end{itemize}
+
+% ======================================================================
+%  II. 主要研究设想
+% ======================================================================
+\section{主要研究设想 Main Research Idea}
+
+\textbf{核心设想：把「超出研究注意力所能解释的部分」定义为关联信号。}
+
+设基因 $g$ 与性状（或癌症过程）$t$ 的库内共现计数为 $n(g,t)$，
+库内边缘频次为 $n_g$、$n_t$，总量为 $N$；
+另设 $m_g$、$m_t$ 为 PubMed 中 $g$ 与 $t$ 各自的独立文献量，$M$ 为检索空间总量。
+则\textbf{仅由注意力驱动}的期望共现为
+\begin{equation}
+E_{\text{ext}}[n(g,t)] = N \cdot \frac{m_g}{M} \cdot \frac{m_t}{M}
+\end{equation}
+残差
+\begin{equation}
+r(g,t) = n(g,t) - E_{\text{ext}}[n(g,t)]
+\end{equation}
+即为本文所定义的注意力校正后信号。
+
+设想的要点不在于提出新的归一化公式，
+而在于主张\textbf{期望值的边缘频次应取自库外}：
+库内计数本身即是被污染的观测量，
+以它构造期望无法区分「该基因被研究得多」与「该关联真实且强」。
+
+\textbf{由此形成一个可直接实施的实验设计：}
+在同一测试集上比较三种排序——
+原始计数 $n$、仅用库内边缘频次的 $\mathrm{PMI}_{\text{int}}$、
+以及用库外基线的 $\mathrm{PMI}_{\text{ext}}$。
+其中 $\mathrm{PMI}_{\text{int}}$ 与 $\mathrm{PMI}_{\text{ext}}$ 的
+\textbf{排名差异即构成文献注意力偏差的直接测量值}，
+该差值在既有文献中尚未被报告。
+
+\textbf{验证方案的立意：规避分层的循环性。}
+如第一节所述，RiceMind 的 Tier~2/Tier~3 由文章数阈值定义，
+故基于该二分层的验证是循环的，这是本设想在方法学上必须处理的核心障碍。
+应对方式有三：
+（i）\textbf{标签选择}上仅使用 \textbf{Tier~1} 作为正例——
+其定义依据是人工审编来源（Oryzabase/RAP-DB）或实验证据码（EXP/IDA/IMP），
+\textbf{与文献量无关}，故可作为干净标签，而 Tier~2/3 仅作分层变量；
+（ii）\textbf{按文章数区间分层}（如 $1$--$5$、$6$--$10$、$11$--$50$、$>50$），
+在各区间\textbf{内部}比较排序质量，
+以控制「Tier~1 基因本来就被研究得多」这一残余混淆；
+（iii）以\textbf{跨物种迁移}作为独立检验——
+在水稻侧确定的校正参数直接应用于癌症侧，
+该检验不依赖任何一方的分层体系，因而不受循环性影响。
+
+\textbf{待检验假设：}
+\begin{itemize}
+  \item \textbf{H1（校正有效性）} 分层条件下，
+        $\mathrm{PMI}_{\text{ext}}$ 对 Tier~1 关联的 $P@k$
+        显著高于原始计数且不低于 $\mathrm{PMI}_{\text{int}}$；
+  \item \textbf{H2（偏差可量化）} 两种 PMI 的排名差异与实体级文献量显著相关，
+        且该相关在两库中具有可比的函数形式；
+  \item \textbf{H3（跨物种迁移）} 水稻侧校正参数应用于癌症侧时排序质量无显著下降；
+  \item \textbf{H4（漏检回收）} 外部基线驱动的残差排序能提升
+        「高文献量、零库内记录」实体的关联召回率。
+\end{itemize}
+
+\textbf{说明：}本文为研究设想，上述 H1--H4 为待检验假设，
+本文不预设任何实验结果。
+
+\end{document}

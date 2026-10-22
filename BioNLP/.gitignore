@@ -1,0 +1,59 @@
+# =============================================================================
+# BioNLP 课程项目
+# 原则：忽略可再下载的语料/文献/第三方模板、编译中间产物与本机环境文件；
+#       保留笔记、报告、提案源码与最终 PDF。
+# =============================================================================
+
+# ---------- Python / Jupyter 环境（备用，当前无代码） ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- 语料与压缩包 ----------
+# Brown 语料库（503 个文件，可用 brown.zip 解压恢复）
+brown/
+# 由 Brown 语料拼接、清洗得到的派生文本（9.6M，可重新生成）
+Exp1/BROWN_A.txt
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tgz
+
+# ---------- 外部文献与课件 PDF（第三方资料，不入库） ----------
+references/*.pdf
+JingboSlides_*.pdf
+
+# ---------- 第三方 LaTeX 模板（会议官网可重新下载） ----------
+templates/
+
+# ---------- LaTeX / BibTeX 编译中间文件 ----------
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# ---------- 系统与本地配置 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
